@@ -34,7 +34,7 @@ if (login_check($mysqli) == true) {
 <div class="topplinje"><a class="button" href="login.php"><?php 
     if(login_check($mysqli) == true){ 
         echo $_SESSION['username'];
-        echo '<a href="logout.php"><span>Logout</span></a></li>';
+        echo '<a href="logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="register.php"><span>Login/Register</span></a></li>';
@@ -50,11 +50,11 @@ if (login_check($mysqli) == true) {
           <div class="navigation ">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">Hjem</a></li>
-               <li><a href="about.html">Dokumenter</a></li>
-               <li><a href="classes.html">Om oss</a></li>
-               <li><a href="staff.html">Miljø</a></li>
-               <li><a href="contacts.html">Kontakt</a></li>
+               <li><a href="index.php">Hjem</a></li>
+               <li><a href="documents.php">Dokumenter</a></li>
+               <li><a href="about.php">Om oss</a></li>
+               <li><a href="environment.php">Miljø</a></li>
+               <li><a href="contacts.php">Kontakt</a></li>
              </ul>
             </nav>
             <br><br>
