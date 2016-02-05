@@ -4,17 +4,71 @@ include_once 'includes/functions.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Secure Login: Registration Form</title>
-        <script type="text/JavaScript" src="js/sha512.js"></script> 
-        <script type="text/JavaScript" src="js/forms.js"></script>
-        <link rel="stylesheet" href="styles/main.css" />
-    </head>
-    <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="css/contact-form.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js"></script>
+<script type="text/JavaScript" src="js/sha512.js"></script> 
+<script type="text/JavaScript" src="js/forms.js"></script> 
+</head>
+    <body class="page1" id="top">
+
+<!--==============================
+              header
+=================================-->
+<div class="main">
+<header>
+<div class="topplinje"><a class="button" href="login.php"><?php 
+    if(login_check($mysqli) == true){ 
+        echo $_SESSION['username'];
+        echo '<a href="logout.php"><span>&nbsp;Logout</span></a></li>';
+        }
+    elseif(login_check($mysqli) == false) 
+        echo '<a href="login.php"><span>Login/Register</span></a></li>';
+    ?></a></div>
+  <div class="container_12">
+		<img src="images/logo.png"  />
+  <section id="stuck_container">
+   <!--==============================
+              Stuck menu
+  =================================-->
+    <div class="container_12">
+        <div class="grid_12">
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li class="current"><a href="index.html">Hjem</a></li>
+               <li><a href="about.html">Dokumenter</a></li>
+               <li><a href="classes.html">Om oss</a></li>
+               <li><a href="staff.html">Miljø</a></li>
+               <li><a href="contacts.html">Kontakt</a></li>
+             </ul>
+            </nav>
+            <br><br>
+		  <hr class="skille">
+         <div class="clear"></div>
+     </div>
+     <div class="clear"></div>
+    </div>
+  </section>
+</header>
+<!--=====================
+          Content
+======================-->
+<section id="content">
+<div class="container_12">
+    
+   <div class="grid_6">
+   
+   
         <!-- Registration form to be output if the POST variables are not
         set or if the registration script caused an error. -->
-        <h1>Register with us</h1>
+        <h2 class="inset__1">Registrer deg</h2>
         <?php
         if (!empty($error_msg)) {
             echo $error_msg;
@@ -54,6 +108,54 @@ include_once 'includes/functions.php';
                                    this.form.password,
                                    this.form.confirmpwd);" /> 
         </form>
-        <p>Return to the <a href="index.php">login page</a>.</p>
-    </body>
+        <p>Return to the <a href="login.php">login page</a>.</p>
+    <div class="grid_3 alpha">
+        
+      </div>
+    </div>
+    <div class="grid_5 prefix_1">
+
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<div class="footer-top">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="sep-1"></div>
+    </div>
+    <div class="grid_4">
+      <address class="address-1"> <div class="fa fa-home"></div>Egsveien 100, 4615 Kristiansand,  <br>
+Telefon: 03738</address>
+    </div>
+    <div class="grid_3">
+      <a href="#" class="mail-1"><span class="fa fa-envelope"></span>Knut-Kristian.Aas.Bjornstad@sshf.no</a>
+    </div>
+    <div class="grid_4 fright">
+      <div class="socials">
+        <a href="#">facebook</a>
+        <a href="#">twitter</a>
+        <a href="#">google+</a>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--==============================
+              footer
+=================================-->
+</div>
+<footer id="footer">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="sub-copy">4400 &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <br> Nettsiden er laget som ett bachelor prosjekt av <a href="https://www.facebook.com/steffangraf" rel="nofollow">group 4400</a></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+<a href="#" id="toTop" class="fa fa-angle-up"></a>
+</body>
+</html>
+	
+	</body>
 </html>

@@ -3,23 +3,28 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
  
 sec_session_start();
+ 
+if (login_check($mysqli) == true) {
+    $logged = 'in';
+} else {
+    $logged = 'out';
+}
 ?>
 <!DOCTYPE html>
-<html>
-    <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Login</title>
+<title>Staff</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
-<script type="text/JavaScript" src="js/sha512.js"></script> 
-<script type="text/JavaScript" src="js/forms.js"></script> 
-</head>
-    <body class="page1" id="top">
-
+<script>
+ $(window).load(function(){
+  $().UItoTop({ easingType: 'easeOutQuart' });
+ }); 
+</script>
+<body class="page1" id="top">
 <!--==============================
               header
 =================================-->
@@ -28,15 +33,15 @@ sec_session_start();
 <div class="topplinje"><a class="button" href="login.php"><?php 
     if(login_check($mysqli) == true){ 
         echo $_SESSION['username'];
-        echo '<a href="logout.php"><span>Logout</span></a></li>';
+        echo '<a href="logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="register.php"><span>Login/Register</span></a></li>';
     ?></a></div>
-	<div class="container_12">
+  <div class="container_12">
 		<img src="images/logo.png"  />
   <section id="stuck_container">
-   <!--==============================
+  <!--==============================
               Stuck menu
   =================================-->
     <div class="container_12">
@@ -44,11 +49,11 @@ sec_session_start();
           <div class="navigation ">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">Hjem</a></li>
-               <li><a href="about.html">Dokumenter</a></li>
-               <li><a href="classes.html">Om oss</a></li>
-               <li><a href="staff.html">Miljø</a></li>
-               <li><a href="contacts.html">Kontakt</a></li>
+               <li><a href="index.php">Hjem</a></li>
+               <li><a href="documents.php">Dokumenter</a></li>
+               <li><a href="about.php">Om oss</a></li>
+               <li class="current"><a href="environment.php">Miljø</a></li>
+               <li><a href="contacts.php">Kontakt</a></li>
              </ul>
             </nav>
             <br><br>
@@ -62,34 +67,41 @@ sec_session_start();
 <!--=====================
           Content
 ======================-->
-<section id="content">
+<section id="content" class="inset__1">
 <div class="container_12">
-    
-   <div class="grid_6">
-        <?php if (login_check($mysqli) == true) : ?>
-            <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
-            <p>
-                This is an example protected page.  To access this page, users
-                must be logged in.  At some stage, we'll also check the role of
-                the user, so pages will be able to determine the type of user
-                authorised to access the page.
-            </p>
-            <p>Return to <a href="login.php">login page</a></p>
-        <?php else : ?>
-            <p>
-                <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
-            </p>
-        <?php endif; ?>
-    <div class="grid_3 alpha">
-        
+    <div class="grid_6">
+      <div class="block-2">
+       asd
       </div>
     </div>
-    <div class="grid_5 prefix_1">
-
+    <div class="grid_6">
+      <div class="block-2">
+       asd
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="grid_6">
+      <div class="block-2">
+        asd
+      </div>
+    </div>
+    <div class="grid_6">
+      <div class="block-2">
+        asd
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="grid_6">
+      <div class="block-2">
+        asd
+      </div>
     </div>
     <div class="clear"></div>
   </div>
 </section>
+<!--==============================
+              footer_top
+=================================-->
 <div class="footer-top">
   <div class="container_12">
     <div class="grid_12">
@@ -126,7 +138,4 @@ Telefon: 03738</address>
 </footer>
 <a href="#" id="toTop" class="fa fa-angle-up"></a>
 </body>
-</html>
-	
-	</body>
 </html>
