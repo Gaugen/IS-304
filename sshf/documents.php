@@ -50,11 +50,17 @@ if (login_check($mysqli) == true) {
           <div class="navigation ">
             <nav>
               <ul class="sf-menu">
-               <li><a href="index.php">Hjem</a></li>
-               <li class="current"><a href="documents.php">Dokumenter</a></li>
-               <li><a href="about.php">Om oss</a></li>
-               <li><a href="environment.php">Miljø</a></li>
-               <li><a href="contacts.php">Kontakt</a></li>
+				<li class="current">
+				<div class="dropdown">
+				<button class="dropMenu"><img src ="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png"> Hjem</button>
+					<div class="dropdown-content">
+					<a href="index.php">Hjem</a>
+					<a href="about.php">Dokumenter</a>
+					<a href="classes.php">Om oss</a>
+					<a href="staff.php">Miljø</a>
+					<a href="contacts.php">Kontakt</a>
+					</div>
+				</div></li>
              </ul>
             </nav>
             <br><br>

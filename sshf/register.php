@@ -42,11 +42,17 @@ include_once 'includes/functions.php';
           <div class="navigation ">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">Hjem</a></li>
-               <li><a href="about.html">Dokumenter</a></li>
-               <li><a href="classes.html">Om oss</a></li>
-               <li><a href="staff.html">Miljø</a></li>
-               <li><a href="contacts.html">Kontakt</a></li>
+				<li class="current">
+				<div class="dropdown">
+				<button class="dropMenu"><img src ="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png"> Hjem</button>
+					<div class="dropdown-content">
+					<a href="index.php">Hjem</a>
+					<a href="about.php">Dokumenter</a>
+					<a href="classes.php">Om oss</a>
+					<a href="staff.php">Miljø</a>
+					<a href="contacts.php">Kontakt</a>
+					</div>
+				</div></li>
              </ul>
             </nav>
             <br><br>

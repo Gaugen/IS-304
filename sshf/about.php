@@ -54,19 +54,24 @@ if (login_check($mysqli) == true) {
   <!--==============================
               Stuck menu
   =================================-->
-    <div class="container_12">
+     <div class="container_12">
         <div class="grid_12">
           <div class="navigation ">
-            <nav>
+                     <nav><br>
               <ul class="sf-menu">
-               <li><a href="index.php">Hjem</a></li>
-               <li><a href="documents.php">Dokumenter</a></li>
-               <li class="current"><a href="about.php">Om oss</a></li>
-               <li><a href="environment.php">Miljø</a></li>
-               <li><a href="contacts.php">Kontakt</a></li>
+               <li class="current">
+			   <div class="dropdown">
+				<button class="dropMenu"><img src ="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png"> Hjem</button>
+					<div class="dropdown-content">
+					<a href="index.php">Hjem</a>
+					<a href="documents.php">Dokumenter</a>
+					<a href="about.php">Om oss</a>
+					<a href="environment.php">Miljø</a>
+					<a href="contacts.php">Kontakt</a>
+					</div>
+				</div></li>
              </ul>
             </nav>
-            <br><br>
 		  <hr class="skille">
          <div class="clear"></div>
      </div>
