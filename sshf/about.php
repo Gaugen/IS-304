@@ -13,7 +13,7 @@ if (login_check($mysqli) == true) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Classes</title>
+<title>Om oss</title>
 <meta charset="utf-8">
 <meta name = "format-detection" content = "telephone=no" />
 <link rel="icon" href="images/favicon.ico">
@@ -46,7 +46,7 @@ if (login_check($mysqli) == true) {
         echo '<a href="logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
-        echo '<a href="register.php"><span>Login/Register</span></a></li>';
+        echo '<a href="login.php"><span>Login/Register</span></a></li>';
     ?></a></div>
   <div class="container_12">
 		<img src="images/logo.png"  />
@@ -54,14 +54,14 @@ if (login_check($mysqli) == true) {
   <!--==============================
               Stuck menu
   =================================-->
-     <div class="container_12">
+    <div class="container_12">
         <div class="grid_12">
           <div class="navigation ">
                      <nav><br>
               <ul class="sf-menu">
                <li class="current">
 			   <div class="dropdown">
-				<button class="dropMenu"><img src ="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png"> Hjem</button>
+				<button class="dropMenu"><img src ="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png"> Meny</button>
 					<div class="dropdown-content">
 					<a href="index.php">Hjem</a>
 					<a href="documents.php">Dokumenter</a>
@@ -134,11 +134,11 @@ if (login_check($mysqli) == true) {
       <div class="sep-1"></div>
     </div>
     <div class="grid_4">
-      <address class="address-1"> <div class="fa fa-home"></div>Egsveien 100, 4615 Kristiansand,  <br>
-Telefon: 03738</address>
+      <address class="address-1"> <div class="fa fa-home"></div>Sørlandet sykehus HF  <br>
+Teknologi og E-helse.</address>
     </div>
     <div class="grid_3">
-      <a href="#" class="mail-1"><span class="fa fa-envelope"></span>Knut-Kristian.Aas.Bjornstad@sshf.no</a>
+      <a href="#" class="mail-1"><span class="fa fa-envelope"></span>miljo@sshf.no</a>
     </div>
     <div class="grid_4 fright">
       <div class="socials">
@@ -157,7 +157,7 @@ Telefon: 03738</address>
 <footer id="footer">
   <div class="container_12">
     <div class="grid_12">
-      <div class="sub-copy">4400 &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <br> Nettsiden er laget som ett bachelor prosjekt av <a href="https://www.facebook.com/steffangraf" rel="nofollow">group 4400</a></div>
+      <div class="sub-copy">4400 &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <br> Nettsiden er laget som ett bachelor prosjekt av <a href="https://www.facebook.com/steffangraf" rel="nofollow">gruppe 4400.</a></div>
     </div>
     <div class="clear"></div>
   </div>
