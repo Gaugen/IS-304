@@ -10,8 +10,6 @@ if (login_check($mysqli) == true) {
     $logged = 'out';
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
