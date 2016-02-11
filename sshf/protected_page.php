@@ -21,6 +21,7 @@ sec_session_start();
                 authorised to access the page.
             </p>
             <p>Return to <a href="index.php">login page</a></p>
+			<p>Want to change your password? Click here <a href="change_password.php">Change Password</a></p>
         <?php else : ?>
             <p>
                 <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.

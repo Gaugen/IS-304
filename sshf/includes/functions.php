@@ -83,6 +83,11 @@ function login($email, $password, $mysqli) {
     }
 }
 
+/*function change_password($currentPassword, $newPassword, $confirmPassword) {
+// Using prepared statements means that SQL injection is not possible. 
+    $prep_stmt = "SELECT id FROM members WHERE username = ? LIMIT 1";
+    $stmt = $mysqli->prepare($prep_stmt);
+}*/
 function checkbrute($user_id, $mysqli) {
     // Get timestamp of current time 
     $now = time();
