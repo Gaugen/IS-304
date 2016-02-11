@@ -22,7 +22,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     }
  
     // Username validity and password validity have been checked client side.
-    // This should be adequate as nobody gains any advantage from
+    // This should should be adequate as nobody gains any advantage from
     // breaking these rules.
     //
  
