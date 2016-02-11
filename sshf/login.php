@@ -34,7 +34,7 @@ if (login_check($mysqli) == true) {
 <div class="topplinje"><a class="button" href="login.php"><?php 
     if(login_check($mysqli) == true){ 
         echo $_SESSION['username'];
-        echo '<a href="logout.php"><span>&nbsp;Logout</span></a></li>';
+        echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="register.php"><span>Login/Register</span></a></li>';
@@ -91,7 +91,7 @@ if (login_check($mysqli) == true) {
 <?php
         if (login_check($mysqli) == true) {
                         echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
- 
+						echo "<p>Want to change password?<a href='change_password.php'>Click here</a></p>";
             echo '<p>Do you want to change user? <a href="includes/logout.php">Log out</a>.</p>';
         } else {
                         echo '<p>Currently logged ' . $logged . '.</p>';
