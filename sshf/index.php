@@ -58,7 +58,7 @@ function MM_swapImage() { //v3.0
 <?php 
     if(login_check($mysqli) == true){ 
         echo $_SESSION['username'];
-        echo '<a href="logout.php"><span>&nbsp;Logout</span></a></li>';
+        echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="login.php"><span>Login/Register</span></a></li>';

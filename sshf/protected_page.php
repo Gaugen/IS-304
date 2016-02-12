@@ -28,7 +28,7 @@ sec_session_start();
 <div class="topplinje"><a class="button" href="login.php"><?php 
     if(login_check($mysqli) == true){ 
         echo $_SESSION['username'];
-        echo '<a href="logout.php"><span>Logout</span></a></li>';
+        echo '<a href="includes/logout.php"><span>Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="login.php"><span>Login/Register</span></a></li>';
@@ -80,6 +80,7 @@ sec_session_start();
                 authorised to access the page.
             </p>
             <p>Return to <a href="login.php">login page</a></p>
+			<p>Want to change your password? Click here <a href="change_password.php">Change Password</a></p>
         <?php else : ?>
             <p>
                 <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
