@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
+include_once '../includes/db_connect.php';
+include_once '../includes/functions.php';
  
 sec_session_start();
  
@@ -16,9 +16,9 @@ if (login_check($mysqli) == true) {
 <title>Dokumenter</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
-<link rel="stylesheet" href="css/contact-form.css">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/script.js"></script>
+<link rel="stylesheet" href="../css/contact-form.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js"></script>
 <script>
  $(window).load(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
@@ -35,13 +35,13 @@ if (login_check($mysqli) == true) {
     if(login_check($mysqli) == true){ 
         echo $_SESSION['username'];
         echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
-		echo '<a href="files/filemanager.php"><span>&nbsp;Manage files</span></a></li>';
+		echo '<a href="filemanager.php"><span>&nbsp;Manage files</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="login.php"><span>Login/Register</span></a></li>';
     ?></a></div>
   <div class="container_12">
-		<img src="images/logo.png"  />
+		<img src="../images/logo.png"  />
   <section id="stuck_container">
   <!--==============================
               Stuck menu
@@ -76,6 +76,34 @@ if (login_check($mysqli) == true) {
 ======================-->
 <section id="content">
   <div class="container_12">
+  
+ <form action="upload.php" method="post" enctype="multipart/form-data">
+	<input type="file" name="file" />
+	<button type="submit" name="btn-upload">Last opp</button>
+	</form>
+    <br /><br />
+    <?php
+	if(isset($_GET['success']))
+	{
+		?>
+        <label>Data opplastet...  <a href="view.php">Trykk her for å se data.</a></label>
+        <?php
+	}
+	else if(isset($_GET['fail']))
+	{
+		?>
+        <label>Det oppstod et problem under opplasting !</label>
+        <?php
+	}
+	else
+	{
+		?>
+        <label>Trykk velg fil for å laste opp excel-ark</label>
+        <?php
+	}
+	
+	?>
+	
 <table width="60%" border="1">
     
     <th colspan="6">Din miljødata.<label><a href="filemanager.php">Last opp ny data</a></label></th>
