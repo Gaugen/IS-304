@@ -27,8 +27,11 @@ sec_session_start();
 <header>
 <div class="topplinje"><a class="button" href="login.php"><?php 
     if(login_check($mysqli) == true){ 
-        echo $_SESSION['username'];
-        echo '<a href="includes/logout.php"><span>&nbsp;&nbsp;&nbsp;&nbsp;Logout</span></a></li>';
+       	echo '<a href="admin-panel.php"><span>Admin &nbsp;</span></a></li>';
+		echo '<a>&nbsp;|&nbsp;</a>';
+		echo $_SESSION['username'];
+		echo '<a>&nbsp;|&nbsp;</a>';
+        echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="login.php"><span>Login/Register</span></a></li>';
@@ -79,11 +82,11 @@ sec_session_start();
                 the user, so pages will be able to determine the type of user
                 authorised to access the page.
             </p>
-            <p>Return to <a href="login.php">login page</a></p>
-			<p>Want to change your password? Click here <a href="change_password.php">Change Password</a></p>
+            <p>Return to <a href="login.php"><button>login page</button></a></p>
+			<p>Want to change your password? Click here <a href="change_password.php"><button>Change Password</button></a></p>
         <?php else : ?>
             <p>
-                <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+                <span class="error">You are not authorized to access this page.</span> Please <a href="login.php"><button>login</button></a>.
             </p>
         <?php endif; ?>
     <div class="grid_3 alpha">

@@ -42,7 +42,10 @@ if (login_check($mysqli) == true) {
 <header>
 <div class="topplinje"><a class="button" href="login.php"><?php 
     if(login_check($mysqli) == true){ 
-        echo $_SESSION['username'];
+       	echo '<a href="admin-panel.php"><span>Admin &nbsp;</span></a></li>';
+		echo '<a>&nbsp;|&nbsp;</a>';
+		echo $_SESSION['username'];
+		echo '<a>&nbsp;|&nbsp;</a>';
         echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 

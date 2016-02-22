@@ -57,7 +57,10 @@ function MM_swapImage() { //v3.0
 <div class="topplinje"><a class="button" href="login.php">
 <?php 
     if(login_check($mysqli) == true){ 
-        echo $_SESSION['username'];
+       	echo '<a href="admin-panel.php"><span>Admin &nbsp;</span></a></li>';
+		echo '<a>&nbsp;|&nbsp;</a>';
+		echo $_SESSION['username'];
+		echo '<a>&nbsp;|&nbsp;</a>';
         echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
@@ -85,7 +88,6 @@ function MM_swapImage() { //v3.0
 					<a href="about.php">Om oss</a>
 					<a href="environment.php">Miljø</a>
 					<a href="contacts.php">Kontakt</a>
-					<a href="posts/main.php">newsfeed</a>
 					</div>
 				</div></li>
              </ul>
@@ -116,9 +118,39 @@ function MM_swapImage() { //v3.0
       </div>
     </div>
     <div class="grid_5 prefix_1">
-		<div class="newsfeed">
-			Her kommer newsfeed
-		</div>
+	<?php
+	echo "<div class=newsekko2>";
+		$q = "SELECT * FROM post";
+$r = mysqli_query($mysqli, "$q");
+if($r)
+{
+
+while($row=mysqli_fetch_array($r)){
+	echo "<form action=index.php method=post>";
+	echo "<div class=container2>";
+	echo "<div class=newsheader2>";
+	echo "<h7>";
+	echo $row['newstopic'];
+	echo "</h7>";
+	echo "</div>";
+	echo "<img src=image.php?newsno=".$row['newsno']." width=180 height=180/>";
+	echo "<div class=tb22>";
+	echo $row['newsinfo'];
+	echo "</div>";
+	echo "<td>" . "<input type=hidden name=hidden value=" . $row['newstopic'] . " </td>";
+	echo "</div>";
+	echo "</br>";
+	echo "</form>";
+}
+echo "</div>";
+
+}
+
+else
+{
+echo mysqli_error();
+}
+?>
     </div>
     <div class="clear"></div>
   </div>

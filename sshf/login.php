@@ -101,7 +101,7 @@ if (login_check($mysqli) == true) {
 			echo '<p>Do you want to change password? <a href="change_password.php">Change password</a>.</p>';
         } else {
                         echo '<p>Currently logged ' . $logged . '.</p>';
-                        echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
+                        echo "<p>If you don't have a login, please <a href='register.php'><button>register</button></a></p>";
                 }
 ?>      
      <div class="grid_3 alpha">
