@@ -85,6 +85,7 @@ function MM_swapImage() { //v3.0
 					<a href="about.php">Om oss</a>
 					<a href="environment.php">Miljø</a>
 					<a href="contacts.php">Kontakt</a>
+					<a href="posts/main.php">newsfeed</a>
 					</div>
 				</div></li>
              </ul>
