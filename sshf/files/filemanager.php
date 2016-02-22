@@ -86,7 +86,7 @@ if (login_check($mysqli) == true) {
 	if(isset($_GET['success']))
 	{
 		?>
-        <label>Data opplastet...  <a href="view.php">Trykk her for å se data.</a></label>
+        <label>Data opplastet...  </label>
         <?php
 	}
 	else if(isset($_GET['fail']))
@@ -106,7 +106,7 @@ if (login_check($mysqli) == true) {
 	
 <table width="60%" border="1">
     
-    <th colspan="6">Din miljødata.<label><a href="filemanager.php">Last opp ny data</a></label></th>
+    <th colspan="6">Din miljødata</th>
 	 
     <?php
 	$sql="SELECT * FROM tbl_uploads";
@@ -126,9 +126,9 @@ if (login_check($mysqli) == true) {
 		echo '<td>' . $row['size'] . '</td>';
 		echo '<td>' . $row['id'] . '</td>';
 		
-		echo '<td><a href="download.php?id=' . $row['id'] . '">Download</a></td>';
+		echo '<td><a href="download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
-		echo '<td><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';	
+		echo '<td><a href="delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	
 	
 		
 		echo "</tr>"; 

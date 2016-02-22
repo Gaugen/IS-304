@@ -693,5 +693,19 @@ hr {
 	z-index: 1;
 }
 
+----- filemanager and documents table -----
+
+#body table
+{
+	margin:0 auto;
+	position:relative;
+	bottom:50px;
+}
+table td,th
+{
+	padding:20px;
+	border: solid #9fa8b0 1px;
+	border-collapse:collapse;
+}
 
 ----- POPUP ------

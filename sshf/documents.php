@@ -78,7 +78,7 @@ if (login_check($mysqli) == true) {
   <div class="container_12">
 <table width="60%" border="1">
     
-    <th colspan="6">Din miljødata.<label><a href="filemanager.php">Last opp ny data</a></label></th>
+    <th colspan="6">Last ned miljødata</th>
 	 
     <?php
 	$sql="SELECT * FROM tbl_uploads";
@@ -90,17 +90,17 @@ if (login_check($mysqli) == true) {
 	
 		echo "<table width=60% border='1' cellpadding='10'>";
 	
-		echo "<tr> <th>Filnavn</th> <th>Filtype</th> <th>Filstørrelse (KB)</th> <th>ID</th> <th>Last ned</th> <th>Slett</th> </tr>";
+		// echo "<tr> <th>Filnavn</th> <th>Filtype</th> <th>Filstørrelse (KB)</th><th>Last ned</th> </tr>";
 	
 		echo "<tr>";
 		echo '<td>' . $row['file'] . '</td>';
-		echo '<td>' . $row['type'] . '</td>';
+		// echo '<td>' . $row['type'] . '</td>';
 		echo '<td>' . $row['size'] . '</td>';
-		echo '<td>' . $row['id'] . '</td>';
+		$row['id'];
+	
 		
-		echo '<td><a href="download.php?id=' . $row['id'] . '">Download</a></td>';
+		echo '<td><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
-		echo '<td><a href="delete.php?id=' . $row['id'] . '">Delete</a></td>';	
 	
 		
 		echo "</tr>"; 
