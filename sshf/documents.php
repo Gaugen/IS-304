@@ -93,13 +93,13 @@ if (login_check($mysqli) == true) {
 		// echo "<tr> <th>Filnavn</th> <th>Filtype</th> <th>Filstørrelse (KB)</th><th>Last ned</th> </tr>";
 	
 		echo "<tr>";
-		echo '<td>' . $row['file'] . '</td>';
+		echo '<td width="60%"> ' . $row['file'] . '</td>';
 		// echo '<td>' . $row['type'] . '</td>';
-		echo '<td>' . $row['size'] . '</td>';
+		echo '<td width="20%">' . $row['size'] . '</td>';
 		$row['id'];
 	
 		
-		echo '<td><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
+		echo '<td width="20%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
 	
 		

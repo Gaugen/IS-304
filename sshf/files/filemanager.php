@@ -104,7 +104,7 @@ if (login_check($mysqli) == true) {
 	
 	?>
 	
-<table width="60%" border="1">
+<table width="90%" border="1">
     
     <th colspan="6">Din miljødata</th>
 	 
@@ -116,9 +116,9 @@ if (login_check($mysqli) == true) {
 	//$stmt->store_result($data);
 	while($row=mysqli_fetch_array($result_set)){
 	
-		echo "<table width=60% border='1' cellpadding='10'>";
+		echo "<table width=90% border='1' cellpadding='10'>";
 	
-		echo "<tr> <th>Filnavn</th> <th>Filtype</th> <th>Filstørrelse (KB)</th> <th>ID</th> <th>Last ned</th> <th>Slett</th> </tr>";
+		echo '<tr> <th width="35%">Filnavn</th> <th width="15%">Filtype</th> <th width="10%">Filstørrelse (KB)</th> <th width="10%">ID</th> <th width="10%">Last ned</th> <th width="10%">Slett</th> </tr>';
 	
 		echo "<tr>";
 		echo '<td>' . $row['file'] . '</td>';
