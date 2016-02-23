@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22. Feb, 2016 11:37 a.m.
--- Server-versjon: 10.1.9-MariaDB
+-- Generation Time: Feb 23, 2016 at 11:40 AM
+-- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `login_attempts`
+-- Table structure for table `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -31,10 +31,21 @@ CREATE TABLE `login_attempts` (
   `time` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `login_attempts`
+--
+
+INSERT INTO `login_attempts` (`user_id`, `time`) VALUES
+(3, '1455133929'),
+(3, '1455180372'),
+(3, '1455265295'),
+(3, '1455265308'),
+(3, '1455524440');
+
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `members`
+-- Table structure for table `members`
 --
 
 CREATE TABLE `members` (
@@ -46,19 +57,18 @@ CREATE TABLE `members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dataark for tabell `members`
+-- Dumping data for table `members`
 --
 
 INSERT INTO `members` (`id`, `username`, `email`, `password`, `salt`) VALUES
 (1, 'test_user', 'test@example.com', '00807432eae173f652f2064bdca1b61b290b52d40e429a7d295d76a71084aa96c0233b82f1feac45529e0726559645acaed6f3ae58a286b9f075916ebf66cacc', 'f9aab579fc1b41ed0c44fe4ecdbfcdb4cb99b9023abb241a6db833288f4eea3c02f76e0d35204a8695077dcf81932aa59006423976224be0390395bae152d4ef'),
 (2, 'knut', 'knut@example.com', '125ee445b5153652b2670907259c767b796341468e60b3ab907aba18d5eee20e516dd838b7a576861f9009021497ba2f391fd512a2fc4f850e94d23ece2de735', '2f12363c7228de4ec7015261b946c09edb2aff5d52f6afbf77a54bee56abc3705b670d3885c9e7fd8f470bd25c5ac533a3748fc034e1cf89060cf461fee3a4e8'),
-(3, 'tor', 'torabang@gmail.com', 'ef5039323294817f44097f597c772e0baedb246cfcf395dee4033d26c9c307fdb01badfa35392a91a168433d68bad6358b07af765f407476d3edf3bddc84dc17', '095c21f5565c2c84a4a87d56e2f79ab7c08fe66f9449a13e0bc18314fea4a88cc911e71c2e01f4fc32f67ae7736144e6bcd10067fffbd9a83bbc4f5c382096cc'),
-(4, 'simen', 'simenstromland@hotmail.com', 'ebfaabf9f709cbc2dd19f0e7d576a0a2caa4d77fecf84be551612f67653cbf98f565c5e6b8dacc4358241b0a1b5762b08455675e6e558bd27ccf691223ca4dc4', '0914b0ca9d07e1ad565c572f24c0b4deef22bf7722fc561d9f471ab356bf59861a92ce3629cc5035f22e49e31f41cb69fb9f110e6a64717e4f5bbe01cece95f3');
+(3, 'tor', 'torabang@gmail.com', 'ef5039323294817f44097f597c772e0baedb246cfcf395dee4033d26c9c307fdb01badfa35392a91a168433d68bad6358b07af765f407476d3edf3bddc84dc17', '095c21f5565c2c84a4a87d56e2f79ab7c08fe66f9449a13e0bc18314fea4a88cc911e71c2e01f4fc32f67ae7736144e6bcd10067fffbd9a83bbc4f5c382096cc');
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `post`
+-- Table structure for table `post`
 --
 
 CREATE TABLE `post` (
@@ -70,7 +80,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dataark for tabell `post`
+-- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`newsno`, `newstopic`, `newsinfo`, `newsphoto`, `newsphototype`) VALUES
@@ -81,7 +91,7 @@ INSERT INTO `post` (`newsno`, `newstopic`, `newsinfo`, `newsphoto`, `newsphototy
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `tbl_uploads`
+-- Table structure for table `tbl_uploads`
 --
 
 CREATE TABLE `tbl_uploads` (
@@ -93,7 +103,7 @@ CREATE TABLE `tbl_uploads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='upload-downoad-delete files';
 
 --
--- Dataark for tabell `tbl_uploads`
+-- Dumping data for table `tbl_uploads`
 --
 
 INSERT INTO `tbl_uploads` (`id`, `file`, `type`, `size`, `path`) VALUES
@@ -129,7 +139,7 @@ ALTER TABLE `tbl_uploads`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `post`
 --
@@ -139,7 +149,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `tbl_uploads`
 --
 ALTER TABLE `tbl_uploads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
