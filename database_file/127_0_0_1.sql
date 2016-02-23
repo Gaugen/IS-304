@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2016 at 11:40 AM
+-- Generation Time: Feb 23, 2016 at 11:43 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `sshf`
 --
+CREATE DATABASE IF NOT EXISTS `sshf` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sshf`;
 
 -- --------------------------------------------------------
 
