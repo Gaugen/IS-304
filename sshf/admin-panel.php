@@ -87,7 +87,7 @@ if (login_check($mysqli) == true) {
 	
 	<section id="tab2">
 		<h2><a href="#tab2">File manager</a></h2>
-		<form action="upload.php" method="post" enctype="multipart/form-data">
+		<form action="files/upload.php" method="post" enctype="multipart/form-data">
 	<input type="file" name="file" />
 	<button type="submit" name="btn-upload">Last opp</button>
 	</form>
