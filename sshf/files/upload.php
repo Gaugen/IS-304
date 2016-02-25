@@ -29,7 +29,7 @@ if(isset($_POST['btn-upload']))
 		if ($insert_stmt = $mysqli->prepare("INSERT INTO tbl_uploads(file,type,size,path) VALUES (?,?,?,?)")) {
 			$insert_stmt->bind_param('ssss',$final_file, $file_type, $new_size, $path);
 			if(! $insert_stmt->execute()) {
-				header('Location: ../admin-panel.php');
+				header('Location: ../admin-panel.php#tab2');
 			}
 		}
 ?>

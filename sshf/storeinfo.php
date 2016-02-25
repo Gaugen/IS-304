@@ -17,6 +17,7 @@ $r = mysqli_query($mysqli,$q);
 if($r)
 {
 echo "Information stored successfully";
+header('Location: admin-panel.php#tab3');
 }
 else
 {
