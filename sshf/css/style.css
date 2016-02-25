@@ -6,7 +6,29 @@
 }
 
 
+.btnLogin {
+	margin-top: 65px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #78b1e0;
+  font-size: 15px;
+  background-color: transparent;
+  bg-start-gradient: ;
+  bg-end-gradient: ;
+  bg-start-gradient-hover: ;
+  bg-end-gradient-hover: #3498db;
+  padding: 10px 80px 10px 80px;
+  border: solid #384a58 1px;
+  text-decoration: none;
+}
 
+.btnLogin:hover {
+  background-color: transparent;
+  border-color: #78b1e0;
+  color: #78b1e0;
+  text-decoration: none;
+}
 
 div {
     font-family: mainFont;
@@ -53,23 +75,26 @@ div {
     display: none;
     position: absolute;
 	margin-top: 61px;
-	margin-left: -601px;
+	margin-left: -300px;
     background-color: #323232;
-    min-width: 1350px;
-	min-height: 300px;
+    min-width: 750px;
+	min-height: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .dropdown-content a {
     color: White;
-    padding: 12px 16px;
-    text-decoration: underline;
+	font-size: 18px;
+    padding: 12px 1px;
+    text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
     display: block;
 }
 
 .dropdown-content a:hover {
-background-color: #ffffff;
-color: black;}
+
+color: #78b1e0;}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -856,6 +881,16 @@ article.tabs section h2
 	overflow-y: auto;
 	margin-left: 10px;
     border: 1px solid #9fa8b0;
+}
+
+.fileTable {
+	background-color: #ffffff;
+	width: 1200px;
+	height: 500px;
+	overflow-y: auto;
+	margin-top: 10px;
+	margin-left: 10px;
+	border: 1px solid #111111;
 }
 
 h7 {

@@ -45,16 +45,24 @@ include_once 'includes/functions.php';
 				<button class="dropMenu">MENY</button>
 					<div class="dropdown-content">
 					<br>
-					<h3><center>Skrive noe her kanskje?</center></h3>
+					<br>
+					<br>
+					<br>
+					<br>
 					<br>
 					<div class="grid_5">
+					
 					<a href="index.php">Hjem</a>
 					<a href="documents.php">Dokumenter</a>
 					<a href="about.php">Om oss</a>
+					
+					<form action="login.php"><button class="btnLogin">Logg inn</button></form>
 					</div>
 					<div class="grid_5">
+					
 					<a href="environment.php">Miljø</a>
 					<a href="contacts.php">Kontakt</a>
+					
 					</div>
 					</div>
 				</div></li>
@@ -76,7 +84,6 @@ include_once 'includes/functions.php';
     </div>
   </section>
 </header>
-
   <!--=====================
           Content
 ======================-->

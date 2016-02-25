@@ -53,16 +53,24 @@ if (login_check($mysqli) == true) {
 				<button class="dropMenu">MENY</button>
 					<div class="dropdown-content">
 					<br>
-					<h3><center>Skrive noe her kanskje?</center></h3>
+					<br>
+					<br>
+					<br>
+					<br>
 					<br>
 					<div class="grid_5">
+					
 					<a href="index.php">Hjem</a>
 					<a href="documents.php">Dokumenter</a>
 					<a href="about.php">Om oss</a>
+					
+					<form action="login.php"><button class="btnLogin">Logg inn</button></form>
 					</div>
 					<div class="grid_5">
+					
 					<a href="environment.php">Miljø</a>
 					<a href="contacts.php">Kontakt</a>
+					
 					</div>
 					</div>
 				</div></li>
@@ -89,6 +97,9 @@ if (login_check($mysqli) == true) {
 ======================-->
 <section id="content">
   <div class="container_12">
+  <br>
+  <br>
+
 	<article class="tabs">
 
 	<section id="tab1">
@@ -130,6 +141,7 @@ if (login_check($mysqli) == true) {
     <th colspan="6">Din miljødata</th>
 	 
     <?php
+	//echo "<div class=fileTable>";
 	$sql="SELECT * FROM tbl_uploads";
 	$result_set=mysqli_query($mysqli, $sql);
 	//$stmt = $mysqli->prepare($sql);
@@ -157,7 +169,7 @@ if (login_check($mysqli) == true) {
 		// close table>
 		echo "</table>";
 	}
-		
+		//echo "</div>";
 		?>
 	</section>
 	
@@ -214,7 +226,7 @@ while($row=mysqli_fetch_array($r)){
 	echo "</form>";
 	echo "</div>";
 }
-echo "</div>";
+
 
 }
 
@@ -222,6 +234,7 @@ else
 {
 echo mysqli_error($mysqli);
 }
+echo "</div>";
 ?>
 	</section>
 

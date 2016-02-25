@@ -239,7 +239,8 @@ body {
 }
 
 .container_12 .grid_5 {
-  width:470px;
+  width:300px;
+  margin-left: 40px;
 }
 
 .container_12 .grid_6 {
