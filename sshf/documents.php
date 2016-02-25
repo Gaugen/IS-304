@@ -31,7 +31,8 @@ if (login_check($mysqli) == true) {
 =================================-->
 <div class="main">
 <header>
-<div class="topplinje"><a class="button" href="login.php"><?php 
+<div class="topplinje"><a class="button" href="login.php">
+<?php 
     if(login_check($mysqli) == true){ 
        	echo '<a href="admin-panel.php"><span>Admin &nbsp;</span></a></li>';
 		echo '<a>&nbsp;|&nbsp;</a>';
@@ -41,31 +42,41 @@ if (login_check($mysqli) == true) {
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="login.php"><span>Login/Register</span></a></li>';
-    ?></a></div>
+    ?>
+	</a></div>
   <div class="container_12">
-		<img src="images/logo.png"  />
+		<img src="images/logo.png" style="float:left" />
+		<nav>
+              <ul class="sf-menu">
+               <li class="current">
+			   <div class="dropdown">
+				<button class="dropMenu">MENY</button>
+					<div class="dropdown-content">
+					<br>
+					<h3><center>Skrive noe her kanskje?</center></h3>
+					<br>
+					<div class="grid_5">
+					<a href="index.php">Hjem</a>
+					<a href="documents.php">Dokumenter</a>
+					<a href="about.php">Om oss</a>
+					</div>
+					<div class="grid_5">
+					<a href="environment.php">Miljø</a>
+					<a href="contacts.php">Kontakt</a>
+					</div>
+					</div>
+				</div></li>
+             </ul>
+            </nav>
   <section id="stuck_container">
+  
   <!--==============================
               Stuck menu
   =================================-->
     <div class="container_12">
         <div class="grid_12">
           <div class="navigation ">
-                     <nav><br>
-              <ul class="sf-menu">
-               <li class="current">
-			   <div class="dropdown">
-				<button class="dropMenu"><img src ="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png"> Meny</button>
-					<div class="dropdown-content">
-					<a href="index.php">Hjem</a>
-					<a href="documents.php">Dokumenter</a>
-					<a href="about.php">Om oss</a>
-					<a href="environment.php">Miljø</a>
-					<a href="contacts.php">Kontakt</a>
-					</div>
-				</div></li>
-             </ul>
-            </nav>
+                    
 		  <hr class="skille">
          <div class="clear"></div>
      </div>
