@@ -1,3 +1,7 @@
+ function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
 $(function(){
 // IPad/IPhone
   var viewportmeta = document.querySelector && document.querySelector('meta[name="viewport"]'),

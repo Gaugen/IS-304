@@ -50,7 +50,7 @@ if (login_check($mysqli) == true) {
               <ul class="sf-menu">
                <li class="current">
 			   <div class="dropdown">
-				<button class="dropMenu">MENY</button>
+				<button onclick="myFunction()" class="dropbtn">MENY</button>
 					<div class="dropdown-content">
 					<br>
 					<br>

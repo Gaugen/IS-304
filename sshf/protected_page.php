@@ -35,7 +35,7 @@ sec_session_start();
         echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
-        echo '<a href="login.php"><span>Login/Register</span></a></li>';
+        echo '<a href="login.php"><span></span></a></li>';
     ?>
 	</a></div>
   <div class="container_12">
@@ -44,8 +44,8 @@ sec_session_start();
               <ul class="sf-menu">
                <li class="current">
 			   <div class="dropdown">
-				<button class="dropMenu">MENY</button>
-					<div class="dropdown-content">
+				<button onclick="myFunction()" class="dropbtn">MENY</button>
+					<div id="myDropdown" class="dropdown-content">
 					<br>
 					<br>
 					<br>

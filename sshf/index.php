@@ -24,7 +24,6 @@ if (login_check($mysqli) == true) {
   $().UItoTop({ easingType: 'easeOutQuart' });
  });
  
- 
 function MM_swapImgRestore() { //v3.0
   var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
 }
@@ -64,7 +63,7 @@ function MM_swapImage() { //v3.0
         echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
-        echo '<a href="login.php"><span>Login/Register</span></a></li>';
+        echo '<a href="login.php"><span></span></a></li>';
     ?>
 	</a></div>
   <div class="container_12">
@@ -73,8 +72,8 @@ function MM_swapImage() { //v3.0
               <ul class="sf-menu">
                <li class="current">
 			   <div class="dropdown">
-				<button class="dropMenu">MENY</button>
-					<div class="dropdown-content">
+				<button onclick="myFunction()" class="dropbtn">MENY</button>
+					<div id="myDropdown" class="dropdown-content">
 					<br>
 					<br>
 					<br>
