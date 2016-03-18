@@ -2,7 +2,7 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
  
-sec_session_start();
+
 
 $newsno = (isset($_GET['newsno']) ? $_GET['newsno'] : null);
 $q = "SELECT newsphoto,newsphototype FROM post where newsno='$newsno'";
