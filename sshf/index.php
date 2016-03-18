@@ -134,7 +134,7 @@ function MM_swapImage() { //v3.0
     <div class="grid_5 prefix_1">
 	<?php
 	echo "<div class=newsekko2>";
-		$q = "SELECT * FROM post";
+$q = "SELECT * FROM post ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {

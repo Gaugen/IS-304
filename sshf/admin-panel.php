@@ -202,7 +202,7 @@ if (isset($_POST['delete'])){
 
 echo "<div class=newsekko>";
 
-$q = "SELECT * FROM post";
+$q = "SELECT * FROM post ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
