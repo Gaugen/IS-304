@@ -19,7 +19,9 @@
     ?>
 	</a></div>
   <div class="container_12">
+	<a href="index.php">
 		<img src="images/logo.png" style="float:left" />
+		</a>
 		<nav>
               <ul class="sf-menu">
                <li class="current">

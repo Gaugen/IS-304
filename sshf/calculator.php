@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MiljÃ¸kalkulator</title>
+<title>Miljøkalkulator</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 
@@ -12,7 +12,7 @@
 </head>
 <body>
 <text>Hvor mange engangsglass bruker du per dag?</text>
-<text><br>Hvor mange kilometer kjÃ¸rer du per dag?</text>
+<text><br>Hvor mange kilometer kjører du per dag?</text>
 
 <form method='post' action='calculator.php'>
 <input type='text' name='value1'>
@@ -49,7 +49,7 @@ echo $value1*$value2*5 . " kroner";
 }
 
 if($forbruk=="Engangsglass"){
-echo "<br><b>I et arbeidsÃ¥r (230 dager) blir dette:</b><br>";
+echo "<br><b>I et arbeidsår (230 dager) blir dette:</b><br>";
 echo $value1*$value2*230 . " kroner"; 
 }
 
@@ -65,7 +65,7 @@ echo $value1*$value3*5 . " kroner";
 }
 
 if($forbruk=="Bensinforbruk"){
-echo "<br><b>I et arbeidsÃ¥r (230 dager) blir dette:</b><br>";
+echo "<br><b>I et arbeidsår (230 dager) blir dette:</b><br>";
 echo $value1*$value3*230 . " kroner"; 
 }
 

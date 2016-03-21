@@ -52,7 +52,9 @@ if (login_check($mysqli) == true) {
         echo '<a href="login.php"><span>Login/Register</span></a></li>';
     ?></a></div>
   <div class="container_12">
+  <a href="../index.php">
 		<img src="../images/logo.png"  />
+		</a>
   <section id="stuck_container">
   <!--==============================
               Stuck menu
@@ -87,9 +89,11 @@ if (login_check($mysqli) == true) {
 ======================-->
 <section id="content">
 
-<h2 class="inset__1"><img src="../images/x.png"/></h2>
-  <div class="container_12">
-    <div class="grid_5">
+<h2 class="inset__1"></h2>
+  
+    <div class="grid_12">
+	<img src="../images/avfall.png"/>
+	<div class="container_12">
     <p class="color1">
     <div class="grid_6 prefix_1">
       <h2 class="inset__1">Avfall</h2>
