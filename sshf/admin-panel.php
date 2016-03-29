@@ -30,7 +30,7 @@ if (login_check($mysqli) == true) {
               header
 =================================-->
 <div class="main">
-<?php include("header.php");?>
+<?php include("headerfooter/header.php");?>
 <!--=====================
           Content
 ======================-->
@@ -69,7 +69,7 @@ if (login_check($mysqli) == true) {
 	else
 	{
 		?>
-        <label>Trykk velg fil for å laste opp excel-ark</label>
+        <label>Trykk velg fil for Ã¥ laste opp excel-ark</label>
         <?php
 	}
 	
@@ -77,7 +77,7 @@ if (login_check($mysqli) == true) {
 	
 <table width="90%" border="1">
     
-    <th colspan="6">Din miljødata</th>
+  
 	 
     <?php
 	//echo "<div class=fileTable>";
@@ -86,21 +86,26 @@ if (login_check($mysqli) == true) {
 	//$stmt = $mysqli->prepare($sql);
 	//$stmt->execute();
 	//$stmt->store_result($data);
+	
+			echo "<table width=100% border='1' cellpadding='10'>";
+	echo '<th width="35%">Filnavn</th> <th width="15%">Filtype</th> <th width="15%">FilstÃ¸rrelse (KB)</th> <th width="5%">ID</th> <th width="10%">Last ned</th> <th width="10%">Slett</th>';
+	
+	
 	while($row=mysqli_fetch_array($result_set)){
+		echo "<table width=100% border='1' cellpadding='10'>";
 	
-		echo "<table width=90% border='1' cellpadding='10'>";
 	
-		echo '<tr> <th width="35%">Filnavn</th> <th width="15%">Filtype</th> <th width="10%">Filstørrelse (KB)</th> <th width="10%">ID</th> <th width="10%">Last ned</th> <th width="10%">Slett</th> </tr>';
+
 	
 		echo "<tr>";
-		echo '<td>' . $row['file'] . '</td>';
-		echo '<td>' . $row['type'] . '</td>';
-		echo '<td>' . $row['size'] . '</td>';
-		echo '<td>' . $row['id'] . '</td>';
+		echo '<td width="35%">' . $row['file'] . '</td>';
+		echo '<td width="15%">' . $row['type'] . '</td>';
+		echo '<td width="15%">' . $row['size'] . '</td>';
+		echo '<td width="5%">' . $row['id'] . '</td>';
 		
-		echo '<td><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
+		echo '<td width="10%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
-		echo '<td><a href="files/delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	
+		echo '<td width="10%"><a href="files/delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	
 	
 		
 		echo "</tr>"; 
@@ -218,6 +223,6 @@ echo "</div>";
 <!--==============================
               footer
 =================================-->
-<?php include("footer.php");?>
+<?php include("headerfooter/footer.php");?>
 </body>
 </html>

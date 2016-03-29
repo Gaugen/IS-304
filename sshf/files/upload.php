@@ -35,7 +35,7 @@ if(isset($_POST['btn-upload']))
 ?>
 		<script>
 		alert('successfully uploaded');
-        window.location.href='filemanager.php?success';
+        window.location.href='../admin-panel.php#tab2';
         </script>
 		<?php
 	}
@@ -44,7 +44,7 @@ if(isset($_POST['btn-upload']))
 		?>
 		<script>
 		alert('error while uploading file');
-        window.location.href='filemanager.php?fail';
+        window.location.href='../admin-panel.php#tab2';
         </script>
 		<?php
 	}

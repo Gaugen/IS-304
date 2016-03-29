@@ -30,7 +30,7 @@ if (login_check($mysqli) == true) {
               header
 =================================-->
 <div class="main">
-<?php include("header.php");?>
+<?php include("headerfooter/header.php");?>
 <!--=====================
           Content
 ======================-->
@@ -75,6 +75,6 @@ if (login_check($mysqli) == true) {
 <!--==============================
               footer
 =================================-->
-<?php include("footer.php");?>
+<?php include("headerfooter/footer.php");?>
 </body>
 </html>

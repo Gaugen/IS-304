@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no" />
+</head>
 <body>
 <header>
 </header>
@@ -12,7 +16,7 @@
       <div class="sep-1"></div>
     </div>
     <div class="grid_4">
-      <address class="address-1"> <div class="fa fa-home"></div>Sørlandet sykehus HF  <br>
+      <address class="address-1"> <div class="fa fa-home"></div>SÃ¸rlandet sykehus HF  <br>
 Teknologi og E-helse.</address>
     </div>
     <div class="grid_3">

@@ -27,14 +27,14 @@ include_once '../includes/db_connect.php';
  
   
  // redirect back to the view page
- header("Location: filemanager.php");
+ header("Location: ../admin-panel.php#tab2");
  }
  else
  // if id isn't set, or isn't valid, redirect back to view page
 
  
  {
- header("Location: filemanager.php");
+ header("Location: ../admin-panel.php#tab2");
  }
   
 ?>

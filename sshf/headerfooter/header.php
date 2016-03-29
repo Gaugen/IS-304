@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no" />
+</head>
 <!--==============================
               header
 =================================-->
@@ -44,7 +48,7 @@
 					</div>
 					<div class="grid_5">
 					
-					<a href="environment.php">Miljø</a>
+					<a href="environment.php">MiljÃ¸</a>
 					<a href="contacts.php">Kontakt</a>
 					
 					</div>

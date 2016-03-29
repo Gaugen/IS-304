@@ -14,7 +14,7 @@ if (login_check($mysqli) == true) {
 <html lang="en">
 <head>
 <title>Home</title>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
@@ -52,7 +52,7 @@ function MM_swapImage() { //v3.0
               header
 =================================-->
 <div class="main">
-<?php include("header.php");?>
+<?php include("headerfooter/header.php");?>
 <!--=====================
           Content
 ======================-->
@@ -67,7 +67,7 @@ function MM_swapImage() { //v3.0
         
 	  <div id="Navbar">
   <p><img src="images/images/Navbar_01.jpg" width="450" height="65" class="top" /></p>
-<p><a href="categories/engangs.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Engangs','','images/images/images/NavOver_10.jpg',1)"><img src="images/images/Navbar_10.jpg" width="150" height="150" class="imageEngangs" id="Engangs" /></a><a href="categories/avfall.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Avfall','','images/images/images/NavOver_09.jpg',0)"><img src="images/images/Navbar_09.jpg" width="150" height="150" class="imageAvfall" id="Avfall" /></a><img src="images/images/Navbar_02.jpg" width="67" height="385" class="left" /><a href="categories/transport.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Transport','','images/images/images/NavOver_03.jpg',1)"><img src="images/images/Navbar_03.jpg" width="150" height="150" class="imageTransport" id="Transport" /></a><img src="images/images/Navbar_07.jpg" width="150" height="16" class="leftmiddle" /><a href="categories/energi.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Energi','','images/images/images/NavOver_05.jpg',1)"><img src="images/images/Navbar_05.jpg" width="150" height="150" class="imageEnergi" id="Energi" /></a><img src="images/images/Navbar_08.jpg" width="150" height="16" class="rightmiddle" /><img src="images/images/Navbar_11.jpg" width="150" height="69" class="leftbottom" /><img src="images/images/Navbar_04.jpg" width="16" height="385" class="middle" float:right; /><img src="images/images/Navbar_12.jpg" width="150" height="69" class="rightbottom" /><img src="images/images/Navbar_06.jpg" width="67" height="385" class="right" /></p></div>
+<p><a href="disposables.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Engangs','','images/images/images/NavOver_10.jpg',1)"><img src="images/images/Navbar_10.jpg" width="150" height="150" class="imageEngangs" id="Engangs" /></a><a href="avfall.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Avfall','','images/images/images/NavOver_09.jpg',0)"><img src="images/images/Navbar_09.jpg" width="150" height="150" class="imageAvfall" id="Avfall" /></a><img src="images/images/Navbar_02.jpg" width="67" height="385" class="left" /><a href="transport.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Transport','','images/images/images/NavOver_03.jpg',1)"><img src="images/images/Navbar_03.jpg" width="150" height="150" class="imageTransport" id="Transport" /></a><img src="images/images/Navbar_07.jpg" width="150" height="16" class="leftmiddle" /><a href="energi.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Energi','','images/images/images/NavOver_05.jpg',1)"><img src="images/images/Navbar_05.jpg" width="150" height="150" class="imageEnergi" id="Energi" /></a><img src="images/images/Navbar_08.jpg" width="150" height="16" class="rightmiddle" /><img src="images/images/Navbar_11.jpg" width="150" height="69" class="leftbottom" /><img src="images/images/Navbar_04.jpg" width="16" height="385" class="middle" float:right; /><img src="images/images/Navbar_12.jpg" width="150" height="69" class="rightbottom" /><img src="images/images/Navbar_06.jpg" width="67" height="385" class="right" /></p></div>
       </div>
     </div>
     <div class="grid_5 prefix_1">
@@ -111,6 +111,6 @@ echo mysqli_error();
 <!--==============================
               footer
 =================================-->
-<?php include("footer.php");?>
+<?php include("headerfooter/footer.php");?>
 </body>
 </html>
