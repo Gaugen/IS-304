@@ -43,14 +43,14 @@ if (login_check($mysqli) == true) {
 	<article class="tabs">
 
 	<section id="tab1">
-		<h2><a href="#tab1">Tab 1</a></h2>
-		<text>Her kan du legge inn nye verdier</text> 
+		<h2><a href="#tab1">Calculator</a></h2>
+		<text>Her kan du legge inn ny verdi for engangsglass</text> 
 <form method='post' name='engangsglass'> 
 <input type='int' name='value2'>
 <input type='submit' name='engangsglass' value='Legg til verdi'></form>
 <br></br>
 
-<text>Her kan du legge inn nye verdier</text><b></br>
+<text>Her kan du legge inn ny verdi for bensinpris pr km</text><br></br>
 <form method='post' name='bensinforbruk'>
 <input type='int' name='value3'>
 <input type='submit' name='bensinforbruk' value='Legg til verdi'></form>
@@ -71,7 +71,7 @@ if(isset($_POST['bensinforbruk'])){
 }
 
 ?>
-<!-->Bruker <-->
+
 <text>Hvor mange engangsglass bruker du per dag?</text>
 <text><br>Hvor mange kilometer kjører du per dag?</text>
 
@@ -149,8 +149,8 @@ echo $value1*$value3*230 . " kroner";
 
 
 ?>
+		
 	</section>
-	
 	<section id="tab2">
 		<h2><a href="#tab2">File manager</a></h2>
 		<form action="files/upload.php" method="post" enctype="multipart/form-data">
