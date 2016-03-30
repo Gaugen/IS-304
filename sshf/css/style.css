@@ -593,8 +593,8 @@ h1 span {
 	position:absolute;
 	left:-30px;
 	top:-5px;
-	content:''
 }
+
 #footer {
 	color:#ebe1eb;
 	font-size:14px;
@@ -736,7 +736,7 @@ hr {
 }
 table td,th
 {
-	padding:20px;
+	padding:2px;
 	border: solid #9fa8b0 1px;
 	border-collapse:collapse;
 }

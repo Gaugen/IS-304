@@ -24,7 +24,7 @@ sec_session_start();
               header
 =================================-->
 <div class="main">
-<?php include("header.php");?>
+<?php include("headerfooter/header.php");?>
 <!--=====================
           Content
 ======================-->
@@ -60,6 +60,6 @@ sec_session_start();
 <!--==============================
               footer
 =================================-->
-<?php include("footer.php");?>
+<?php include("headerfooter/footer.php");?>
 </body>
 </html>

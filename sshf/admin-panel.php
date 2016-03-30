@@ -36,6 +36,7 @@ if (login_check($mysqli) == true) {
 ======================-->
 <section id="content">
   <div class="container_12">
+  <div class="grid_11">
   <br>
   <br>
 
@@ -88,7 +89,7 @@ if (login_check($mysqli) == true) {
 	//$stmt->store_result($data);
 	
 			echo "<table width=100% border='1' cellpadding='10'>";
-	echo '<th width="35%">Filnavn</th> <th width="15%">Filtype</th> <th width="15%">Filstørrelse (KB)</th> <th width="5%">ID</th> <th width="10%">Last ned</th> <th width="10%">Slett</th>';
+	echo '<th width="40%">Filnavn</th> <th width="15%">Filtype</th> <th width="15%">Filstørrelse (KB)</th> <th width="5%">ID</th> <th width="6%">Last ned</th> <th width="4%">Slett</th>';
 	
 	
 	while($row=mysqli_fetch_array($result_set)){
@@ -98,14 +99,14 @@ if (login_check($mysqli) == true) {
 
 	
 		echo "<tr>";
-		echo '<td width="35%">' . $row['file'] . '</td>';
+		echo '<td width="40%">' . $row['file'] . '</td>';
 		echo '<td width="15%">' . $row['type'] . '</td>';
 		echo '<td width="15%">' . $row['size'] . '</td>';
 		echo '<td width="5%">' . $row['id'] . '</td>';
 		
-		echo '<td width="10%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
+		echo '<td width="6%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
-		echo '<td width="10%"><a href="files/delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	
+		echo '<td width="3%"><a href="files/delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	
 	
 		
 		echo "</tr>"; 
@@ -142,6 +143,12 @@ if (login_check($mysqli) == true) {
 if (isset($_POST['delete'])){
 	$DeleteQuery = "DELETE FROM post WHERE newstopic='$_POST[hidden]'";
 	mysqli_query($mysqli, $DeleteQuery);
+	?>
+		<script>
+		alert('successfully deleted');
+        window.location.href='admin-panel.php#tab3';
+        </script>
+		<?php
 };
 
 echo "<div class=newsekko>";
@@ -167,6 +174,7 @@ while($row=mysqli_fetch_array($r)){
 	echo "<td>" .  "<input type=submit name=delete value=Delete>" . "</td>";
 	echo "</div>";
 	echo "</br>";
+	echo "</br>";
 	echo "</form>";
 	echo "</div>";
 }
@@ -183,40 +191,6 @@ echo "</div>";
 	</section>
 
 </article>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
      <div class="clear"></div>
 </div>
 </section>

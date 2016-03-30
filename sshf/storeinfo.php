@@ -16,7 +16,12 @@ $q ="INSERT INTO post VALUES('','$newstopic','$newsinfo','$newsphoto','$imgtype'
 $r = mysqli_query($mysqli,$q);
 if($r)
 {
-echo "Information stored successfully";
+	?>
+		<script>
+		alert('Information stored successfully');
+		window.location.href='admin-panel.php#tab3';
+		</script>
+		<?php
 }
 else
 {

@@ -25,8 +25,8 @@ Teknologi og E-helse.</address>
     <div class="grid_4 fright">
       <div class="socials">
         <a href="#">facebook</a>
-        <a href="#">twitter</a>
         <a href="#">google+</a>
+		<a href="#">twitter</a>
       </div>
     </div>
     <div class="clear"></div>
