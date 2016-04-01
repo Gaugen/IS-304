@@ -221,6 +221,7 @@ input,textarea {
 	border-radius:0!important;
 	outline:0!important;
 	-webkit-appearance:none
+
 }
 img {
 	max-width:100%
@@ -836,25 +837,28 @@ article.tabs section h2
 	border-width: 1px;
 	border-color: #111111;
 	border-style: solid;
-	
+	text-align: center;
+
 }
 
 
 .newsheader {
 	float: left;
-	background: #006599;
-	height: 30px;
+	background: #ffffff;
+	height: 20px;
 	width: 434px;
-	text-align: center;
-
+	padding-left: 5px;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-color: #ADADAD;
 	}
 .newsfooter {
-	background: #d0d7e9;
+	background: #ffffff;
 	float:left;
-	width:434px;
+	width:439px;
 	text-align: right;
 	border-width: 1px;
-	border-top-style: solid;
+	border-bottom-style: solid;
 	border-color: #111111;
 	}
 	
@@ -863,17 +867,19 @@ article.tabs section h2
 	float: left;
     border: 1px solid #000000;
     padding: 15px; 
-    width: 150px;
+    width: 155px;
     height: 120px;
 }
 
 
 .tb2 {
 	float: left;
-	background-color : #d0d7e9;
+	background-color : #ffffff;
 	width: 250px;
 	height: 185px;
 	overflow-y: auto;
+	/*text-align: center;*/
+	padding-left: 5px;
 }
 
 .newsekko {
@@ -897,8 +903,9 @@ article.tabs section h2
 }
 
 h7 {
-	margin: 0;
-	color: white;
+	color: #111111;
+	font-weight: bold;
+	font-size: 120%;
 }
 	
 	
@@ -916,42 +923,45 @@ h7 {
 	border-width: 1px;
 	border-color: #111111;
 	border-style: solid;
-	-moz-border-radius-topright: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	border-top-left-radius: 10px;
-	
 }
 
 
 .newsheader2 {
 	float: left;
-	background: #006599;
-	height: 30px;
+	background: #ffffff;
+	height: 20px;
 	width: 434px;
-	text-align: center;
-	-moz-border-radius-topright: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	border-top-left-radius: 10px;
+	padding-left: 5px;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-style: solid;
+	border-color: #ADADAD;
 	}
+
 .newsfooter2 {
-	background: #d0d7e9;
+	background: #ffffff;
 	float:left;
 	width:434px;
+	height: 1px;
 	text-align: right;
 	border-width: 1px;
 	border-top-style: solid;
-	border-color: #111111;
+	border-color: #ADADAD;
 	}
-	
 
 .tb22 {
 	float: left;
-	background-color : #d0d7e9;
-	width: 254px;
+	background-color : #ffffff;
+	width: 255px;
 	height: 180px;
 	overflow-y: auto;
+	/*text-align: center;*/
+	padding-left: 5px;
+	border-left-style: solid;
+	border-color: #ADADAD;
+	border-width: 1px;
 }
 
 .newsekko2 {
@@ -963,8 +973,4 @@ h7 {
 	margin-left: 10px;
 }
 
-h7 {
-	margin: 0;
-	color: white;
-}
-		
+	

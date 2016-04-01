@@ -271,11 +271,13 @@ while($row=mysqli_fetch_array($r)){
 	echo "</div>";
 	echo "<img src=image.php?newsno=".$row['newsno']." width=184 height=185/>";
 	echo "<div class=tb2>";
-	echo $row['newsinfo'];
+	echo "<pre>";
+	echo $row['newsinfo']; 
+	echo "</pre>";
 	echo "</div>";
 	echo "<td>" . "<input type=hidden name=hidden value=" . $row['newstopic'] . " </td>";
 	echo "<div class=newsfooter>";
-	echo "<td>" .  "<input type=submit name=delete value=Delete>" . "</td>";
+	echo "<td>" .  "<input type=submit name=delete value=Slett>" . "</td>";
 	echo "</div>";
 	echo "</br>";
 	echo "</br>";
