@@ -41,29 +41,29 @@ include_once 'includes/functions.php';
         }
         ?>
         <ul>
-            <li>Usernames may contain only digits, upper and lowercase letters and underscores</li>
-            <li>Emails must have a valid email format</li>
-            <li>Passwords must be at least 6 characters long</li>
-            <li>Passwords must contain
+           	<li>Brukernavn kan bare inneholde bare tall, store og små bokstaver og understreker</li>
+            <li>Email må ha et godkjent format</li>
+            <li>Passord må inneholde minst 6 bokstaver</li>
+            <li>Passord må inneholde:
                 <ul>
-                    <li>At least one uppercase letter (A..Z)</li>
-                    <li>At least one lowercase letter (a..z)</li>
-                    <li>At least one number (0..9)</li>
+                    <li>Minst èn stor bokstav (A..Z)</li>
+                    <li>Minst èn liten bokstav (a..z)</li>
+                    <li>Minst ett nummer (0..9)</li>
                 </ul>
             </li>
-            <li>Your password and confirmation must match exactly</li>
+            <li>Passord og bekreft passord må matche</li>
         </ul>
         <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" 
                 method="post" 
                 name="registration_form">
-            Username: <input type='text' 
+            Brukernavn: <input type='text' 
                 name='username' 
                 id='username' /><br>
             Email: <input type="text" name="email" id="email" /><br>
-            Password: <input type="password"
+            Passord: <input type="password"
                              name="password" 
                              id="password"/><br>
-            Confirm password: <input type="password" 
+            Bekreft passord: <input type="password" 
                                      name="confirmpwd" 
                                      id="confirmpwd" /><br>
             <input type="button" 
@@ -74,7 +74,7 @@ include_once 'includes/functions.php';
                                    this.form.password,
                                    this.form.confirmpwd);" /> 
         </form>
-        <p>Return to the <a href="login.php"><button>login page</button></a>.</p>
+        <p>Gå tilbake til <a href="login.php"><button>Innloggingssiden</button></a>.</p>
     <div class="grid_3 alpha">
         
       </div>

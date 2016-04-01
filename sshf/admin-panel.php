@@ -43,7 +43,7 @@ if (login_check($mysqli) == true) {
 	<article class="tabs">
 
 	<section id="tab1">
-		<h2><a href="#tab1">Calculator</a></h2>
+		<h2><a href="#tab1">Kalkulator</a></h2>
 		<text>Her kan du legge inn ny verdi for engangsglass</text> 
 <form method='post' name='engangsglass'> 
 <input type='int' name='value2'>
@@ -152,7 +152,7 @@ echo $value1*$value3*230 . " kroner";
 		
 	</section>
 	<section id="tab2">
-		<h2><a href="#tab2">File manager</a></h2>
+		<h2><a href="#tab2">Filbehandler</a></h2>
 		<form action="files/upload.php" method="post" enctype="multipart/form-data">
 	<input type="file" name="file" />
 	<button type="submit" name="btn-upload">Last opp</button>
@@ -223,7 +223,7 @@ echo $value1*$value3*230 . " kroner";
 	</section>
 	
 	<section id="tab3">
-		<h2><a href="#tab3">Newsfeed</a></h2>
+		<h2><a href="#tab3">Nyheter</a></h2>
 		<form enctype="multipart/form-data" action="storeinfo.php" method="POST">
 		<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
 		<tr><td colspan=3>Nyheter</td></tr>

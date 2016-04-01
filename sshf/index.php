@@ -13,7 +13,7 @@ if (login_check($mysqli) == true) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Hjem</title>
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">

@@ -39,23 +39,23 @@ if (login_check($mysqli) == true) {
     
    <div class="grid_6">
         <?php if (login_check($mysqli) == true) : ?>
-            <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+            <p>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</p>
             <p>
-                <a href='change_password.php?action=change_password'>Here you can change your password</a>
+                <a href='change_password.php?action=change_password'>Her kan du bytte passord</a>
             </p>
-            <p>Return to <a href="index.php">login page</a></p>
+            <p>Tilbake til <a href="index.php">innloggingssiden</a></p>
         <?php else : ?>
             <p>
-                <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+                <span class="error">Du har ikke rettigheter til å se denne siden.</span> Vennligst <a href="index.php">logg inn</a>.
             </p>
         <?php endif; ?>
 		<?php
 		if(@$_GET['action'] == "change_password"){ ?>
 		
 			<form action='change_password.php?action=change_password' method='POST'><center>
-			Current password: <input type='text' name='cp'><br/>
-			New password: <input type='password' name='np'><br/>
-			Re-type password: <input type='password' name='rp'><br/>
+			Nåværende passord: <input type='text' name='cp'><br/>
+			Nytt passord: <input type='password' name='np'><br/>
+			Bekreft passord: <input type='password' name='rp'><br/>
 			<input type='submit' name='change_pass' value='Change' 
 				onclick="formhash(this.form, this.form.cp, 'curr_pass');formhash(this.form, this.form.np, 'new_pass');formhash(this.form, this.form.rp, 're_pass');">
 			<br />

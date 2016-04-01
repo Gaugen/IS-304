@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Secure Login: Registration Success</title>
+        <title>Sikker login: Registrering Suksess!</title>
         <link rel="stylesheet" href="styles/main.css" />
     </head>
     <body>
-        <h1>Registration successful!</h1>
-        <p>You can now go back to the <a href="index.php">login page</a> and log in</p>
+        <h1>Registrering Suksess!</h1>
+        <p>Du kan nå gå tilbake til <a href="index.php">innloggingssiden</a> og logge inn</p>
     </body>
 </html>
