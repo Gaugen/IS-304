@@ -7,10 +7,10 @@ if(isset($_POST['btn-upload']))
 {    
     // Variables giving file information 
 	$file = rand(1000,100000)."-".$_FILES['file']['name'];
-    $file_loc = $_FILES['file']['tmp_name'];
-	$file_size = $_FILES['file']['size'];
-	$file_type = $_FILES['file']['type'];
-	$file_path = $_FILES['file']['path'];
+    $file_loc = isset($_FILES['file']['tmp_name']) ? $_FILES['file']['tmp_name']: null ;
+	$file_size = isset($_FILES['file']['size']) ? $_FILES['file']['size']: null ;
+	$file_type = isset($_FILES['file']['type']) ? $_FILES['file']['type']: null ;
+	$file_path = isset($_FILES['file']['path']) ? $_FILES['file']['path']: null ;
 	$folder="uploads/";
 	
 	// new file size in KB

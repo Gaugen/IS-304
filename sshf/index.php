@@ -62,8 +62,8 @@ function MM_swapImage() { //v3.0
     
    <div class="grid_6">
       <h2 class="inset__1">Velkommen!</h2>
-	  <p>Hei og velkommen til siden, håper du koser deg og at du får ett nytt syn på din forbruk av glass, reising osv. 
-	  <br>Her kommer en del info om siden og hva siden kan tilby! Ha en ellers fortreffelig dag :)</p>
+	  <p><font size="4">Hei og velkommen til siden, håper du koser deg og at du får ett nytt syn på din forbruk av glass, reising osv. 
+	  <br>Her kommer en del info om siden og hva siden kan tilby! Ha en ellers fortreffelig dag :)</p></font>
 	  <div class="grid_8 alpha">
         
 	  <div id="Navbar">
