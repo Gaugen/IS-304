@@ -17,6 +17,7 @@ if (login_check($mysqli) == true) {
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
+<link rel="stylesheet" href="css/lightbox.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
 <script>
@@ -86,7 +87,7 @@ while($row=mysqli_fetch_array($r)){
 	echo $row['newstopic'];
 	echo "</h7>";
 	echo "</div>";
-	echo "<img src=image.php?newsno=".$row['newsno']." width=180 height=180/>";
+	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
 	echo "<div class=tb22>";
 	echo "<pre>";
 	echo $row['newsinfo'];
@@ -116,5 +117,6 @@ echo mysqli_error();
               footer
 =================================-->
 <?php include("headerfooter/footer.php");?>
+<script src="js/lightbox-plus-jquery.js"></script>
 </body>
 </html>
