@@ -36,9 +36,14 @@ if (login_check($mysqli) == true) {
 ======================-->
 <section id="content">
   <div class="container_12">
+  <br>
+  <br>
+  <br>
+  <br>
+  <center>
 <table width="60%" border="1">
     
-    <th colspan="6">Last ned miljødata</th>
+    <th width="60%">Filnavn</th> <th width="20%">Filstørrelse</th><th width="9%">Last ned</th>
 	 
     <?php
 	$sql="SELECT * FROM tbl_uploads";
@@ -59,7 +64,7 @@ if (login_check($mysqli) == true) {
 		$row['id'];
 	
 		
-		echo '<td width="20%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
+		echo '<td width="9%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
 	
 		
@@ -70,6 +75,8 @@ if (login_check($mysqli) == true) {
 	}
 		
 		?>
+		</table>
+		</center>
   </div>
 </section>
 <!--==============================

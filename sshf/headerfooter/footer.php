@@ -16,7 +16,7 @@
       <div class="sep-1"></div>
     </div>
     <div class="grid_4">
-      <address class="address-1"> <div class="fa fa-home"></div><a href="http://www.sshf.no" rel="nofollow">Sørlandet sykehus HF<br>Teknologi og E-helse.</address></a>  
+      <a href="http://www.sshf.no" rel="nofollow"><address class="address-1"> <div class="fa fa-home"></div>Sørlandet sykehus HF<br>Teknologi og E-helse.</address></a>  
     </div>
     <div class="grid_3">
       <a href="#" class="mail-1"><span class="fa fa-envelope"></span>miljo@sshf.no</a>

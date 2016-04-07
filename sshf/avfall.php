@@ -40,18 +40,33 @@ if (login_check($mysqli) == true) {
   
     <div class="grid_12">
 	<img src="images/wide.jpg"/>
+	</div>
 	<div class="container_12">
+	
     <p class="color1">
-    <div class="grid_6 prefix_1">
+    <div class="grid_6 prefix_5">
       <h2 class="inset__1">Avfall</h2>
-     <div class="grid_3 alpha">
-        <ul class="list-1 inset__1">
-          <li><a href="#">abc </a></li>
+	</div>
+	  <br>
+     <div class="grid_3 prefix_3">
+	 hello from<br>
+	 the other side<br>
+	 hello from<br>
+	 the other side<br>
+
+      </div>
+	       <div class="grid_4">
+        <ul class="list-1  prefix_5">
+          <li><a href="transport.php">Transport </a></li>
+		  <li><a href="energi.php">Energi </a></li>
+		  <li><a href="avfall.php">Avfall </a></li>
+		  <li><a href="disposables.php">Engangs </a></li>
         </ul>
+		<br>
       </div>
       
-      
-  </div>
+      </div>
+  
 </section>
 <!--==============================
               footer
