@@ -91,7 +91,6 @@ div {
     text-decoration: none;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-	border-bottom-color: #515151;
     display: block;
 }
 
@@ -578,24 +577,7 @@ h1 span {
 	display:inline-block;
 	margin-left:40px
 }
-.socials {
-	text-align:right
-}
-.socials a {
-	position:relative;
-	display:inline-block
-}
-.socials a+a {
-	margin-left:55px
-}
-.socials a+a:before {
-	width:1px;
-	height:36px;
-	background-color:#818080;
-	position:absolute;
-	left:-30px;
-	top:-5px;
-}
+
 
 #footer {
 	color:#ebe1eb;
