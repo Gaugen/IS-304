@@ -14,6 +14,7 @@ if (login_check($mysqli) == true) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <title>Kontakt</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
@@ -35,26 +36,34 @@ if (login_check($mysqli) == true) {
 <!--=====================
           Content
 ======================-->
+
 <section id="content">
   <div class="container_12">
-    <div class="grid_10">
+  <div class="grid_7 prefix_1">
+  <div class="grid_10">
+  <div style="background-color:#8bb1df; overflow: auto;">
 	
-	<text>Hvor mange engangsglass bruker du per dag?</text>
-<text><br>Hvor mange kilometer kjører du per dag?</text>
+	
+	
+<text><font color="white"><br><br><center>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
 
+<text><br><center>Hvor mange engangsglass bruker du per dag?</text>
+<text><br>Hvor mange kilometer kjører du per dag?</center></text>
+
+<center>
 <form method='post'>
-<input type='text' name='value1'>
- 
+	<input type='text' name='value1'>
+
 <select name='forbruk'>
-<option value2="Engangsglass">Engangsglass</option>
-<option value3="Bensinforbruk">Bensinforbruk</option>
-
-
+	<option value2="Engangsglass">Engangsglass</option>
+	<option value3="Bensinforbruk">Bensinforbruk</option>
+</center>
+</font>
 </select>
 
 
 
-<input type='submit' name='submit' value='Kalkuler'></form>
+<input type='submit' name='submit' value='Kalkulèr'></form>
 
 <?php
 
@@ -113,6 +122,7 @@ echo $value1*$value3*230 . " kroner";
 ?>
 </div>
 </div>
+
 </section>
 	<!--==============================
               footer
