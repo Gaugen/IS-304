@@ -5,6 +5,22 @@
     src: url(/fonts/scala-sans-regular.woff);
 }
 
+input[type="radio"] {
+        display:inline-block;
+        width:21px;
+        height:21px;
+        margin:-1px 4px 0 0;
+        vertical-align:middle;  background:url(http://csscheckbox.com/checkboxes/u/csscheckbox_ef32e9f2ed5c57aba4c2206a981ba7a4.png) 0px top no-repeat;
+        cursor:pointer;
+    appearance:none;
+-moz-appearance:none; /* Firefox */
+-webkit-appearance:none; /* Safari and Chrome */
+    }
+
+
+    input[type="radio"]:checked {    background:url(http://csscheckbox.com/checkboxes/u/csscheckbox_ef32e9f2ed5c57aba4c2206a981ba7a4.png) 0px bottom no-repeat;
+    }
+
 
 .btnLogin {
 	margin-top: 65px;
@@ -778,6 +794,10 @@ article.tabs section:nth-child(2) h2
 article.tabs section:nth-child(3) h2
 {
 	left: 254px;
+}
+article.tabs section:nth-child(4) h2
+{
+	left: 376px;
 }
 
 article.tabs section h2 a
