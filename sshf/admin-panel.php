@@ -207,17 +207,24 @@ echo "</div>";
 
 	</section>
 	<section id="tab4">
-		<h2><a href="#tab4">Kalkulator</a></h2>
-		<text>Her kan du legge inn ny verdi for engangsglass</text> 
-<form method='post' name='engangsglass'> 
-<input type='int' name='value2'>
-<input type='submit' name='engangsglass' value='Legg til verdi'></form>
+	<h2><a href="#tab4">Kalkulator</a></h2>
+	<div class="grid_9">
+	<div style="background-color:#8bb1df; overflow: auto;">
+	  
+	  	
+		
+		<text><center><font color="white">Her kan du legge inn ny verdi for engangsglass</text> 
+		
+
+		<form method='post' name='engangsglass'> 
+			<input type='int' name='value2'>
+			<input type='submit' name='engangsglass' value='Legg til verdi'></form>
 <br></br>
 
-<text>Her kan du legge inn ny verdi for bensinpris pr km</text><br></br>
-<form method='post' name='bensinforbruk'>
-<input type='int' name='value3'>
-<input type='submit' name='bensinforbruk' value='Legg til verdi'></form>
+	<text>Her kan du legge inn ny verdi for bensinpris pr km</text><br></br>
+		<form method='post' name='bensinforbruk'>
+			<input type='int' name='value3'>
+			<input type='submit' name='bensinforbruk' value='Legg til verdi'></form>
 <br></br>
 
 <?php 
@@ -245,6 +252,7 @@ if(isset($_POST['bensinforbruk'])){
 <select name='forbruk'>
 <option value2="Engangsglass">Engangsglass</option>
 <option value3="Bensinforbruk">Bensinforbruk</option>
+</center>
 
 
 </select>
