@@ -9,8 +9,8 @@ if (login_check($mysqli) == true) {
 } else {
     $logged = 'out';
 }
+
 ?>
-<!DOCTYPE html>
 <html>
     <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ if (login_check($mysqli) == true) {
               header
 =================================-->
 <div class="main">
-<?php include("headerfooter/header.php");?>
+<?php include("header.php");?>
 <!--=====================
           Content
 ======================-->
@@ -46,7 +46,7 @@ if (login_check($mysqli) == true) {
         ?> 
         <form action="includes/process_login.php" method="post" name="login_form">                      
             Email: <input type="text" name="email" />
-            Passord: <input type="password" 
+            Password: <input type="password" 
                              name="password" 
                              id="password"/>
             <input type="button" 
@@ -54,12 +54,21 @@ if (login_check($mysqli) == true) {
                    onclick="formhash(this.form, this.form.password);" /> 
         </form>
  
+	<form action="includes/resetmail.php" method="post" name="reset_form"> 
+	<br/><br/>
+			Forgotten your password? <br/>
+            <input type="text" name="email"  placeholder="Write your email here:" />
+            <input type="submit" value="Send"/> 
+        </form>
+		
+		
+		
 <?php
         if (login_check($mysqli) == true) {
-                        echo '<p>Logget  ' . $logged . ' som: ' . htmlentities($_SESSION['username']) . '.</p>';
+                        echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
  
-            echo '<p>Vil du bytte bruker? <a href="includes/logout.php">Logg ut</a>.</p>';
-			echo '<p>Vil du bytte passord? <a href="change_password.php">Bytt passord</a>.</p>';
+            echo '<p>Do you want to change user? <a href="includes/logout.php">Log out</a>.</p>';
+			echo '<p>Do you want to change password? <a href="change_password.php">Change password</a>.</p>';
         } else {
                         echo '<p>Currently logged ' . $logged . '.</p>';
                         echo "<p>If you don't have a login, please <a href='register.php'><button>register</button></a></p>";
@@ -78,6 +87,6 @@ if (login_check($mysqli) == true) {
 <!--==============================
               footer
 =================================-->
-<?php include("headerfooter/footer.php");?>
+<?php include("footer.php");?>
 </body>
 </html>
