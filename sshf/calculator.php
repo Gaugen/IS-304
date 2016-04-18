@@ -28,6 +28,7 @@ if (login_check($mysqli) == true) {
 </script>
 </head>
 <body class="page1" id="top">
+
 <!--==============================
               header
 =================================-->
@@ -42,10 +43,10 @@ if (login_check($mysqli) == true) {
   <div class="grid_7 prefix_1">
   <div class="grid_10">
   <div style="background-color:#8bb1df; overflow: auto;">
+  <div style="font-family: helvetica">
 	
 	
-	
-<text><font color="white"><br><br><center>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
+<text><font color="white"><br><br><center>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
 
 <text><br><center>Hvor mange engangsglass bruker du per dag?</text>
 <text><br>Hvor mange kilometer kjører du per dag?</center></text>
@@ -65,6 +66,8 @@ if (login_check($mysqli) == true) {
 
 <input type='submit' name='submit' value='Kalkulèr'></form>
 
+<center>
+<textarea rows="10" cols="50" placeholder=".....">
 <?php
 
 
@@ -83,43 +86,52 @@ $value3 = $x['bensinforbruk'];
 
 
 //Hvis engangsglass er valgt, gang value1(dynamisk) med value2(fra database)
-if($forbruk=="Engangsglass"){
-echo "<b>Du bruker engangsglass for verdi:</b><br>";
+if($forbruk=="Engangsglass"){ 
+echo "Du bruker engangsglass for verdi: ";
 echo $value1*$value2 . " kroner"; 
 }
 
 
 if($forbruk=="Engangsglass"){
-echo "<br><b>I en arbeidsuke blir dette:</b><br>";
+echo "				I en arbeidsuke blir dette: ";
 echo $value1*$value2*5 . " kroner"; 
 }
 
 if($forbruk=="Engangsglass"){
-echo "<br><b>I et arbeidsår (230 dager) blir dette:</b><br>";
+echo "				I et arbeidsår (230 dager) blir dette: ";
 echo $value1*$value2*230 . " kroner"; 
+
+echo "
+				
+Husk at disse verdiene blir ganget med tusenvis av andre ansatte! ";
 }
 
 
 //Hvis bensinforbruk er valgt, gang value1(dynamisk) med value3(fra database)
 if($forbruk=="Bensinforbruk"){
-echo "<b>Du bruker bensin for verdi:</b><br>";
+echo "Du bruker bensin for verdi: ";
 echo $value1*$value3 . " kroner"; 
 }
 
 
 if($forbruk=="Bensinforbruk"){
-echo "<br><b>I en arbeidsuke blir dette:</b><br>";
+echo "			I en arbeidsuke blir dette: ";
 echo $value1*$value3*5 . " kroner"; 
 }
 
 if($forbruk=="Bensinforbruk"){
-echo "<br><b>I et arbeidsår (230 dager) blir dette:</b><br>";
+echo "			I et arbeidsår (230 dager) blir dette: ";
 echo $value1*$value3*230 . " kroner"; 
+
+echo "
+				
+Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på Sykehuset! ";
 }
 
 }
 
 ?>
+</textarea></center>
 </div>
 </div>
 

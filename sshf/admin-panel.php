@@ -210,7 +210,7 @@ echo "</div>";
 	<h2><a href="#tab4">Kalkulator</a></h2>
 	<div class="grid_9">
 	<div style="background-color:#8bb1df; overflow: auto;">
-	  
+	<div style="font-family: helvetica">
 	  	
 		
 		<text><center><font color="white">Her kan du legge inn ny verdi for engangsglass</text> 
@@ -260,6 +260,8 @@ if(isset($_POST['bensinforbruk'])){
 
 
 <input type='submit' name='submit' value='Kalkuler'></form>
+<center>
+<textarea rows="10" cols="50" placeholder=".....">
 
 <?php
 
@@ -280,37 +282,46 @@ $value3 = $x['bensinforbruk'];
 
 //Hvis engangsglass er valgt, gang value1(dynamisk) med value2(fra database)
 if($forbruk=="Engangsglass"){
-echo "<b>Du bruker engangsglass for verdi:</b><br>";
+echo "Du bruker engangsglass for verdi: ";
 echo $value1*$value2 . " kroner"; 
 }
 
 
 if($forbruk=="Engangsglass"){
-echo "<br><b>I en arbeidsuke blir dette:</b><br>";
+echo "			I en arbeidsuke blir dette: ";
 echo $value1*$value2*5 . " kroner"; 
 }
 
 if($forbruk=="Engangsglass"){
-echo "<br><b>I et arbeidsår (230 dager) blir dette:</b><br>";
+echo "			I et arbeidsår (230 dager) blir dette: ";
 echo $value1*$value2*230 . " kroner"; 
+
+
+echo "
+				
+Husk at disse verdiene blir ganget med tusenvis av andre ansatte! ";
 }
 
 
 //Hvis bensinforbruk er valgt, gang value1(dynamisk) med value3(fra database)
 if($forbruk=="Bensinforbruk"){
-echo "<b>Du bruker bensin for verdi:</b><br>";
+echo "Du bruker bensin for verdi: ";
 echo $value1*$value3 . " kroner"; 
 }
 
 
 if($forbruk=="Bensinforbruk"){
-echo "<br><b>I en arbeidsuke blir dette:</b><br>";
+echo "			I en arbeidsuke blir dette: ";
 echo $value1*$value3*5 . " kroner"; 
 }
 
 if($forbruk=="Bensinforbruk"){
-echo "<br><b>I et arbeidsår (230 dager) blir dette:</b><br>";
+echo "			I et arbeidsår (230 dager) blir dette: ";
 echo $value1*$value3*230 . " kroner"; 
+
+echo "
+				
+Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på Sykehuset! ";
 }
 
 
@@ -321,7 +332,7 @@ echo $value1*$value3*230 . " kroner";
 
 
 ?>
-		
+	</textarea></center>	
 	</section>
 </article>
      <div class="clear"></div>
