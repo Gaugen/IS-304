@@ -77,3 +77,47 @@ function regformhash(form, uid, email, password, conf) {
     form.submit();
     return true;
 }
+
+function passcheck(form, password, name) {
+	// Check that the password is sufficiently long (min 6 chars)
+    // The check is duplicated below, but this is included to give more
+    // specific guidance to the user
+    if (password.value.length < 6) {
+        alert('Passwords must be at least 6 characters long.  Please try again');
+        form.password.focus();
+        return false;
+    }
+	var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; 
+    if (!re.test(password.value)) {
+        alert('Passwords must contain at least one number, one lowercase and one uppercase letter.  Please try again');
+        return false;
+    }
+    // Create a new element input, this will be our hashed password field. 
+    var p = document.createElement("input");
+ 
+    // Add the new element to our form. 
+    form.appendChild(p);
+    p.name = name || "p";
+    p.type = "hidden";
+    p.value = hex_sha512(password.value);
+ 
+    // Make sure the plaintext password doesn't get sent. 
+    password.value = "";
+ 
+    // Finally submit the form. 
+    form.submit();
+	return true;
+}
+function check() {
+	//Checks if the two passwords match eachother, if they do it says "match" in green text,
+	//else it says "no match" in red text.
+    if(document.getElementById('new_password').value === document.getElementById('confirm_password').value) {
+        var match = document.getElementById('message');
+		match.style.color = "green";
+		match.innerHTML = "Passwords match";
+    } else {
+		var nomatch = document.getElementById('message');
+		nomatch.style.color = "red";
+		nomatch.innerHTML = "Passwords do not match";
+    }
+}

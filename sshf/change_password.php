@@ -15,7 +15,7 @@ if (login_check($mysqli) == true) {
     <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Login</title>
+<title>Change password</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 		<link rel="stylesheet" href="css/contact-form.css">
@@ -39,31 +39,42 @@ if (login_check($mysqli) == true) {
     
    <div class="grid_6">
         <?php if (login_check($mysqli) == true) : ?>
-            <p>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</p>
+            <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
             <p>
-                <a href='change_password.php?action=change_password'>Her kan du bytte passord</a>
+                <a href='change_password.php?action=change_password'>Click here to change your password</a>
             </p>
-            <p>Tilbake til <a href="index.php">innloggingssiden</a></p>
+            <p> <a href="index.php">Or return to login page</a></p>
         <?php else : ?>
             <p>
-                <span class="error">Du har ikke rettigheter til å se denne siden.</span> Vennligst <a href="index.php">logg inn</a>.
+                <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
             </p>
         <?php endif; ?>
 		<?php
 		if(@$_GET['action'] == "change_password"){ ?>
+		<ul>
+			<li>Passwords must be at least 6 characters long</li>
+            <li>Passwords must contain
+                <ul>
+                    <li>At least one uppercase letter (A..Z)</li>
+                    <li>At least one lowercase letter (a..z)</li>
+                    <li>At least one number (0..9)</li>
+                </ul>
+            </li>
+        </ul>
 		
 			<form action='change_password.php?action=change_password' method='POST'><center>
-			Nåværende passord: <input type='text' name='cp'><br/>
-			Nytt passord: <input type='password' name='np'><br/>
-			Bekreft passord: <input type='password' name='rp'><br/>
-			<input type='submit' name='change_pass' value='Change' 
-				onclick="formhash(this.form, this.form.cp, 'curr_pass');formhash(this.form, this.form.np, 'new_pass');formhash(this.form, this.form.rp, 're_pass');">
+			<br/>Current password: <input type='text' name='cp'><br/>
+			New password: <input type='password' name='new_password' id="new_password" onkeyup='check()'><br/>
+			Re-type password: <input type='password' name='confirm_password' id='confirm_password' onkeyup='check()'>
+			<br/><span id='message'></span><br/>
+			<input type='submit' name='change_pass' value='Change password' 
+				onclick="formhash(this.form, this.form.cp, 'curr_pass');passcheck(this.form, this.form.new_password, 'new_password');passcheck(this.form, this.form.confirm_password, 'confirm_password');">
 			<br />
 			<?php
 			//makes vaiables for the posts from the form.
 			$curr_pass=@$_POST['curr_pass'];
-			$new_pass=@$_POST['new_pass'];
-			$re_pass=@$_POST['re_pass'];
+			$new_pass=@$_POST['new_password'];
+			$re_pass=@$_POST['confirm_password'];
 			
 			if(isset($_POST['change_pass'])){
 				//Using prepared statements means that SQL injection is not possible. 
