@@ -22,7 +22,7 @@ include_once 'includes/functions.php';
               header
 =================================-->
 <div class="main">
-<?php include("header.php");?>
+<?php include("headerfooter/header.php");?>
 <!--=====================
           Content
 ======================-->
@@ -133,7 +133,7 @@ include_once 'includes/functions.php';
 <!--==============================
               footer
 =================================-->
-<?php include("footer.php");?>
+<?php include("headerfooter/footer.php");?>
 </body>
 </html>
 </html>

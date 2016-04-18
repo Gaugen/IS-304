@@ -31,7 +31,7 @@ if(isset($_POST['email']))
 			$mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
 			$mail->setFrom('miljo.sshf@gmail.com', 'Knut');     //Set who the message is to be sent from
 			//$mail->addReplyTo('labnol@gmail.com', 'First Last');  //Set an alternative reply-to address
-			$mail->addAddress('torabang@gmail.com', 'Tor Arne');  // Add a recipient
+			$mail->addAddress($email);  // Add a recipient
 			//$mail->addAddress('ellen@example.com');               // Name is optional
 			//$mail->addCC('cc@example.com');
 			//$mail->addBCC('bcc@example.com');
