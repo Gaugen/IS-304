@@ -100,7 +100,7 @@ if (login_check($mysqli) == true) {
 						$stmt->execute();    // Execute the prepared query.
 
 						echo "Your password has been changed, please log in again.";
-						header( "refresh:3; ./index.php" ); //wait for 5 seconds before redirecting
+						header( "refresh:3; ./index.php" ); //wait for 3 seconds before redirecting
 						exit();
 					}
 					else {
