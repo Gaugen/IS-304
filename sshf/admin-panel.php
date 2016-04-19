@@ -151,6 +151,7 @@ Da går man inn på "Kalkulator"-fanen og trykker på knappen "Legg til verdi", 
 		</tr>
 		<tr>
 		<td>Kategori</td><td>
+				<input type="radio" value="Generell" name="kategori">Generell<br>
 				<input type="radio" value="transport" name="kategori">Transport<br>
 				<input type="radio" value="energi" name="kategori">Energi<br>
 				<input type="radio" value="avfall" name="kategori">Avfall<br>
@@ -172,11 +173,11 @@ Da går man inn på "Kalkulator"-fanen og trykker på knappen "Legg til verdi", 
 
 
 if (isset($_POST['delete'])){
-	$DeleteQuery = "DELETE FROM post WHERE newstopic='$_POST[hidden]'";
+	$DeleteQuery = "DELETE FROM post WHERE newsno='$_POST[newsno]'";
 	mysqli_query($mysqli, $DeleteQuery);
 	?>
 		<script>
-		alert('successfully deleted');
+		//alert('successfully deleted');
         window.location.href='admin-panel.php#tab3';
         </script>
 		<?php
@@ -200,11 +201,15 @@ while($row=mysqli_fetch_array($r)){
 	echo "<div class=tb2>";
 	echo "<pre>";
 	echo $row['newsinfo']; 
+	echo "</br>";
 	echo "</pre>";
 	echo "</div>";
-	echo "<td>" . "<input type=hidden name=hidden value=" . $row['newstopic'] . " </td>";
+	echo "<td>" . "<input type=hidden name=newsno value=" . $row['newsno'] . " </td>";
 	echo "<div class=newsfooter>";
+	echo 'Kategori: ' .	$row['kategori']; 
+	echo "<div style='float: right;'>";
 	echo "<td>" .  "<input type=submit name=delete value=Slett>" . "</td>";
+	echo "</div>";
 	echo "</div>";
 	echo "</br>";
 	echo "</br>";

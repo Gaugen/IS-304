@@ -828,7 +828,6 @@ article.tabs section h2
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
 }
-
 ---- Newsfeed - admin -----
 
 .container
@@ -860,11 +859,12 @@ article.tabs section h2
 	background: #ffffff;
 	float:left;
 	width:439px;
-	text-align: right;
+	text-align: left;
 	border-width: 1px;
 	border-bottom-style: solid;
 	border-color: #111111;
 	}
+	
 	
 .containerpost
 {
@@ -944,15 +944,19 @@ h7 {
 	border-color: #ADADAD;
 	}
 
+
+	
 .newsfooter2 {
 	background: #ffffff;
 	float:left;
-	width:434px;
-	height: 1px;
-	text-align: right;
+	width:439px;
+	text-align: left;
 	border-width: 1px;
+	border-bottom-style: solid;
+	border-left-style: solid;
 	border-top-style: solid;
-	border-color: #ADADAD;
+	border-right-style: solid;
+	border-color: #adadad;
 	}
 
 .tb22 {
@@ -976,5 +980,3 @@ h7 {
 	overflow-y: auto;
 	margin-left: 10px;
 }
-
-	

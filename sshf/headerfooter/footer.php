@@ -22,8 +22,8 @@
       <a href="#" class="mail-1"><span class="fa fa-envelope"></span><p><font size="4">miljo@sshf.no<p></font></a>
     </div>
     </div>
-    <div class="clear"></div>
   </div>
+  <div class="clear"></div>
 </div>
 <!--==============================
               footer

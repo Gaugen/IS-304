@@ -93,10 +93,11 @@ while($row=mysqli_fetch_array($r)){
 	echo $row['newsinfo'];
 	echo "</pre>";
 	echo "</div>";
-	echo "<td>" . "<input type=hidden name=hidden value=" . $row['newstopic'] . " </td>";
 	echo "</div>";
 	echo "<div class=newsfooter2>";
+	echo 'Kategori: ' .	$row['kategori']; 
 	echo "</div>";
+	echo "</br>";
 	echo "</br>";
 	echo "</form>";
 }
