@@ -208,7 +208,7 @@ sss * {
 }
 body {
 	position:relative;
-	background:#8bb1df;
+	background:#22282b;
 	color:#636262;
 	font:300 18px/24px;
 	font-family: mainFont;
@@ -980,3 +980,13 @@ h7 {
 	overflow-y: auto;
 	margin-left: 10px;
 }
+
+.newsekkoKategori {
+	float: left;
+	background-color : #ffffff;
+	width: 460px;
+	height: 400px;
+	overflow-y: auto;
+	margin-left: 10px;
+}
+

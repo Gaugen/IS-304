@@ -42,21 +42,15 @@ if (login_check($mysqli) == true) {
 	<img src="images/wide.jpg"/>
 	</div>
 	<div class="container_12">
-	
-    <p class="color1">
-    <div class="grid_6 prefix_5">
+<div class="grid_6">
       <h2 class="inset__1">Energi</h2>
-	</div>
-	  <br>
-     <div class="grid_3 prefix_3">
-	 hello from<br>
-	 the other side<br>
-	 hello from<br>
-	 the other side<br>
-
-      </div>
-	       <div class="grid_4">
-        <ul class="list-1  prefix_5">
+	  <p><font size="4">Hei og velkommen til siden, håper du koser deg og at du får ett nytt syn på din forbruk av glass, reising osv. 
+	  <br>Her kommer en del info om siden og hva siden kan tilby! Ha en ellers fortreffelig dag :)</p></font>
+	  
+    </div>
+	<div class="grid_4">
+	</br>
+        <ul class="list-1  prefix_3">
           <li><a href="transport.php">Transport </a></li>
 		  <li><a href="energi.php">Energi </a></li>
 		  <li><a href="avfall.php">Avfall </a></li>
@@ -64,9 +58,48 @@ if (login_check($mysqli) == true) {
         </ul>
 		<br>
       </div>
-      
-      </div>
-  
+    <div class="grid_5 prefix_1">
+	<?php
+	echo "</br>";
+	echo "<div class=newsekkoKategori>";
+$q = "SELECT * FROM post WHERE kategori = 'Energi'";
+$r = mysqli_query($mysqli, "$q");
+if($r)
+{
+
+while($row=mysqli_fetch_array($r)){
+	echo "<form action=index.php method=post>";
+	echo "<div class=container2>";
+	echo "<div class=newsheader2>";
+	echo "<h7>";
+	echo $row['newstopic'];
+	echo "</h7>";
+	echo "</div>";
+	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
+	echo "<div class=tb22>";
+	echo "<pre>";
+	echo $row['newsinfo'];
+	echo "</pre>";
+	echo "</div>";
+	echo "</div>";
+	echo "<div class=newsfooter2>";
+	echo 'Kategori: ' .	$row['kategori']; 
+	echo "</div>";
+	echo "</br>";
+	echo "</br>";
+	echo "</form>";
+}
+echo "</div>";
+
+}
+
+else
+{
+echo mysqli_error();
+}
+?>
+    </div>
+  </div>
 </section>
 <!--==============================
               footer
