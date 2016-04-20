@@ -42,11 +42,11 @@ if (login_check($mysqli) == true) {
   <div class="container_12">
   <div class="grid_7 prefix_1">
   <div class="grid_10">
-  <div style="background-color:#8bb1df; overflow: auto;">
+  <div style="background-color:#dad8d8; overflow: auto;">
   <div style="font-family: helvetica">
 	
 	
-<text><font color="white"><br><br><center>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
+<text><font color="#666362"><br><br><center>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
 
 <text><br><center>Hvor mange engangsglass bruker du per dag?</text>
 <text><br>Hvor mange kilometer kjører du per dag?</center></text>
