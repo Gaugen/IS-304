@@ -15,7 +15,7 @@ if (login_check($mysqli) == true) {
 <html lang="en">
 <head>
 
-<title>Kontakt</title>
+<title>Kalkulator</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
@@ -46,7 +46,7 @@ if (login_check($mysqli) == true) {
   <div style="font-family: helvetica">
 	
 	
-<text><font color="#666362"><br><br><center><h5>Forbrukskalkulator</h5></br>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
+<text><font color="#666362"><br><br><center><h5>Forbrukskalkulator</h5></br>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Velg kategori og skriv inn verdier i tekstfeltet for å regne ut ditt forbruk!</center></text>
 
 <text><br><center>Hvor mange engangsglass bruker du per dag?</text>
 <text><br>Hvor mange kilometer kjører du per dag?</center></text>
