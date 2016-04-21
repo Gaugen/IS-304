@@ -12,13 +12,14 @@ if(isset($_POST['email']))
     }
     else
     {
-        $query = "SELECT id FROM members where email='".$email."'";
+        $query = "SELECT id, security_question FROM members where email='".$email."'";
         $result = mysqli_query($mysqli,$query);
         $Results = mysqli_fetch_array($result);
  
         if(count($Results)>=1)
         {
             $encrypt = md5(1290*3+$Results['id']);
+			$security_question = $Results['security_question'];
 			
 			$mail = new PHPMailer;
 			
@@ -41,7 +42,7 @@ if(isset($_POST['email']))
 			$mail->isHTML(true);                                  // Set email format to HTML
 			 
 			$mail->Subject = 'Here is the subject';
-			$mail->Body    = 'Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password https://localhost/sshf/reset_password.php?encrypt='.$encrypt.'&action=reset';
+			$mail->Body    = 'Hi, <br/> <br/>Din brukerID er '.$Results['id'].'<br/><br/> Ditt sikkerhetsspørsmål er: '.$Results['security_question'].' <br><br>Klikk her for å sette nytt passord: https://localhost/sshf/reset_password.php?encrypt='.$encrypt.'&action=reset';
 			//$mail->AltBody = 'Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password https://localhost/sshf/reset_password.php?encrypt='.$encrypt.'&action=reset';
 			 
 			//Read an HTML message body from an external file, convert referenced images to embedded,
@@ -54,7 +55,9 @@ if(isset($_POST['email']))
 			   exit;
 			}
 			 
-			echo 'Message has been sent';
+			echo 'Meldingen har blitt send, du blir straks sendt tilbake til login siden.';
+			header( "refresh:3; ../login.php" ); //wait for 3 seconds before redirecting
+			exit();
 			
         }
         else

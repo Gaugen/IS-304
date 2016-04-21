@@ -33,18 +33,14 @@ sec_session_start();
     
    <div class="grid_6">
         <?php if (login_check($mysqli) == true) : ?>
-            <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
-            <p>
-                This is an example protected page.  To access this page, users
-                must be logged in.  At some stage, we'll also check the role of
-                the user, so pages will be able to determine the type of user
-                authorised to access the page.
-            </p>
-            <p>Return to <a href="login.php"><button>login page</button></a></p>
-			<p>Want to change your password? Click here <a href="change_password.php"><button>Change Password</button></a></p>
+            <p>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</p>
+            <p>Her kan du enten bytte passord eller legge til/endre sikkerhetsspørsmål som vil bli brukt dersom du glemmer passordet og velger å sende en gjenopprettingsmail. </p>
+			<p><a href="security_question.php"><u>Legg til/endre sikkerhetsspørsmål</u></a></p>
+			<p><a href="change_password.php"><u>Bytt passord</u></a></p>
+			<p><a href="includes/logout.php"><u>Logg ut</u></a></p>
         <?php else : ?>
             <p>
-                <span class="error">You are not authorized to access this page.</span> Please <a href="login.php"><button>login</button></a>.
+                <span class="error">Du har ikke autorisasjon til å se denne siden.</span> Vennligst <a href="login.php"><button>logg inn</button></a>.
             </p>
         <?php endif; ?>
     <div class="grid_3 alpha">

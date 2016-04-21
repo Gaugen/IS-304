@@ -46,7 +46,7 @@ if (login_check($mysqli) == true) {
         ?> 
         <form action="includes/process_login.php" method="post" name="login_form">                      
             Email: <input type="text" name="email" />
-            Password: <input type="password" 
+            Passord: <input type="password" 
                              name="password" 
                              id="password"/>
             <input type="button" 
@@ -56,19 +56,19 @@ if (login_check($mysqli) == true) {
  
 	<form action="includes/resetmail.php" method="post" name="reset_form"> 
 	<br/><br/>
-			Forgotten your password? <br/>
-            <input type="text" name="email"  placeholder="Write your email here:" />
+			Glemt passordet? <br/>
+            <input type="text" name="email"  placeholder="Fyll inn emailadressen din her:" />
             <input type="submit" value="Send"/> 
-        </form>
+        </form><br>
 		
 		
 		
 <?php
         if (login_check($mysqli) == true) {
                         echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
- 
-            echo '<p>Do you want to change user? <a href="includes/logout.php">Log out</a>.</p>';
-			echo '<p>Do you want to change password? <a href="change_password.php">Change password</a>.</p>';
+			echo '<p>Legg til/endre sikkerhetsspørsmål <a href="security_question.php"><u>Her!</u></a></p>';
+            echo '<p>Ønsker du å logge ut? <a href="includes/logout.php"><u>Logg ut</u></a></p>';
+			echo '<p>Ønsker du å bytte passord? <a href="change_password.php"><u>Bytt passord</u></a>.</p>';
         } else {
                         echo '<p>Currently logged ' . $logged . '.</p>';
                         echo "<p>If you don't have a login, please <a href='register.php'><button>register</button></a></p>";

@@ -14,7 +14,7 @@
     if(login_check($mysqli) == true){ 
        	echo '<a href="admin-panel.php"><span>Admin &nbsp;</span></a></li>';
 		echo '<a>&nbsp;|&nbsp;</a>';
-		echo $_SESSION['username'];
+		echo '<a href="protected_page.php">'.$_SESSION['username'].'</a>';
 		echo '<a>&nbsp;|&nbsp;</a>';
         echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
         }

@@ -58,31 +58,40 @@ include_once 'includes/functions.php';
 			$encrypt = mysqli_real_escape_string($mysqli,$_POST['encrypt']);
 			$new=@$_POST['new_password'];
 			$confirm=@$_POST['confirm_password'];
+			$security_answer=@$_POST['security_answer'];
 			
-			$stmt = $mysqli->prepare("SELECT id, salt FROM members where md5(1290*3+id)= ? LIMIT 1");
+			$stmt = $mysqli->prepare("SELECT id, salt, security_answer FROM members where md5(1290*3+id)= ? LIMIT 1");
 			$stmt->bind_param('s', $encrypt);
 			$stmt->execute();
 			$stmt->store_result();
-			$stmt->bind_result($id, $salt);
+			$stmt->bind_result($id, $salt, $answer);
 			$stmt->fetch();
 			if(count($stmt->store_result())>=1)
 			{
-				if($new == $confirm){
+				if($security_answer == $answer)
+				{
+					if($new == $confirm)
+					{
 					
-					$stmt = $mysqli->prepare("UPDATE members SET password = ?
-											WHERE id = ?
-											LIMIT 1");
-					$stmt->bind_param('ss', hash('sha512', $new . $salt), $id);  
-					$stmt->execute();    // Execute the prepared query.
+						$stmt = $mysqli->prepare("UPDATE members SET password = ?
+												WHERE id = ?
+												LIMIT 1");
+						$stmt->bind_param('ss', hash('sha512', $new . $salt), $id);  
+						$stmt->execute();    // Execute the prepared query.
 
-					echo "Your password has been changed, please log in again.";
-					header( "refresh:3; ./index.php" ); //wait for 5 seconds before redirecting
-					exit();
+						echo "Passordet har blitt endret, vennligst logg inn på nytt.";
+						header( "refresh:3; ./index.php" ); //wait for 3 seconds before redirecting
+						exit();
+					}
+					else
+					{
+						echo "De to passordene stemmer ikke, vennligst kontakt server administrator.";
+						return false;
+					}
 				}
 				else
 				{
-					echo "The two passwords are not the same. Please contact the server administrator.";
-					return false;
+					echo "Sikkerhetssvaret er ikke riktig, prøv igjen.";
 				}
 			}	
 			else 
@@ -95,30 +104,33 @@ include_once 'includes/functions.php';
 	else 
 	{
         
-		echo "Form did not get submitted?";
+		echo "Form did not get submitted";
            return false;
     }
 		?>
 			<ul>
-			<li>Passwords must be at least 6 characters long</li>
-            <li>Passwords must contain:
+			<li>Passordet må være minst 6 karakterer langt</li>
+            <li>Passordet må inneholde:
                 <ul>
-                    <li>At least one uppercase letter (A..Z)</li>
-                    <li>At least one lowercase letter (a..z)</li>
-                    <li>At least one number (0..9)</li>
+                    <li>Minst en stor bokstav(A..Å)</li>
+                    <li>Minst en liten bokstav(a..å)</li>
+                    <li>Minst et tall(0..9)</li>
                 </ul>
             </li>
+        </ul>
         </ul><br/><br/>
 			
 			<form action='reset_password.php?encrypt=<?php echo "$encrypt";?>' method='POST'><center>
-			New password: <input type='password' name='new_password' id="new_password" onkeyup='check()'><br/>
-			Confirm password: <input type='password' name='confirm_password' id="confirm_password" onkeyup='check()' > 
+			Svar på sikkerhetsspørsmål:<input type='text' name='security_answer' id='security_answer'><br>
+			Nytt Passord: <input type='password' name='new_password' id="new_password" onkeyup='check()'><br/>
+			Gjenta Passord: <input type='password' name='confirm_password' id="confirm_password" onkeyup='check()' > 
 			<br/><span id='message'></span><br/>
 			<input type='hidden' name='encrypt' value="<?php echo "$encrypt";?>"/>
 			<br/>
 			<input type='submit' name='reset_password' value='Reset Password!' 
-			onclick="passcheck(this.form, this.form.new_password, 'new_password');return passcheck(this.form, this.form.confirm_password, 'confirm_password');">
-			<br />
+			onclick="passcheck(this.form, this.form.new_password, 'new_password');
+			passcheck(this.form, this.form.confirm_password, 'confirm_password');
+			formhash(this.form, this.form.security_answer, 'security_answer');"><br />
 			
      <div class="grid_3 alpha">
         

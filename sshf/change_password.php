@@ -39,35 +39,35 @@ if (login_check($mysqli) == true) {
     
    <div class="grid_6">
         <?php if (login_check($mysqli) == true) : ?>
-            <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
+            <p>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</p>
             <p>
-                <a href='change_password.php?action=change_password'>Click here to change your password</a>
+                <a href='change_password.php?action=change_password'><u>Trykk her for å endre passord</u></a>
             </p>
-            <p> <a href="index.php">Or return to login page</a></p>
+            <p> <a href="protected_page.php"><u>Eller trykk her for å gå tilbake til kontosiden din</u></a></p>
         <?php else : ?>
             <p>
-                <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+                <span class="error">Du har ikke autorisasjon til å se denne siden.</span> Vennligst <a href="login.php"><button>logg inn</button></a>.
             </p>
         <?php endif; ?>
 		<?php
 		if(@$_GET['action'] == "change_password"){ ?>
 		<ul>
-			<li>Passwords must be at least 6 characters long</li>
-            <li>Passwords must contain
+			<li>Passordet må være minst 6 karakterer langt</li>
+            <li>Passordet må inneholde:
                 <ul>
-                    <li>At least one uppercase letter (A..Z)</li>
-                    <li>At least one lowercase letter (a..z)</li>
-                    <li>At least one number (0..9)</li>
+                    <li>Minst en stor bokstav(A..Å)</li>
+                    <li>Minst en liten bokstav(a..å)</li>
+                    <li>Minst et tall(0..9)</li>
                 </ul>
             </li>
         </ul>
 		
 			<form action='change_password.php?action=change_password' method='POST'><center>
-			<br/>Current password: <input type='text' name='cp'><br/>
-			New password: <input type='password' name='new_password' id="new_password" onkeyup='check()'><br/>
-			Re-type password: <input type='password' name='confirm_password' id='confirm_password' onkeyup='check()'>
+			<br/>Nåværende passord: <input type='text' name='cp'><br/>
+			Nytt passord: <input type='password' name='new_password' id="new_password" onkeyup='check()'><br/>
+			Gjenta passord: <input type='password' name='confirm_password' id='confirm_password' onkeyup='check()'>
 			<br/><span id='message'></span><br/>
-			<input type='submit' name='change_pass' value='Change password' 
+			<input type='submit' name='change_pass' value='Bytt passord' 
 				onclick="formhash(this.form, this.form.cp, 'curr_pass');passcheck(this.form, this.form.new_password, 'new_password');passcheck(this.form, this.form.confirm_password, 'confirm_password');">
 			<br />
 			<?php
@@ -99,18 +99,18 @@ if (login_check($mysqli) == true) {
 						$stmt->bind_param('ss', hash('sha512', $new_pass . $salt), $_SESSION['username']);  
 						$stmt->execute();    // Execute the prepared query.
 
-						echo "Your password has been changed, please log in again.";
+						echo "Passordet ditt har blitt endret, vennligst logg inn med det nye passordet.";
 						header( "refresh:3; ./index.php" ); //wait for 3 seconds before redirecting
 						exit();
 					}
 					else {
-						echo "New passwords don't match";
+						echo "De nye passordene er ikke like";
 						return false;
 					}
                 } 
 				else {
                     // Wrong current password
-					echo "Current password given is not correct.";
+					echo "Nåværende passord er ikke riktig.";
                     return false;
                 }
 			}
