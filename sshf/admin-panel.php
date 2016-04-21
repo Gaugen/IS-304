@@ -231,11 +231,11 @@ echo "</div>";
 	<section id="tab4">
 	<h2><a href="#tab4">Kalkulator</a></h2>
 	<div class="grid_9">
-	<div style="background-color:#8bb1df; overflow: auto;">
+	<div style="background-color:#f2f2f2;">
 	<div style="font-family: helvetica">
 	  	
 		
-		<text><center><font color="white">Her kan du legge inn ny verdi for engangsglass</text> 
+		<text><center><font color="#666362">Her kan du legge inn ny verdi for engangsglass</text> 
 		
 
 		<form method='post' name='engangsglass'> 
@@ -247,6 +247,7 @@ echo "</div>";
 		<form method='post' name='bensinforbruk'>
 			<input type='int' name='value3'>
 			<input type='submit' name='bensinforbruk' value='Legg til verdi'></form>
+			
 <br></br>
 
 <?php 
@@ -265,15 +266,36 @@ if(isset($_POST['bensinforbruk'])){
 
 ?>
 
-<text>Hvor mange engangsglass bruker du per dag?</text>
-<text><br>Hvor mange kilometer kjører du per dag?</text>
-
+<text><br><center>Hvor mange engangsglass bruker du per dag?</text>
+<text><br>Hvor mange kilometer kjører du per dag?</center></text>
+<br>
+<center>
 <form method='post'>
-<input type='text' name='value1'>
- 
-<select name='forbruk'>
-<option value2="Engangsglass">Engangsglass</option>
-<option value3="Bensinforbruk">Bensinforbruk</option>
+<div class="inputHolder">
+
+<label>
+Kategori:
+</label>
+<select name='forbruk' class="calcInput2">
+	<option value2="Engangsglass">Engangsglass</option>
+	<option value3="Bensinforbruk">Bensinforbruk</option>
+</select>
+</div>
+</br>
+</br>
+</br>
+<div class="inputHolder">
+
+<label>
+Verdi:
+</label>
+<input type='text' name='value1' class="calcInput">
+</div>
+</br>
+</br>
+</br>
+<input type="submit" name='submit' value='Kalkulèr' class="buttonKalkuler">
+</form>
 </center>
 
 
@@ -281,7 +303,7 @@ if(isset($_POST['bensinforbruk'])){
 
 
 
-<input type='submit' name='submit' value='Kalkuler'></form>
+
 <center>
 <textarea rows="10" cols="50" placeholder=".....">
 

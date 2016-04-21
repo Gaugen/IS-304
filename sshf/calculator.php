@@ -76,7 +76,7 @@ Verdi:
 </br>
 </br>
 </br>
-<input type="button" name='submit' value='Kalkulèr' class="buttonKalkuler">
+<input type="submit" name='submit' value='Kalkulèr' class="buttonKalkuler">
 </form>
 </center>
 </font>
