@@ -5,7 +5,6 @@
     src: url(/fonts/scala-sans-regular.woff);
 }
 
-
 input[type="radio"] {
         display:inline-block;
         width:21px;
@@ -23,15 +22,6 @@ input[type="radio"] {
     }
 
 
----- BTN KALKULER ----
-
-
-
-
-
------------
-	
-	
 .btnLogin {
 	margin-top: 65px;
   -webkit-border-radius: 28;
@@ -282,12 +272,6 @@ h4 {
 	font-size:25px;
 	line-height:42px;
 	margin-top: 10px;
-}
-h5 {
-	font-size:30px;
-	line-height:42px;
-	margin-top: 10px;
-	color:#666362;
 }
 h4.inset__1 {
 	padding-top:15px;
@@ -1006,38 +990,3 @@ h7 {
 	margin-left: 10px;
 }
 
-
------- kalkulator ------
-
-.inputHolder {
-    float: left;
-    width: 480px;
-    margin: 0px 0px 10px 0px;
-    line-height: 30px;
-}
-
-.inputHolder label {
-    float:left;
-	margin-left: 280px;
-    width: 200px;
-    font-size: 18px;
-    line-height: 30px;
-	text-align: left;
-}
-
-.inputHolder .calcInput {
-    float: left;
-    width: 200px;
-    height: 28px;
-    line-height: 28px;
-    padding: 0px 0px 0px 10px;
-    font-size: 13px;
-}
-.inputHolder .calcInput2 {
-    float: left;
-    width: 213px;
-    height: 32px;
-    line-height: 28px;
-    padding: 0px 0px 0px 10px;
-    font-size: 15px;
-}

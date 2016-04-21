@@ -15,12 +15,17 @@ if (login_check($mysqli) == true) {
 <html lang="en">
 <head>
 
-<title>Forbrukskalkulator</title>
+<title>Kontakt</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
+<script>
+ $(window).load(function(){
+  $().UItoTop({ easingType: 'easeOutQuart' });
+ });
+</script>
 </head>
 <body class="page1" id="top">
 
@@ -37,45 +42,30 @@ if (login_check($mysqli) == true) {
   <div class="container_12">
   <div class="grid_7 prefix_1">
   <div class="grid_10">
-  <div style="background-color:#f2f2f2;">
+  <div style="background-color:#dad8d8; overflow: auto;">
   <div style="font-family: helvetica">
 	
 	
-<text><font color="#666362"><br><br><center><h5>Forbrukskalkulator</h5></br>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
+<text><font color="#666362"><br><br><center>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Skriv inn verdier i tekstfeltet og velg kategori for å regne ut ditt forbruk!</center></text>
 
 <text><br><center>Hvor mange engangsglass bruker du per dag?</text>
 <text><br>Hvor mange kilometer kjører du per dag?</center></text>
-<br>
+
 <center>
 <form method='post'>
-<div class="inputHolder">
+	<input type='text' name='value1'>
 
-<label>
-Kategori:
-</label>
-<select name='forbruk' class="calcInput2">
+<select name='forbruk'>
 	<option value2="Engangsglass">Engangsglass</option>
 	<option value3="Bensinforbruk">Bensinforbruk</option>
-</select>
-</div>
-</br>
-</br>
-</br>
-<div class="inputHolder">
-
-<label>
-Verdi:
-</label>
-<input type='text' name='value1' class="calcInput">
-</div>
-</br>
-</br>
-</br>
-<input type="button" name='submit' value='Kalkulèr'>
-</form>
 </center>
 </font>
-</br>
+</select>
+
+
+
+<input type='submit' name='submit' value='Kalkulèr'></form>
+
 <center>
 <textarea rows="10" cols="50" placeholder=".....">
 <?php
@@ -144,9 +134,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 </textarea></center>
 </div>
 </div>
-</div>
-</div>
-</div>
+
 </section>
 	<!--==============================
               footer

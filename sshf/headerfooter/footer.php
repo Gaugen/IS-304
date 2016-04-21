@@ -37,5 +37,6 @@
     <div class="clear"></div>
   </div>
 </footer>
+<a href="#" id="toTop" class="fa fa-angle-up"></a>
 </body>
 </html>
