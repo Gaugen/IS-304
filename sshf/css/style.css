@@ -21,6 +21,35 @@ input[type="radio"] {
     input[type="radio"]:checked {    background:url(http://csscheckbox.com/checkboxes/u/csscheckbox_ef32e9f2ed5c57aba4c2206a981ba7a4.png) 0px bottom no-repeat;
     }
 
+.buttonKalkuler {
+  background: #fffccf;
+  background-image: -webkit-linear-gradient(top, #fffccf, #bfbf0b);
+  background-image: -moz-linear-gradient(top, #fffccf, #bfbf0b);
+  background-image: -ms-linear-gradient(top, #fffccf, #bfbf0b);
+  background-image: -o-linear-gradient(top, #fffccf, #bfbf0b);
+  background-image: linear-gradient(to bottom, #fffccf, #bfbf0b);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 3px #333333;
+  -moz-box-shadow: 0px 1px 3px #333333;
+  box-shadow: 0px 1px 3px #333333;
+  font-family: Arial;
+  color: #3d3d3d;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
+.buttonKalkuler:hover {
+  background: #bfbf0b;
+  background-image: -webkit-linear-gradient(top, #bfbf0b, #fffccf);
+  background-image: -moz-linear-gradient(top, #bfbf0b, #fffccf);
+  background-image: -ms-linear-gradient(top, #bfbf0b, #fffccf);
+  background-image: -o-linear-gradient(top, #bfbf0b, #fffccf);
+  background-image: linear-gradient(to bottom, #bfbf0b, #fffccf);
+  text-decoration: none;
+}
 
 .btnLogin {
 	margin-top: 65px;
@@ -989,4 +1018,47 @@ h7 {
 	overflow-y: auto;
 	margin-left: 10px;
 }
+
+------ kalkulator ------
+
+.inputHolder {
+    float: left;
+    width: 480px;
+    margin: 0px 0px 10px 0px;
+    line-height: 30px;
+}
+
+.inputHolder label {
+    float:left;
+	margin-left: 280px;
+    width: 200px;
+    font-size: 18px;
+    line-height: 30px;
+	text-align: left;
+}
+
+.inputHolder .calcInput {
+    float: left;
+    width: 200px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px 0px 0px 10px;
+    font-size: 13px;
+}
+.inputHolder .calcInput2 {
+    float: left;
+    width: 213px;
+    height: 32px;
+    line-height: 28px;
+    padding: 0px 0px 0px 10px;
+    font-size: 15px;
+}
+
+h5 {
+	font-size:30px;
+	line-height:42px;
+	margin-top: 10px;
+	color:#666362;
+}
+
 
