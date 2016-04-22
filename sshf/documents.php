@@ -43,7 +43,7 @@ if (login_check($mysqli) == true) {
   <center>
 <table width="60%" border="1">
     
-    <th width="60%">Filnavn</th> <th width="20%">Filstørrelse</th><th width="9%">Last ned</th>
+    <th width="60%">Filnavn</th> <th width="20%">Filstørrelse</th><th width="10%">Last ned</th>
 	 
     <?php
 	$sql="SELECT * FROM tbl_uploads";
@@ -64,7 +64,7 @@ if (login_check($mysqli) == true) {
 		$row['id'];
 	
 		
-		echo '<td width="9%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
+		echo '<td width="10%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
 	
 		
