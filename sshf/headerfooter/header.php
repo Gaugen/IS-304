@@ -12,11 +12,11 @@
 <div class="topplinje"><a class="button" href="login.php">
 <?php 
     if(login_check($mysqli) == true){ 
-       	echo '<a href="admin-panel.php"><span>Admin &nbsp;</span></a></li>';
+       	echo '<a href="admin-panel.php"><span>Admin-panel &nbsp;</span></a></li>';
 		echo '<a>&nbsp;|&nbsp;</a>';
 		echo '<a href="protected_page.php">'.$_SESSION['username'].'</a>';
 		echo '<a>&nbsp;|&nbsp;</a>';
-        echo '<a href="includes/logout.php"><span>&nbsp;Logout</span></a></li>';
+        echo '<a href="includes/logout.php"><span>&nbsp;Logg ut</span></a></li>';
         }
     elseif(login_check($mysqli) == false) 
         echo '<a href="login.php"><span></span></a></li>';

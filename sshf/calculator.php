@@ -46,15 +46,17 @@ if (login_check($mysqli) == true) {
   <div style="font-family: helvetica">
 	
 	
-<text><font color="#666362"><br><br><center><h5>Forbrukskalkulator</h5></br>Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Velg kategori og skriv inn verdier i tekstfeltet for å regne ut ditt forbruk!</center></text>
+<text><font color="#666362"><br><br><center><h5>Forbrukskalkulator</h5>
+<hr class="skille"></br>
+Her kan du få en liten oversikt over dine egne miljøvaner på sykehuset. <br>Velg kategori og skriv inn verdier i tekstfeltet for å regne ut ditt forbruk!</center></text>
 
 <text><br><center>Hvor mange engangsglass bruker du per dag?</text>
 <text><br>Hvor mange kilometer kjører du per dag?</center></text>
 <br>
 <center>
 <form method='post'>
-<div class="inputHolder">
 
+<div class="inputHolder">
 <label>
 Kategori:
 </label>
@@ -66,13 +68,14 @@ Kategori:
 </br>
 </br>
 </br>
-<div class="inputHolder">
 
+<div class="inputHolder">
 <label>
 Verdi:
 </label>
 <input type='text' name='value1' class="calcInput">
 </div>
+
 </br>
 </br>
 </br>

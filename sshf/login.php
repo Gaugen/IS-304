@@ -37,42 +37,66 @@ if (login_check($mysqli) == true) {
 <section id="content">
 <div class="container_12">
     
-   <div class="grid_6">
-      <h2 class="inset__1">Logg Inn</h2>
+   <div class="grid_6 prefix_3">
+     </br>
+      <h5>Logg Inn</h5>
+	  <hr class="skille">
+	    </br>
+		  </br>
         <?php
         if (isset($_GET['error'])) {
             echo '<p class="error">Error Logging In!</p>';
         }
         ?> 
-        <form action="includes/process_login.php" method="post" name="login_form">                      
-            Email: <input type="text" name="email" />
-            Passord: <input type="password" 
+        <form action="includes/process_login.php" method="post" name="login_form"> 
+<div class="inputHold">		
+            <label>Email:</label> <input type="text" name="email" class="calcInput" placeholder="Email" />
+</div>
+			</br>
+			</br>
+			</br>
+<div class="inputHold">
+            <label>Passord:</label> <input type="password" 
                              name="password" 
-                             id="password"/>
+                             id="password"
+							 class="calcInput"
+							 placeholder="Passord"/>
+</div>
+			</br>
+			</br>
+			
             <input type="button" 
-                   value="Login" 
-                   onclick="formhash(this.form, this.form.password);" /> 
+                   value="Logg inn" 
+                   onclick="formhash(this.form, this.form.password);" 
+				   class="btnLoginLogin"/> 
         </form>
- 
+ <br/><br/>
 	<form action="includes/resetmail.php" method="post" name="reset_form"> 
 	<br/><br/>
-			Glemt passordet? <br/>
-            <input type="text" name="email"  placeholder="Fyll inn emailadressen din her:" />
-            <input type="submit" value="Send"/> 
+	<div class="inputHold">
+			<label>Glemt passord?</label> 
+            <input type="text" name="email" class="calcInput" placeholder="Fyll inn Email" />
+			<hr style="height:1px; visibility:hidden;" />
+            <input type="submit" value="Send"  class="btnLoginLogin"/> 
+</div>
         </form><br>
-		
-		
+
+			<br/><br/>	<br/><br/>
+			<br/><br/>  <br/><br/>
 		
 <?php
+echo "<div class=inputHold>";
         if (login_check($mysqli) == true) {
-                        echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
-			echo '<p>Legg til/endre sikkerhetsspørsmål <a href="security_question.php"><u>Her!</u></a></p>';
-            echo '<p>Ønsker du å logge ut? <a href="includes/logout.php"><u>Logg ut</u></a></p>';
-			echo '<p>Ønsker du å bytte passord? <a href="change_password.php"><u>Bytt passord</u></a>.</p>';
-        } else {
-                        echo '<p>Currently logged ' . $logged . '.</p>';
-                        echo "<p>If you don't have a login, please <a href='register.php'><button>register</button></a></p>";
-                }
+                       
+        } else {		echo "<label>";
+                        echo "<p>Ny bruker?</p>"; 
+						echo "</label>";
+						echo "<div class=calcInput>";
+						echo "<a href='register.php'><input type=submit class=btnLoginRegistrer value=Registrer></a>";
+						echo "</div>";
+						
+				}
+echo "</div>";
 ?>      
      <div class="grid_3 alpha">
         
