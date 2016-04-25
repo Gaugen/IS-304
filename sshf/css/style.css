@@ -890,6 +890,11 @@ article.tabs section:nth-child(4) h2
 {
 	left: 376px;
 }
+article.tabs section:nth-child(5) h2
+{
+	left: 498px;
+}
+
 
 article.tabs section h2 a
 {
@@ -975,6 +980,17 @@ article.tabs section h2
 	overflow-y: auto;
 	/*text-align: center;*/
 	padding-left: 5px;
+}
+
+.tb3 {
+	float: left;
+	background-color : #ffffff;
+	width: 432px;
+	height: 185px;
+	overflow-y: auto;
+	/*text-align: center;*/
+	padding-left: 5px;
+	border: 1px solid #9fa8b0;
 }
 
 .newsekko {
