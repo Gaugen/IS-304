@@ -45,7 +45,7 @@ if (login_check($mysqli) == true) {
 		  </br>
         <?php
         if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
+            echo '<p class="error">Feil email eller passord, vennligst prøv igjen.</p>';
         }
         ?> 
         <form action="includes/process_login.php" method="post" name="login_form"> 

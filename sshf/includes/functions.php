@@ -1,5 +1,7 @@
 <?php
 include_once 'db_config.php';
+include_once 'brutemail.php';
+
  
 function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
@@ -47,7 +49,8 @@ function login($email, $password, $mysqli) {
             if (checkbrute($user_id, $mysqli) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
-                return false;
+				sendbrute($email, $mysqli);
+				return false;
             } else {
                 // Check if the password in the database matches
                 // the password the user submitted.
