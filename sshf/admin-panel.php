@@ -39,7 +39,7 @@ if (login_check($mysqli) == true) {
 	<div class="grid_11">
 	<br>
 	<br>
-
+<?php if (login_check($mysqli) == true) : ?>
 	<article class="tabs">
 
 		<section id="tab1">
@@ -209,101 +209,7 @@ if (login_check($mysqli) == true) {
 				?>
 		</section>
 		<section id="tab4">
-			<h2><a href="#tab4">asd</a></h2>
-			<form enctype="multipart/form-data" action="storedata.php" method="POST">
-			<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
-			<tr><td colspan=3>Nyheter</td></tr>
-			<tr>
-			<td>Overskrift</td><td><input type=text size="35%" name="teksttopic"></td>
-			</tr>
-			<tr>
-			<td>Informasjon</td><td><textarea name="tekstinfo" id="tekstinfo" rows="10" cols="60"></textarea></td>
-			</tr>
-			<tr>
-			<td>Hvor</td><td>
-					<input type="radio" value="forside" name="plassering">Forside<br>
-					<input type="radio" value="transportside" name="plassering">Transportside<br>
-					<input type="radio" value="energiside" name="plassering">Energiside<br>
-					<input type="radio" value="avfallside" name="plassering">Avfallside<br>
-					<input type="radio" value="engangsside" name="plassering">Engangsside<br>
-					</td>
-			</tr>
-			<tr>
-			<td></td><td><input type=submit name="submit" value="Post"></td>
-			</tr>
-			</table>
-			</form>
-			<?php
-			//if(isset($_POST['kategori'])){
-			//	$kategori = $_POST['kategori'];
-			//	echo("Kategori: ".$kategori);
-			//}
-			?>
-			<?php
-
-
-			if (isset($_POST['delete'])){
-				$DeleteQuery = "DELETE FROM tekstbokser WHERE tekstno='$_POST[tekstno]'";
-				mysqli_query($mysqli, $DeleteQuery);
-				?>
-					<script>
-					//alert('successfully deleted');
-					window.location.href='admin-panel.php#tab4';
-					</script>
-					<?php
-			};
-			if (isset($_POST['edit'])){
-				$UpdateQuery = "UPDATE FROM tekstbokser WHERE tekstno='$_POST[tekstno]'";
-				mysqli_query($mysqli, $UpdateQuery);
-				?>
-					<script>
-					//alert('successfully deleted');
-					window.location.href='admin-panel.php#tab4';
-					</script>
-					<?php
-			};
-			echo "<div class=newsekko>";
-			$q = "SELECT * FROM tekstbokser ORDER BY tekstno DESC";
-			$r = mysqli_query($mysqli, "$q");
-			if($r)
-			{
-			while($row=mysqli_fetch_array($r)){
-				echo "<form action=admin-panel.php method=post>";
-				echo "<div class=container>";
-				echo "<div class=newsheader>";
-				echo "<h7>";
-				echo $row['teksttopic'];
-				echo "</h7>";
-				echo "</div>";
-				echo "<div class=tb3>";
-				echo "<pre>";
-				echo $row['tekstinfo']; 
-				echo "</br>";
-				echo "</pre>";
-				echo "</div>";
-				echo "<td>" . "<input type=hidden name=tekstno value=" . $row['tekstno'] . " </td>";
-				echo "<div class=newsfooter>";
-				echo "<div style='float: right;'>";
-				echo "<td>" .  "<input type=submit name=delete value=Slett>" . "</td>";
-				echo "<td>" .  "<input type=submit name=edit value=Endre>" . "</td>";
-				echo "</div>";
-				echo "</div>";
-				echo "</br>";
-				echo "</br>";
-				echo "</form>";
-				echo "</div>";
-				}
-				}
-				else
-				{
-				echo mysqli_error($mysqli);
-				}
-				echo "</div>";
-				?>
-		
-		</section>
-		<section id="tab5">
-			<h2><a href="#tab5">Kalkulator</a></h2>
+			<h2><a href="#tab4">Kalkulator</a></h2>
 			<div class="grid_9">
 			<div style="background-color:#f2f2f2;">
 			<div style="font-family: helvetica">
@@ -420,7 +326,12 @@ if (login_check($mysqli) == true) {
 			</textarea></center></div></div></div>
 		</section>
 		
-
+<?php else : ?>
+            <p>
+                <span class="error">Du har ikke autorisasjon til å se denne siden, du blir nå videresendt til login siden.</span>
+				<?php header( "refresh:5; ./login.php" ); //wait for 5 seconds before redirecting?>
+            </p>
+        <?php endif; ?>
 	</article>
      <div class="clear"></div>
 </div>

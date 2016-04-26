@@ -59,12 +59,57 @@ function MM_swapImage() { //v3.0
 ======================-->
 <section id="content">
 <div class="container_12">
-    
+    <?php
+	
+	if(isset($_POST['update'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE tekstbokser SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'Forside'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM tekstbokser
+		WHERE plassering = 'Forside'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_6">
-      <h2 class="inset__1">Velkommen!</h2>
-	  <p><font size="4">Hei og velkommen til siden, håper du koser deg og at du får ett nytt syn på din forbruk av glass, reising osv. 
-	  <br>Her kommer en del info om siden og hva siden kan tilby! Ha en ellers fortreffelig dag :)</p></font>
+      <form  action="index.php" method="POST">
+			<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+			<tr><td colspan=3>Statisk tekst</td></tr>
+			<tr>
+			<td>Overskrift</td><td><input type=text size="35%" name="teksttopic" value="<?php echo $overskrift;?>"></td>
+			</tr>
+			<tr>
+			<td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?></textarea></td>
+			</tr>
+			<tr>
+			<td></td><td><input type="submit" name="update" value="Post"></td>
+			</tr>
+			</table>
+			</form>
 	  <div class="grid_8 alpha">
+	  <?php }
+	  else{?>
+   <div class="grid_6">
+      <h2 class="inset__1"><?php echo $overskrift; ?></h2>
+	  <p><font size="4"><?php echo $tekst; ?></p></font>
+	  <div class="grid_8 alpha">
+	<?php }?>
         
 	  <div id="Navbar">
   <p><img src="images/images/Navbar_01.jpg" width="450" height="65" class="top" /></p>
