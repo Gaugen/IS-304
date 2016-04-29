@@ -43,46 +43,30 @@ if (login_check($mysqli) == true) {
 <!--=====================
           Content
 ======================-->
-<section id="content">
+  <div class="clear"></div>
+  <div class="clear"></div>
+  
+  
+  <section id="content">
   <div class="container_12">
-    <div class="grid_5">
-      <h2 class="inset__1">Ekko!</h2>
-      <p class="color1">
-    <div class="grid_6 prefix_1">
-      <h2 class="inset__1">heihei!</h2>
-     <div class="grid_3 alpha">
-        <ul class="list-1 inset__1">
-          <li><a href="#">abc </a></li>
-          <li><a href="#">abc</a></li>
-          <li><a href="#">abc</a></li>
-          <li><a href="#">abc </a></li>
-        </ul>
-      </div>
-      <div class="grid_3 omega">
-        <ul class="list-1 inset__1">
-          <li><a href="#">def </a></li>
-          <li><a href="#">def</a></li>
-          <li><a href="#">def</a></li>
-          <li><a href="#">def </a></li>
-        </ul>
-      </div>
-      <div class="clear"></div>
+    <div class="grid_6 prefix_3">
+
+	
+      <h2 class="inset__1">Velkommen til Sørlandet sykehus HF Miljø!</h2>
+	  <br>
+      
+   
+       <div class="grid_6">
+          Sørlandet sykehus HF (SSHF) er områdesykehus for befolkningen i Agderfylkene, og har også lokalsykehusfunksjon for kommunene Lund og Sokndal i Rogaland. Befolkningsgrunnlaget over 290.000. <br>
+          Miljøavdelingen har det overordnede ansvar for å samle inn, samt rapportere og bevisstgjøre ansatte og andre interessenter om miljø-relaterte faktorer på Sykehuset.<br> Dette kan omhandle blant annet; Bruk av engangsglass, antall kilometer kjørt med arbeidsbiler, energibruk, m.m. 
+					 <br><br>Denne siden er designet som en arena for å vise fram disse miljø-dataene. Den blir drevet og administret av miljøansvarlig på Sykehuset. Håper du finner det du leter etter!
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         </div>
+   
+    
     </div>
-    <div class="grid_12">
-      <div class="sep-1 offset__1"></div>
-    </div>  
-    <div class="grid_5">
-      <h3 class="offset__1">Meir info?!</h3>
-      <p class="colo1"><a href="#">sjå på da!</div>
-    <div class="grid_6 prefix_1">
-      <h3 class="offset__2">Tuddelu!</h3>
-      <img src="images/page3_img1.jpg" alt="" class="fleft">
-      <div class="extra_wrapper">
-        <p class="color1">Fin farge!</p>
-        asdsada
-		<a href="#" class="link-1">mer?!</a>
-      </div>
-    </div>
+     <div class="clear"></div>
+     <div class="clear"></div>
     <div class="clear"></div>
   </div>
 </section>

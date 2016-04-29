@@ -17,7 +17,7 @@ if (login_check($mysqli) == true) {
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
-<link rel="stylesheet" href="Css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
 <script>
  $(window).load(function(){

@@ -17,7 +17,7 @@ if (login_check($mysqli) == true) {
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
-<link rel="stylesheet" href="Css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
 <script>
  $(window).load(function(){
@@ -39,7 +39,7 @@ if (login_check($mysqli) == true) {
 <h2 class="inset__1"></h2>
   
     <div class="grid_12">
-	<img src="images/wide.jpg"/>
+	<img src=""/>
 	</div>
 	<div class="container_12">
 	

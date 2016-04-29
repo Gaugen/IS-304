@@ -42,7 +42,7 @@ function sendbrute($email, $mysqli)
 			$mail->isHTML(true);                                  // Set email format to HTML
 				 
 			$mail->Subject = 'Kontoen låst';
-			$mail->Body    = 'Kontoen din er låst på grunn av for mange innloggingsforsøk.<br/> <br/>Din brukerID er '.$Results['id'].'<br/><br/> Ditt sikkerhetsspørsmål er: '.$Results['security_question'].'<br><br>Kjenner du ikke igjen denne aktiviteten, kontakt administrator. <br><br>Ellers klikk her for å låse opp kontoen din https://localhost/sshf/open_brute.php?encrypt='.$encrypt.'&action=reset';
+			$mail->Body    = 'Kontoen din er låst på grunn av for mange innloggingsforsøk.<br/> <br/>Din brukerID er '.$Results['id'].'<br/><br/> Ditt sikkerhetsspørsmål er: '.$Results['security_question'].'<br><br>Kjenner du ikke igjen denne aktiviteten, kontakt administrator. <br><br>Ellers kopier adressen inn i nettleseren for å låse opp kontoen din https://sshfmiljø.no/open_brute.php?encrypt='.$encrypt.'&action=reset';
 			//$mail->AltBody = 'Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password https://localhost/sshf/reset_password.php?encrypt='.$encrypt.'&action=reset';
 			 
 			//Read an HTML message body from an external file, convert referenced images to embedded,
