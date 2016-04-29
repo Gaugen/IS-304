@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21. Apr, 2016 17:30 p.m.
--- Server-versjon: 10.1.9-MariaDB
+-- Generation Time: Apr 29, 2016 at 10:12 AM
+-- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ USE `sshf`;
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `calculator`
+-- Table structure for table `calculator`
 --
 
 CREATE TABLE `calculator` (
@@ -34,7 +34,7 @@ CREATE TABLE `calculator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dataark for tabell `calculator`
+-- Dumping data for table `calculator`
 --
 
 INSERT INTO `calculator` (`engangsglass`, `bensinforbruk`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `calculator` (`engangsglass`, `bensinforbruk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `login_attempts`
+-- Table structure for table `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -51,30 +51,10 @@ CREATE TABLE `login_attempts` (
   `time` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dataark for tabell `login_attempts`
---
-
-INSERT INTO `login_attempts` (`user_id`, `time`) VALUES
-(3, '1455133929'),
-(3, '1455180372'),
-(3, '1455265295'),
-(3, '1455265308'),
-(3, '1455524440'),
-(3, '1460567732'),
-(3, '1460567776'),
-(3, '1460567790'),
-(3, '1460567805'),
-(3, '1460567838'),
-(3, '1460567851'),
-(3, '1460617710'),
-(3, '1460618097'),
-(3, '1460913927');
-
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `members`
+-- Table structure for table `members`
 --
 
 CREATE TABLE `members` (
@@ -88,16 +68,16 @@ CREATE TABLE `members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dataark for tabell `members`
+-- Dumping data for table `members`
 --
 
 INSERT INTO `members` (`id`, `username`, `email`, `password`, `salt`, `security_question`, `security_answer`) VALUES
-(3, 'tor', 'torabang@gmail.com', '64a9e516d609649781ef9ebf75eb16f37b13cec1defdd17a086bc3328c42ca69ae5e4ce986dea33493d2bc2a8e84f8b474ad7092b4503ef32a4682b44a627150', '095c21f5565c2c84a4a87d56e2f79ab7c08fe66f9449a13e0bc18314fea4a88cc911e71c2e01f4fc32f67ae7736144e6bcd10067fffbd9a83bbc4f5c382096cc', 'Hva heter din far?', '48cbeb56fd2c378a659a34f06d07d68ba4f6698c81bc30362e71344bda67f187d6926bfa94b27eacb3b693a0d4adabfe9ade381108e2b9095830f56cfeea5470');
+(3, 'tor', 'torabang@gmail.com', 'ef5039323294817f44097f597c772e0baedb246cfcf395dee4033d26c9c307fdb01badfa35392a91a168433d68bad6358b07af765f407476d3edf3bddc84dc17', '095c21f5565c2c84a4a87d56e2f79ab7c08fe66f9449a13e0bc18314fea4a88cc911e71c2e01f4fc32f67ae7736144e6bcd10067fffbd9a83bbc4f5c382096cc', 'Hva heter din mor?', 'e8384f16f125a0b2ee934de612e3fe6d0dc8a91fe67cda93822d070ec28a568d4763fb004967e64207e7b9cedd0ee9c381b8bc22efc34de988770e324f852a6b');
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `post`
+-- Table structure for table `post`
 --
 
 CREATE TABLE `post` (
@@ -110,7 +90,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dataark for tabell `post`
+-- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`newsno`, `newstopic`, `newsinfo`, `newsphoto`, `newsphototype`, `kategori`) VALUES
@@ -121,7 +101,7 @@ INSERT INTO `post` (`newsno`, `newstopic`, `newsinfo`, `newsphoto`, `newsphototy
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `security_question`
+-- Table structure for table `security_question`
 --
 
 CREATE TABLE `security_question` (
@@ -133,7 +113,7 @@ CREATE TABLE `security_question` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur for tabell `tbl_uploads`
+-- Table structure for table `tbl_uploads`
 --
 
 CREATE TABLE `tbl_uploads` (
@@ -145,7 +125,7 @@ CREATE TABLE `tbl_uploads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='upload-downoad-delete files';
 
 --
--- Dataark for tabell `tbl_uploads`
+-- Dumping data for table `tbl_uploads`
 --
 
 INSERT INTO `tbl_uploads` (`id`, `file`, `type`, `size`, `path`) VALUES
@@ -153,6 +133,32 @@ INSERT INTO `tbl_uploads` (`id`, `file`, `type`, `size`, `path`) VALUES
 (6, '15393-yes-you-can.jpg', 'image/jpeg', 23, 'uploads/15393-yes-you-can.jpg'),
 (7, '12855-lastned.jpg', 'image/jpeg', 7, 'uploads/12855-lastned.jpg'),
 (8, '29342-lastned.jpg', 'image/jpeg', 7, 'uploads/29342-lastned.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tekstbokser`
+--
+
+CREATE TABLE `tekstbokser` (
+  `tekstno` int(11) NOT NULL,
+  `teksttopic` varchar(200) NOT NULL,
+  `tekstinfo` text NOT NULL,
+  `plassering` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tekstbokser`
+--
+
+INSERT INTO `tekstbokser` (`tekstno`, `teksttopic`, `tekstinfo`, `plassering`) VALUES
+(1, 'Velkommen!', 'Her er det mye snacks! Superman!', 'Forside'),
+(2, 'Velkommen', 'Hei', 'Energiside'),
+(3, 'Velkommen', 'Hei', 'Om oss'),
+(4, 'Kontaktinformasjon', 'TLF:<br>\r\nEmail:<br>', 'Kontakt'),
+(5, 'Velkommen', 'Hei', 'Transport'),
+(6, 'Velkommen', 'Hei', 'Avfall'),
+(7, 'Velkommen', 'Hei', 'Forbruk');
 
 --
 -- Indexes for dumped tables
@@ -177,6 +183,12 @@ ALTER TABLE `tbl_uploads`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tekstbokser`
+--
+ALTER TABLE `tekstbokser`
+  ADD PRIMARY KEY (`tekstno`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -184,7 +196,7 @@ ALTER TABLE `tbl_uploads`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `post`
 --
@@ -195,6 +207,11 @@ ALTER TABLE `post`
 --
 ALTER TABLE `tbl_uploads`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `tekstbokser`
+--
+ALTER TABLE `tekstbokser`
+  MODIFY `tekstno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
