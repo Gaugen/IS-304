@@ -43,11 +43,6 @@ sec_session_start();
                 <span class="error">Du har ikke autorisasjon til å se denne siden.</span> Vennligst <a href="login.php"><button>logg inn</button></a>.
             </p>
         <?php endif; ?>
-		<?php if (empty($_SESSION['some_counter'])) {
-    $_SESSION['some_counter'] = 0;
-}
-
-echo $_SESSION['some_counter']++;?>
     <div class="grid_3 alpha">
         
       </div>

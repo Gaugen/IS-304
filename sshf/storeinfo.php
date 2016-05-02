@@ -10,8 +10,9 @@ $newsphoto = addslashes (file_get_contents($_FILES['newsphoto']['tmp_name']));
 $image = getimagesize($_FILES['newsphoto']['tmp_name']);//to know about image type etc
 
 $imgtype = $image['mime'];
+$kategori = $_POST['kategori'];
 
-$q ="INSERT INTO post VALUES('','$newstopic','$newsinfo','$newsphoto','$imgtype')";
+$q ="INSERT INTO post VALUES('','$newstopic','$newsinfo','$newsphoto','$imgtype','$kategori')";
 
 $r = mysqli_query($mysqli,$q);
 if($r)
