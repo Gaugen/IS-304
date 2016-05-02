@@ -89,18 +89,24 @@ function MM_swapImage() { //v3.0
 	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_6">
       <form  action="index.php" method="POST">
-			<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
-			<tr><td colspan=3>Statisk tekst</td></tr>
-			<tr>
-			<td>Overskrift</td><td><input type=text size="35%" name="teksttopic" value="<?php echo $overskrift;?>"></td>
-			</tr>
-			<tr>
-			<td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?></textarea></td>
-			</tr>
-			<tr>
-			<td></td><td><input type="submit" name="update" value="Post"></td>
-			</tr>
-			</table>
+	  <h2 class="inset__1"><?php echo $overskrift; ?></h2>
+	  <p><font size="4"><?php echo $tekst; ?></p></font>
+<div class="dropdownIndex">
+<submit onclick="myIndexFunction()" class="dropbtnIndex"><font size="3" color="blue" style="text-decoration: underline">Rediger teksten.</font></submit>
+  <div id="myDropdownIndex" class="dropdown-contentIndex">
+  <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Overskrift</td><td><input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="update" value="Post"></td>
+  </tr>
+  </table>
+  </div>
+</div>
 			</form>
 	  <div class="grid_8 alpha">
 	  <?php }

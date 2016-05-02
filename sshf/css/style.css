@@ -5,6 +5,58 @@
     src: url(/fonts/scala-sans-regular.woff);
 }
 
+-------------------
+
+.dropbtnIndex {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 7px 15px 7px 15px;
+  text-decoration: none;
+}
+
+.dropbtnIndex:hover, .dropbtnIndex:focus {
+	 cursor: pointer; cursor: hand;
+}
+
+.dropdownIndex {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contentIndex {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 10000;
+}
+
+.dropdown-contentIndex a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownIndex a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+------------
+
+
 input[type="radio"] {
         display:inline-block;
         width:21px;
