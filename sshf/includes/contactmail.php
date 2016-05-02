@@ -3,6 +3,15 @@ include_once 'db_connect.php';
 include_once 'functions.php';
 require '../PHPMailer/PHPMailerAutoload.php';
 
+if ($stmt = $mysqli->prepare("SELECT email FROM active_mail WHERE id = 1
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($active_mail);
+        $stmt->fetch();}
+
 if(isset($_POST['email']))
 {
     $email = $_POST['email'];
@@ -11,7 +20,8 @@ if(isset($_POST['email']))
 	$message = $_POST['message'];
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
     {
-        $message =  "Invalid email address please type a valid email!!";
+        $message =  "Ikke gyldig mailadresse, skriv inn på nytt!!";
+		header( "refresh:3; ../contacts.php" ); //wait for 3 seconds before redirecting
     }
 			
 	$mail = new PHPMailer;
@@ -25,7 +35,7 @@ if(isset($_POST['email']))
 	$mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
 	$mail->setFrom($email, $name);     //Set who the message is to be sent from
 	//$mail->addReplyTo('labnol@gmail.com', 'First Last');  //Set an alternative reply-to address
-	$mail->addAddress($email);  // Add a recipient
+	$mail->addAddress($active_mail);  // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional
 	//$mail->addCC('cc@example.com');
 	//$mail->addBCC('bcc@example.com');
@@ -35,12 +45,7 @@ if(isset($_POST['email']))
 	$mail->isHTML(true);                                  // Set email format to HTML
 			 
 	$mail->Subject = 'Subject:'.$subject;
-	$mail->Body    = 'Hi, here is the message from '.$name.' <br/> <br/>'.$message.' <br><br> Please respond to: '.$email;
-	//$mail->AltBody = 'Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password https://localhost/sshf/reset_password.php?encrypt='.$encrypt.'&action=reset';
-	 
-	//Read an HTML message body from an external file, convert referenced images to embedded,
-	//convert HTML into a basic plain-text alternative body
-	//$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+	$mail->Body    = 'Hei, her er en henvendelse fra '.$name.' <br/> <br/>'.$message.' <br><br> Vennligst send svar til: '.$email;
 			 
 	if(!$mail->send()) {
 		echo 'Message could not be sent.';
@@ -50,8 +55,8 @@ if(isset($_POST['email']))
 	
 	else
 	{
-	echo 'Message has been sent';
-	header( "refresh:3; ../index.php" ); //wait for 3 seconds before redirecting
+	echo 'Meldingen ble sendt';
+	header( "refresh:3; ../contacts.php" ); //wait for 3 seconds before redirecting
 	}
     
 }

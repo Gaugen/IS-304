@@ -19,6 +19,7 @@ if (login_check($mysqli) == true) {
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
+<script type="text/JavaScript" src="js/forms.js"></script>
 <script>
  $(window).load(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
@@ -326,6 +327,35 @@ if (login_check($mysqli) == true) {
 			</textarea></center></div></div></div>
 		</section>
 		
+		<section id="tab5">
+		<?php
+		if ($stmt = $mysqli->prepare("SELECT email FROM active_mail WHERE id = 1
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($active_mail);
+        $stmt->fetch();} 
+		?>
+			<h2><a href="#tab5">Aktiv Email</a></h2>
+			<form action="editmail.php" method="POST">
+			<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+			<tr><td colspan=3>Skriv inn email-adresse som du vil henvendelser fra brukere skal bli sendt til.</td></tr>
+			<tr><td colspan=3>Aktiv Email-Adresse nå er: <?php echo $active_mail;?></td></tr>
+			<tr>
+			<td>Email-Adresse:</td><td><input type=text size="35%" name="new_mail" id="new_mail" onkeyup='checkmail()'></td>
+			</tr>
+			<tr>
+			<td>Gjenta Email-Adresse:</td><td><input type=text size="35%" name="confirm_mail" id="confirm_mail" onkeyup='checkmail()'></td>
+			<tr><td>Email-Adressene er:</td><td><span id='message'></span></td>
+			</tr>
+			<tr>
+			<td></td><td><input type="submit" name="change_mail" value="Bytt Email"></td>
+			</tr>
+			</table>
+			</form>
+		</section>
 <?php else : ?>
             <p>
                 <span class="error">Du har ikke autorisasjon til å se denne siden, du blir nå videresendt til login siden.</span>
@@ -336,9 +366,7 @@ if (login_check($mysqli) == true) {
      <div class="clear"></div>
 </div>
 </section>
-</section>
-</section>
-</section>
+
 <!--==============================
               footer
 =================================-->
