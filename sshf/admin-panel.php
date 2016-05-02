@@ -124,16 +124,16 @@ if (login_check($mysqli) == true) {
 		<section id="tab3">
 			<h2><a href="#tab3">Nyheter</a></h2>
 			<form enctype="multipart/form-data" action="storeinfo.php" method="POST">
-			<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+			<table <div class="containerpost" border=0 align="center" bgcolor=#d0d7e9>
 			<tr><td colspan=3>Nyheter</td></tr>
 			<tr>
-			<td>Tema</td><td><input type=text size="35%" name="newstopic"></td>
+			<td>Tema</td><td><input type="text" size="35%" name="newstopic"></td>
 			</tr>
 			<tr>
 			<td>Informasjon</td><td><textarea name="newsinfo" id="newsinfo" rows="10" cols="60"></textarea></td>
 			</tr>
 			<tr>
-			<td>Bilde</td><td><input type=file name="newsphoto"></td>
+			<td>Bilde</td><td><input type="file" name="newsphoto"></td>
 			</tr>
 			<tr>
 			<td>Kategori</td><td>
@@ -145,7 +145,7 @@ if (login_check($mysqli) == true) {
 					</td>
 			</tr>
 			<tr>
-			<td></td><td><input type=submit name="submit" value="Post"></td>
+			<td></td><td><input type="submit" name="submit" value="Post"></td>
 			</tr>
 			</table>
 			</form>
@@ -328,21 +328,27 @@ if (login_check($mysqli) == true) {
 		</section>
 		<section id="tab1">
 			<h2><a href="#tab1">Guide</a></h2>
-			asd
 		</section>
 		<section id="tab2">
 			<h2><a href="#tab2">Filbehandler</a></h2>
-			asd
 		</section>
 		<section id="tab3">
 			<h2><a href="#tab3">Nyheter</a></h2>
-			asd
 		</section>
 		<section id="tab4">
 			<h2><a href="#tab4">Kalkulator</a></h2>
-			asd
 		</section>
 		<section id="tab5">
+		<?php
+		if ($stmt = $mysqli->prepare("SELECT email FROM active_mail WHERE id = 1
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($active_mail);
+        $stmt->fetch();} 
+		?>
 			<h2><a href="#tab5">Aktiv Email</a></h2>
 			<form action="editmail.php" method="POST">
 			<center>
@@ -372,10 +378,6 @@ if (login_check($mysqli) == true) {
 	</article>
      <div class="clear"></div>
 </div>
-</section>
-</section>
-</section>
-</section>
 </section>
 <!--==============================
               footer

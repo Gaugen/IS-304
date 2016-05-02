@@ -51,11 +51,11 @@
 }
 
 .dropdownIndex a:hover {background-color: #f1f1f1}
-
+/*
 .show {display:block;}
 
 ------------
-
+*/
 
 input[type="radio"] {
         display:inline-block;

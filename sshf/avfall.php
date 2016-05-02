@@ -73,9 +73,9 @@ if (login_check($mysqli) == true) {
 	
 	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_6">
-         <form  action="index.php" method="POST">
-	  <h2 class="inset__1"><?php echo $overskrift; ?></h2>
-	  <p><font size="4"><?php echo $tekst; ?></p></font>
+         <form  action="avfall.php" method="POST">
+	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
+	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 <div class="dropdownIndex">
 <submit onclick="myIndexFunction()" class="dropbtnIndex"><font size="3" color="blue" style="text-decoration: underline">Rediger teksten.</font></submit>
   <div id="myDropdownIndex" class="dropdown-contentIndex">
