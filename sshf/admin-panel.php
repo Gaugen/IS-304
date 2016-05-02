@@ -62,9 +62,8 @@ if (login_check($mysqli) == true) {
 			<font size="4"><p style="font-weight:bold;"> Legge inn kalkulatordata </p> </font>
 			<p> På "Kalkulator"-fanen kan Administrator legge inn nye kalkulator data til kalkulatoren siden prisene på engangsglass/bensin kan forandres ofte, spesielt bensin.
 			Da går man inn på "Kalkulator"-fanen og trykker på knappen "Legg til verdi", som er ved siden av feltene for både engangsglass og bensin. </p>
-
-		
 		</section>
+		
 		<section id="tab2">
 			<h2><a href="#tab2">Filbehandler</a></h2>
 			<form action="files/upload.php" method="post" enctype="multipart/form-data">
@@ -325,35 +324,43 @@ if (login_check($mysqli) == true) {
 			}
 			?>
 			</textarea></center></div></div></div>
+			
 		</section>
-		
+		<section id="tab1">
+			<h2><a href="#tab1">Guide</a></h2>
+			asd
+		</section>
+		<section id="tab2">
+			<h2><a href="#tab2">Filbehandler</a></h2>
+			asd
+		</section>
+		<section id="tab3">
+			<h2><a href="#tab3">Nyheter</a></h2>
+			asd
+		</section>
+		<section id="tab4">
+			<h2><a href="#tab4">Kalkulator</a></h2>
+			asd
+		</section>
 		<section id="tab5">
-		<?php
-		if ($stmt = $mysqli->prepare("SELECT email FROM active_mail WHERE id = 1
-        LIMIT 1")) {
-        $stmt->execute();    // Execute the prepared query.
-        $stmt->store_result();
- 
-        // get variables from result.
-        $stmt->bind_result($active_mail);
-        $stmt->fetch();} 
-		?>
 			<h2><a href="#tab5">Aktiv Email</a></h2>
 			<form action="editmail.php" method="POST">
-			<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+			<center>
+			<table <div class=containerpost2 border=0 align=center bgcolor=#d0d7e9>
 			<tr><td colspan=3>Skriv inn email-adresse som du vil henvendelser fra brukere skal bli sendt til.</td></tr>
 			<tr><td colspan=3>Aktiv Email-Adresse nå er: <?php echo $active_mail;?></td></tr>
 			<tr>
-			<td>Email-Adresse:</td><td><input type=text size="35%" name="new_mail" id="new_mail" onkeyup='checkmail()'></td>
+			<td>Email-Adresse:</td><td><input type=text size="29%" name="new_mail" id="new_mail" onkeyup='checkmail()'></td>
 			</tr>
 			<tr>
-			<td>Gjenta Email-Adresse:</td><td><input type=text size="35%" name="confirm_mail" id="confirm_mail" onkeyup='checkmail()'></td>
+			<td>Gjenta Email-Adresse:</td><td><input type=text size="29%" name="confirm_mail" id="confirm_mail" onkeyup='checkmail()'></td>
 			<tr><td>Email-Adressene er:</td><td><span id='message'></span></td>
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="change_mail" value="Bytt Email"></td>
 			</tr>
 			</table>
+			</center>
 			</form>
 		</section>
 <?php else : ?>
@@ -366,7 +373,10 @@ if (login_check($mysqli) == true) {
      <div class="clear"></div>
 </div>
 </section>
-
+</section>
+</section>
+</section>
+</section>
 <!--==============================
               footer
 =================================-->

@@ -946,6 +946,23 @@ article.tabs section:nth-child(5) h2
 {
 	left: 498px;
 }
+article.tabs section:nth-child(6) h2
+{
+	left: 620px;
+}
+article.tabs section:nth-child(7) h2
+{
+	left: 742px;
+}
+article.tabs section:nth-child(8) h2
+{
+	left: 864px;
+}
+article.tabs section:nth-child(9) h2
+{
+	left: 986px;
+}
+
 
 
 article.tabs section h2 a
@@ -1023,6 +1040,13 @@ article.tabs section h2
     height: 120px;
 }
 
+.containerpost2
+{
+    border: 1px solid #000000;
+    padding: 15px; 
+    width: 400px;
+    height: 120px;
+}
 
 .tb2 {
 	float: left;
