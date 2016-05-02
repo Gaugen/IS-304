@@ -10,7 +10,7 @@ define("DATABASE", "db1623_sshf");    // The database name.
 define("CAN_REGISTER", "any");
 define("DEFAULT_ROLE", "member");
  
-define("SECURE", FALSE);    // False FOR DEVELOPMENT ONLY!!!! */
+define("SECURE", TRUE);    // False FOR DEVELOPMENT ONLY!!!! */
 /**
  * These are the database login details
  */  
