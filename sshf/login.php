@@ -15,6 +15,7 @@ if (login_check($mysqli) == true) {
     <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
 <title>Login</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />

@@ -7,6 +7,7 @@ include_once 'includes/functions.php';
     <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
 <title>Reset password</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
