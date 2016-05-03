@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2016 at 11:50 AM
+-- Generation Time: May 03, 2016 at 01:23 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -151,7 +151,8 @@ INSERT INTO `tbl_uploads` (`id`, `file`, `type`, `size`, `path`) VALUES
 (5, '13221-lastned.jpg', 'image/jpeg', 7, 'uploads/13221-lastned.jpg'),
 (6, '15393-yes-you-can.jpg', 'image/jpeg', 23, 'uploads/15393-yes-you-can.jpg'),
 (7, '12855-lastned.jpg', 'image/jpeg', 7, 'uploads/12855-lastned.jpg'),
-(8, '29342-lastned.jpg', 'image/jpeg', 7, 'uploads/29342-lastned.jpg');
+(8, '29342-lastned.jpg', 'image/jpeg', 7, 'uploads/29342-lastned.jpg'),
+(9, '73498-styringsmã¸te-3-5-16.pdf', 'application/pdf', 42, 'uploads/73498-styringsmã¸te 3-5-16.pdf');
 
 -- --------------------------------------------------------
 
@@ -173,11 +174,13 @@ CREATE TABLE `tekstbokser` (
 INSERT INTO `tekstbokser` (`tekstno`, `teksttopic`, `tekstinfo`, `plassering`) VALUES
 (1, 'Velkommen!', 'lol\r\nroflmao   \r\n                       ', 'Forside'),
 (2, 'Energi!', 'Zap!', 'Energiside'),
-(3, 'Velkommen', 'Hei', 'Om oss'),
+(3, 'Velkommen', 'Hei', 'Om_oss'),
 (4, 'Kontaktinformasjon', 'TLF:\r\nEmail:     ', 'Kontakt'),
 (5, 'Transport!', 'Brooom!', 'Transport'),
 (6, 'Velkommen', 'Hei', 'Avfall'),
-(7, 'Velkommen', 'Hei', 'Forbruk');
+(7, 'Velkommen', 'Hei', 'Forbruk'),
+(8, 'docs', 'hei', 'Dokumenter'),
+(9, 'miljo', 'miljo', 'Miljo');
 
 --
 -- Indexes for dumped tables
@@ -231,12 +234,12 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `tbl_uploads`
 --
 ALTER TABLE `tbl_uploads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tekstbokser`
 --
 ALTER TABLE `tekstbokser`
-  MODIFY `tekstno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `tekstno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
