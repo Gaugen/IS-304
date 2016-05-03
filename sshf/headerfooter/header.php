@@ -42,7 +42,7 @@
 					
 					<a href="index.php">Hjem</a>
 					<a href="documents.php">Dokumenter</a>
-					<a href="about.php">Om oss</a>
+					<a href="about.php">Om SSHF</a>
 					
 					<form action="login.php"><button class="btnLogin">Logg inn</button></form>
 					</div>
