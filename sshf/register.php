@@ -1,6 +1,8 @@
 <?php
 include_once 'includes/register.inc.php';
 include_once 'includes/functions.php';
+
+sec_session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +33,7 @@ include_once 'includes/functions.php';
     
    <div class="grid_6">
    
-   
+		<?php if (login_check($mysqli) == true) : ?>
         <!-- Registration form to be output if the POST variables are not
         set or if the registration script caused an error. -->
         <h2 class="inset__1">Registrer deg</h2>
@@ -76,7 +78,11 @@ include_once 'includes/functions.php';
         </form>
         <p>Gå tilbake til <a href="login.php"><button>Innloggingssiden</button></a>.</p>
     <div class="grid_3 alpha">
-        
+        <?php else : ?>
+            <p>
+                <span class="error">Du har ikke autorisasjon til å se denne siden.</span> Vennligst <a href="login.php"><button>logg inn</button></a>.
+            </p>
+        <?php endif; ?>
       </div>
     </div>
     <div class="grid_5 prefix_1">

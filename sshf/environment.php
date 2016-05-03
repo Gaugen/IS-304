@@ -97,8 +97,8 @@ if (login_check($mysqli) == true) {
 	  <?php }
 	  else{?>
    <div class="grid_6">
-      <h2 class="inset__1"><?php echo $overskrift; ?></h2>
-	  <p><font size="4"><?php echo $tekst; ?></p></font>
+      <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
+	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	  <div class="grid_8 alpha">
 	<?php }?>
 	

@@ -39,6 +39,19 @@ sec_session_start();
 			<p><a href="security_question.php"><u>Legg til/endre sikkerhetsspørsmål</u></a></p>
 			<p><a href="change_password.php"><u>Bytt passord</u></a></p>
 			<p><a href="includes/logout.php"><u>Logg ut</u></a></p>
+<?php
+echo "<div class=inputHold>";
+        if (login_check($mysqli) == true) {
+                   		echo "<label>";
+                        echo "<p>Lage konto for ny bruker?</p>"; 
+						echo "</label>";
+						echo "<div class=calcInput>";
+						echo "<a href='register.php'><input type=submit class=btnLoginRegistrer value=Registrer></a>";
+						echo "</div>";
+						
+				}
+echo "</div>";
+?>
         <?php else : ?>
             <p>
                 <span class="error">Du har ikke autorisasjon til å se denne siden.</span> Vennligst <a href="login.php"><button>logg inn</button></a>.

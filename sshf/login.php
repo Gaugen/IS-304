@@ -88,9 +88,8 @@ if (login_check($mysqli) == true) {
 <?php
 echo "<div class=inputHold>";
         if (login_check($mysqli) == true) {
-                       
-        } else {		echo "<label>";
-                        echo "<p>Ny bruker?</p>"; 
+                   		echo "<label>";
+                        echo "<p>Lage konto for ny bruker?</p>"; 
 						echo "</label>";
 						echo "<div class=calcInput>";
 						echo "<a href='register.php'><input type=submit class=btnLoginRegistrer value=Registrer></a>";
