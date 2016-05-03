@@ -101,7 +101,7 @@ if (login_check($mysqli) == true) {
 						$stmt->execute();    // Execute the prepared query.
 
 						echo "Passordet ditt har blitt endret, vennligst logg inn med det nye passordet.";
-						header( "refresh:3; ./index.php" ); //wait for 3 seconds before redirecting
+						header('Location: ./protected_page.php?action=changed_password'); // redirecting
 						exit();
 					}
 					else {

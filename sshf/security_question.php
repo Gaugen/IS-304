@@ -74,7 +74,7 @@ sec_session_start();
 					$stmt->execute();    // Execute the prepared query.
 
 						echo "Ditt sikkerhetsspørsmål og svar har blitt endret.";
-						header( "refresh:3; ./login.php" ); //wait for 3 seconds before redirecting
+						header('Location: ./protected_page.php?action=changed_security_question'); // redirecting
 						exit();
 					
 					

@@ -10,7 +10,7 @@ sec_session_start();
 <html lang="en">
 <head>
 <link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
-<title>Login</title>
+<title>Min Side</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
@@ -52,6 +52,22 @@ echo "<div class=inputHold>";
 				}
 echo "</div>";
 ?>
+<?php if(@$_GET['action'] == "changed_security_question")
+{
+echo "<p>Sikkerhetsspørsmålet ditt har blitt endret! </p>";
+}
+?>
+<?php if(@$_GET['action'] == "changed_password")
+{
+echo "<p><br/><br/><br/><br/>Passordet ditt har blitt endret!</p>";
+}
+?>
+<?php if(@$_GET['action'] == "new_user")
+{
+echo "<p><br/><br/><br/><br/>En ny bruker har blitt opprettet! </p>";
+}
+?>
+
         <?php else : ?>
             <p>
                 <span class="error">Du har ikke autorisasjon til å se denne siden.</span> Vennligst <a href="login.php"><button>logg inn</button></a>.
