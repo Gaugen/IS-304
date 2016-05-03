@@ -43,7 +43,7 @@ if (login_check($mysqli) == true) {
   
   <div class="container_12">
     <div class="grid_6 prefix_3">
-
+<center>
 <?php
 	
 	if(isset($_POST['update'])){
@@ -117,6 +117,7 @@ if (login_check($mysqli) == true) {
      <div class="clear"></div>
      <div class="clear"></div>
     <div class="clear"></div>
+	</center>
   </div>
   
 </section>

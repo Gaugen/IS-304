@@ -95,7 +95,7 @@ if (login_check($mysqli) == true) {
 			<table width="90%" border="1">
 			<?php
 			//echo "<div class=fileTable>";
-			$sql="SELECT * FROM tbl_uploads";
+			$sql="SELECT * FROM tbl_uploads ORDER BY id DESC";
 			$result_set=mysqli_query($mysqli, $sql);
 			//$stmt = $mysqli->prepare($sql);
 			//$stmt->execute();

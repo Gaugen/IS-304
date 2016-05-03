@@ -101,7 +101,7 @@ if (login_check($mysqli) == true) {
 	  else{?>
 	  
    <div class="grid_5">
-      <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
+      <h4 class="color1 inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	<?php }?>
     </div>

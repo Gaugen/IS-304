@@ -53,7 +53,8 @@ if (login_check($mysqli) == true) {
   
   <section id="content">
   <div class="container_12">
-    <div class="grid_6 prefix_3">
+ <div class="grid_6 prefix_3">
+    <center>
 <?php
 	
 	if(isset($_POST['update'])){
@@ -82,7 +83,7 @@ if (login_check($mysqli) == true) {
 	}
 	?>
 	<?php if (login_check($mysqli) == true) {?>
-   <div class="grid_6">
+   
       <form  action="about.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
@@ -116,17 +117,18 @@ if (login_check($mysqli) == true) {
 	  <br>
       
    
-       <div class="grid_6">
+      
          
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-         </div>
+         
    
     
     </div>
      <div class="clear"></div>
      <div class="clear"></div>
     <div class="clear"></div>
-  </div>
+	</div>
+    </center>
 </section>
 <!--==============================
               footer
