@@ -44,6 +44,9 @@ if (login_check($mysqli) == true) {
 <!--=====================
           Content
 ======================-->
+
+
+
   <div class="clear"></div>
   <div class="clear"></div>
   
@@ -51,16 +54,70 @@ if (login_check($mysqli) == true) {
   <section id="content">
   <div class="container_12">
     <div class="grid_6 prefix_3">
-
+<?php
 	
-      <h2 class="inset__1">Velkommen til Sørlandet sykehus HF Miljø!</h2>
+	if(isset($_POST['update'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE tekstbokser SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'Om_oss'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM tekstbokser
+		WHERE plassering = 'Om_oss'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	<?php if (login_check($mysqli) == true) {?>
+   <div class="grid_6">
+      <form  action="about.php" method="POST">
+	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
+	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
+<div class="dropdownIndex">
+<submit onclick="myIndexFunction()" class="dropbtnIndex"><font size="3" color="blue" style="text-decoration: underline">Rediger teksten.</font></submit>
+  <div id="myDropdownIndex" class="dropdown-contentIndex">
+  <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Overskrift</td><td><input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="update" value="Post"></td>
+  </tr>
+  </table>
+  </div>
+</div>
+			</form>
+	  
+	  <?php }
+	  else{?>
+   
+      <h2 class="inset__1"><?php echo $overskrift; ?></h2>
+	  <p><font size="4"><?php echo $tekst; ?></p></font>
+	  
+	<?php }?>
+	
+      <h2 class="inset__1"></h2>
 	  <br>
       
    
        <div class="grid_6">
-          Sørlandet sykehus HF (SSHF) er områdesykehus for befolkningen i Agderfylkene, og har også lokalsykehusfunksjon for kommunene Lund og Sokndal i Rogaland. Befolkningsgrunnlaget over 290.000. <br>
-          Miljøavdelingen har det overordnede ansvar for å samle inn, samt rapportere og bevisstgjøre ansatte og andre interessenter om miljø-relaterte faktorer på Sykehuset.<br> Dette kan omhandle blant annet; Bruk av engangsglass, antall kilometer kjørt med arbeidsbiler, energibruk, m.m. 
-					 <br><br>Denne siden er designet som en arena for å vise fram disse miljø-dataene. Den blir drevet og administret av miljøansvarlig på Sykehuset. Håper du finner det du leter etter!
+         
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
          </div>
    
