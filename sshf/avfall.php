@@ -117,7 +117,7 @@ if (login_check($mysqli) == true) {
 	<?php
 	echo "</br>";
 	echo "<div class=newsekkoKategori>";
-$q = "SELECT * FROM post WHERE kategori = 'Avfall'";
+$q = "SELECT * FROM post WHERE kategori = 'Avfall' ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
