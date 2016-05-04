@@ -1086,6 +1086,7 @@ article.tabs section h2
 	overflow-y: auto;
 	/*text-align: center;*/
 	padding-left: 5px;
+	word-wrap: break-word;
 }
 
 .tb3 {
@@ -1096,7 +1097,6 @@ article.tabs section h2
 	/*text-align: center;*/
 	padding-left: 5px;
 	border: 1px solid #9fa8b0;
-	word-break: break-all; 
 	word-wrap: break-word;
 }
 
@@ -1182,8 +1182,7 @@ h7 {
 	border-left-style: solid;
 	border-right-style: solid;
 	border-color: #ADADAD;
-	border-width: 1px;
-	word-break: break-all; 
+	border-width: 1px; 
 	word-wrap: break-word;
 }
 
