@@ -359,7 +359,7 @@ if (login_check($mysqli) == true) {
 			</tr>
 			<tr>
 			<td>Gjenta Email-Adresse:</td><td><input type=text size="29%" name="confirm_mail" id="confirm_mail" onkeyup='checkmail()'></td>
-			<tr><td>Email-Adressene er:</td><td><span id='message'></span></td>
+			<tr><td>&nbsp;</td><td><span id='message1'></span></td>
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="change_mail" value="Bytt Email"></td>

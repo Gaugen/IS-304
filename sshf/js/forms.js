@@ -114,23 +114,23 @@ function check() {
     if(document.getElementById('new_password').value === document.getElementById('confirm_password').value) {
         var match = document.getElementById('message');
 		match.style.color = "green";
-		match.innerHTML = "Passwords match";
+		match.innerHTML = "Passordene er like";
     } else {
 		var nomatch = document.getElementById('message');
 		nomatch.style.color = "red";
-		nomatch.innerHTML = "Passwords do not match";
+		nomatch.innerHTML = "Passordene stemmer ikke!";
     }
 }
 function checkmail() {
 	//Checks if the two passwords match eachother, if they do it says "match" in green text,
 	//else it says "no match" in red text.
     if(document.getElementById('new_mail').value === document.getElementById('confirm_mail').value) {
-        var match = document.getElementById('message');
+        var match = document.getElementById('message1');
 		match.style.color = "green";
-		match.innerHTML = "Like!";
+		match.innerHTML = "Mailadressene er like";
     } else {
-		var nomatch = document.getElementById('message');
+		var nomatch = document.getElementById('message1');
 		nomatch.style.color = "red";
-		nomatch.innerHTML = "Ikke like!";
+		nomatch.innerHTML = "Mailadressene er ikke like!";
     }
 }

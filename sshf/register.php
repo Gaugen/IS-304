@@ -65,20 +65,31 @@ sec_session_start();
 				class="calcInput" 	/>
 				</div><br>
 				<div class="inputHold">	
-            <label>Email: </label><input type="text" name="email" id="email" class="calcInput" />
+            <label>Email: </label><input type="text" name="email" id="new_mail" class="calcInput" onkeyup='checkmail()'/>
 			</div><br>
+			<div class="inputHold">	
+            <label>Email: </label><input type="text" name="email" id="confirm_mail" class="calcInput" onkeyup='checkmail()'/>
+			</div><br>
+			<div class="inputHold">	
+							<label>&nbsp;</label><span id='message1'>
+							</div><br>
             <div class="inputHold">	
 			<label>Passord:</label> <input type="password"
                              name="password" 
-                             id="password"
-							 class="calcInput"/>
+                             id="new_password"
+							 class="calcInput"
+							 onkeyup='check()'/>
 							 </div>
 							 <br>
 			<div class="inputHold">	
             <label>Bekreft passord: </label><input type="password" 
                                      name="confirmpwd" 
-                                     id="confirmpwd"
-									class="calcInput"	 />
+                                     id="confirm_password"
+									class="calcInput"	
+									onkeyup='check()' />
+							</div>
+							<div class="inputHold">	
+							<label>&nbsp;</label><span id='message'>
 							</div>
 							<br>
             <input type="button" 
