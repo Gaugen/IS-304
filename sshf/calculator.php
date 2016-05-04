@@ -85,7 +85,7 @@ Verdi:
 </font>
 
 <center>
-<textarea rows="10" cols="50" placeholder=".....">
+<textarea rows="10" cols="55" placeholder=".....">
 <?php
 
 

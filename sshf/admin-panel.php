@@ -234,7 +234,7 @@ if (login_check($mysqli) == true) {
 				mysqli_query($mysqli, $r);
 			}
 			?>
-
+			</center>
 			<text><br><center>Hvor mange engangsglass bruker du per dag?</text>
 			<text><br>Hvor mange kilometer kjører du per dag?</center></text>
 			<br>
@@ -268,61 +268,71 @@ if (login_check($mysqli) == true) {
 			</center>
 			</select>
 			<center>
-			<textarea rows="10" cols="50" placeholder=".....">
-
-			<?php
-
+			<textarea rows="10" cols="55" placeholder=".....">
+<?php
 
 
-			//Input tall i value1, hent databaseverdier for value 2 og 3 
-			if(isset($_POST['submit'])){
 
-			$sql = "SELECT * FROM calculator";
-			$result_set=mysqli_query($mysqli, $sql);
-			$x=mysqli_fetch_array($result_set); 	
+//Input tall i value1, hent databaseverdier for value 2 og 3 
+if(isset($_POST['submit'])){
+
+$sql = "SELECT * FROM calculator";
+$result_set=mysqli_query($mysqli, $sql);
+$x=mysqli_fetch_array($result_set); 	
+	
+$value1 = $_POST['value1'];
+$forbruk = $_POST['forbruk'];
+$value2 = $x['engangsglass'];
+$value3 = $x['bensinforbruk'];
+
+
+//Hvis engangsglass er valgt, gang value1(dynamisk) med value2(fra database)
+if($forbruk=="Engangsglass"){ 
+echo "Du bruker engangsglass for verdi: ";
+echo $value1*$value2 . " kroner"; 
+}
+
+
+if($forbruk=="Engangsglass"){
+echo "				I en arbeidsuke blir dette: ";
+echo $value1*$value2*5 . " kroner"; 
+}
+
+if($forbruk=="Engangsglass"){
+echo "				I et arbeidsår (230 dager) blir dette: ";
+echo $value1*$value2*230 . " kroner"; 
+
+echo "
 				
-			$value1 = $_POST['value1'];
-			$forbruk = $_POST['forbruk'];
-			$value2 = $x['engangsglass'];
-			$value3 = $x['bensinforbruk'];
+Husk at disse verdiene blir ganget med tusenvis av andre ansatte! ";
+}
 
 
-			//Hvis engangsglass er valgt, gang value1(dynamisk) med value2(fra database)
-			if($forbruk=="Engangsglass"){
-			echo "Du bruker engangsglass for verdi: ";
-			echo $value1*$value2 . " kroner"; 
-			}
+//Hvis bensinforbruk er valgt, gang value1(dynamisk) med value3(fra database)
+if($forbruk=="Bensinforbruk"){
+echo "Du bruker bensin for verdi: ";
+echo $value1*$value3 . " kroner"; 
+}
 
 
-			if($forbruk=="Engangsglass"){
-			echo "			I en arbeidsuke blir dette: ";
-			echo $value1*$value2*5 . " kroner"; 
-			}
+if($forbruk=="Bensinforbruk"){
+echo "			I en arbeidsuke blir dette: ";
+echo $value1*$value3*5 . " kroner"; 
+}
 
-			if($forbruk=="Engangsglass"){
-			echo "			I et arbeidsår (230 dager) blir dette: ";
-			echo $value1*$value2*230 . " kroner"; 
-			echo "				
-			Husk at disse verdiene blir ganget med tusenvis av andre ansatte! ";
-			}
-			//Hvis bensinforbruk er valgt, gang value1(dynamisk) med value3(fra database)
-			if($forbruk=="Bensinforbruk"){
-			echo "Du bruker bensin for verdi: ";
-			echo $value1*$value3 . " kroner"; 
-			}
-			if($forbruk=="Bensinforbruk"){
-			echo "			I en arbeidsuke blir dette: ";
-			echo $value1*$value3*5 . " kroner"; 
-			}
-			if($forbruk=="Bensinforbruk"){
-			echo "			I et arbeidsår (230 dager) blir dette: ";
-			echo $value1*$value3*230 . " kroner"; 
-			echo "				
-			Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på Sykehuset! ";
-			}
-			}
-			?>
-			</textarea></center></div></div></div>
+if($forbruk=="Bensinforbruk"){
+echo "			I et arbeidsår (230 dager) blir dette: ";
+echo $value1*$value3*230 . " kroner"; 
+
+echo "
+				
+Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på Sykehuset! ";
+}
+
+}
+
+?>
+</textarea></center></div></div></div>
 			
 		</section>
 		<section id="tab1">
