@@ -39,6 +39,8 @@ sec_session_start();
 			<p><a href="security_question.php"><u>Legg til/endre sikkerhetsspørsmål</u></a></p>
 			<p><a href="change_password.php"><u>Bytt passord</u></a></p>
 			<p><a href="includes/logout.php"><u>Logg ut</u></a></p>
+			
+
 <?php
 echo "<div class=inputHold>";
         if (login_check($mysqli) == true) {
@@ -52,6 +54,33 @@ echo "<div class=inputHold>";
 				}
 echo "</div>";
 ?>
+<?php
+			if ($stmt = $mysqli->prepare("SELECT security_question, security_answer 
+                                      FROM members 
+                                      WHERE id = ? LIMIT 1")){
+            // Bind "$user_id" to parameter. 
+            $stmt->bind_param('i', $_SESSION['user_id']);
+            $stmt->execute();   // Execute the prepared query.
+            $stmt->store_result();
+			$stmt->bind_result($security_question, $security_answer);
+			$stmt->fetch();
+									  }
+			if (empty($security_question) == TRUE)
+			{
+			// User havent added a security question
+			echo '<p style="color:red;"><u>Sikkerhetsspørsmålet er ikke satt, dette er viktig for å ha muligheten til
+			å gjennopprette kontoen etter glemt passord eller at kontoen har blitt låst som følger av angrep.</u></p>';
+			}
+			/*if (seccheck($mysqli) == true) {
+			echo "Sikkerhetsspørsmålet er ikke satt, dette er viktig for å ha muligheten til
+			å gjennopprette kontoen etter <br>
+			glemt passord eller at kontoen har blitt låst som følger av angrep.";
+			}
+			else {
+				echo "Sikkerhetsspørsmålet er satt";
+			}*/
+?>
+
 <?php if(@$_GET['action'] == "changed_security_question")
 {
 echo "<p>Sikkerhetsspørsmålet ditt har blitt endret! </p>";
