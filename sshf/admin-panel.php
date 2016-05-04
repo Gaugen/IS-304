@@ -184,10 +184,8 @@ if (login_check($mysqli) == true) {
 				echo "</div>";
 				echo "<img src=image.php?newsno=".$row['newsno']." width=184 height=185/>";
 				echo "<div class=tb2>";
-				echo "<pre>";
 				echo $row['newsinfo']; 
 				echo "</br>";
-				echo "</pre>";
 				echo "</div>";
 				echo "<td>" . "<input type=hidden name=newsno value=" . $row['newsno'] . " </td>";
 				echo "<div class=newsfooter>";

@@ -6,7 +6,7 @@
 }
 
 -------------------
-
+ 
 .dropbtnIndex {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -1063,10 +1063,11 @@ article.tabs section h2
 	background-color : #ffffff;
 	width: 432px;
 	height: 185px;
-	overflow-y: auto;
 	/*text-align: center;*/
 	padding-left: 5px;
 	border: 1px solid #9fa8b0;
+	word-break: break-all; 
+	word-wrap: break-word;
 }
 
 .newsekko {
@@ -1147,12 +1148,13 @@ h7 {
 	background-color : #ffffff;
 	width: 255px;
 	height: 180px;
-	overflow-y: auto;
-	/*text-align: center;*/
 	padding-left: 5px;
 	border-left-style: solid;
+	border-right-style: solid;
 	border-color: #ADADAD;
 	border-width: 1px;
+	word-break: break-all; 
+	word-wrap: break-word;
 }
 
 .newsekko2 {
