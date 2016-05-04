@@ -68,7 +68,7 @@ sec_session_start();
             <label>Email: </label><input type="text" name="email" id="new_mail" class="calcInput" onkeyup='checkmail()'/>
 			</div><br>
 			<div class="inputHold">	
-            <label>Email: </label><input type="text" name="email" id="confirm_mail" class="calcInput" onkeyup='checkmail()'/>
+            <label>Bekreft email: </label><input type="text" name="conf_email" id="confirm_mail" class="calcInput" onkeyup='checkmail()'/>
 			</div><br>
 			<div class="inputHold">	
 							<label>&nbsp;</label><span id='message1'>

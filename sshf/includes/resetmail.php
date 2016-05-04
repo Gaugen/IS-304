@@ -41,8 +41,8 @@ if(isset($_POST['email']))
 			//$mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
 			$mail->isHTML(true);                                  // Set email format to HTML
 			 
-			$mail->Subject = 'Here is the subject';
-			$mail->Body    = 'Hi, <br/> <br/>Din brukerID er '.$Results['id'].'<br/><br/> Ditt sikkerhetsspørsmål er: '.$Results['security_question'].' <br><br>Kopier dette inn i nettleseren for å sette nytt passord: http://sshfmiljø.no/reset_password.php?encrypt='.$encrypt.'&action=reset';
+			$mail->Subject = 'Gjennoprettingsmail for passord';
+			$mail->Body    = 'Hei, <br/> <br/>Din brukerID er '.$Results['id'].'<br/><br/> Ditt sikkerhetsspørsmål er: '.$Results['security_question'].' <br><br>Kopier dette inn i nettleseren for å sette nytt passord: http://sshfmiljø.no/reset_password.php?encrypt='.$encrypt.'&action=reset';
 			//$mail->AltBody = 'Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password https://localhost/sshf/reset_password.php?encrypt='.$encrypt.'&action=reset';
 			 
 			//Read an HTML message body from an external file, convert referenced images to embedded,
@@ -55,8 +55,7 @@ if(isset($_POST['email']))
 			   exit;
 			}
 			 
-			echo 'Meldingen har blitt send, du blir straks sendt tilbake til login siden.';
-			header( "refresh:3; ../login.php" ); //wait for 3 seconds before redirecting
+			header('Location: ../login.php?action=reset'); // redirecting
 			exit();
 			
         }

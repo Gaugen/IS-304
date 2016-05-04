@@ -81,6 +81,11 @@ if (login_check($mysqli) == true) {
             <input type="submit" value="Send"  class="btnLoginLogin"/> 
 </div>
         </form><br>
+<?php if(@$_GET['action'] == "reset")
+{
+echo "<p>Gjennopprettingsmail er blitt sendt, husk å sjekke søppelpost hvis du ikke finner mailen.</p>";
+}
+?>
 
 			<br/><br/>	<br/><br/>
 			<br/><br/>  <br/><br/>
