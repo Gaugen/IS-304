@@ -1,12 +1,12 @@
 <?php
-//error_reporting(0);
-
+//error_reporting(E_ALL);
+// rand(1000,100000)."-".
 include_once '../includes/db_connect.php';
 
 if(isset($_POST['btn-upload']))
 {    
     // Variables giving file information 
-	$file = rand(1000,100000)."-".$_FILES['file']['name'];
+	$file =$_FILES['file']['name'];
     $file_loc = isset($_FILES['file']['tmp_name']) ? $_FILES['file']['tmp_name']: null ;
 	$file_size = isset($_FILES['file']['size']) ? $_FILES['file']['size']: null ;
 	$file_type = isset($_FILES['file']['type']) ? $_FILES['file']['type']: null ;
@@ -19,17 +19,18 @@ if(isset($_POST['btn-upload']))
 	// make file name in lower case
 	$new_file_name = strtolower($file);
 		
-	$final_file=str_replace(' ','-',$new_file_name);
+	//$final_file=str_replace(' ','-',$new_file_name);
 	
-	if(move_uploaded_file($file_loc,$folder.$final_file))
+	//if(move_uploaded_file($file_loc,$folder.$final_file))
+	if(move_uploaded_file($file_loc,$folder.$new_file_name))
 	{
 		$path = "$folder" . "$new_file_name"; 
-		//$sql="INSERT INTO tbl_uploads(file,type,size,path) VALUES('$final_file','$file_type','$new_size','$path')";
+		//$sql="INSERT INTO tbl_uploads(file,type,size,path) VALUES('$new_file_name','$file_type','$new_size','$path')";
 		//mysql_query($sql)or die(mysqli_error($db));
 		if ($insert_stmt = $mysqli->prepare("INSERT INTO tbl_uploads(file,type,size,path) VALUES (?,?,?,?)")) {
-			$insert_stmt->bind_param('ssss',$final_file, $file_type, $new_size, $path);
+			$insert_stmt->bind_param('ssss',$new_file_name, $file_type, $new_size, $path);
 			if(! $insert_stmt->execute()) {
-				header('Location: filemanager.php');
+				echo "couldn't execute";
 			}
 		}
 ?>
