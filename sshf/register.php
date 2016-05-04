@@ -31,7 +31,7 @@ sec_session_start();
 <section id="content">
 <div class="container_12">
     
-   <div class="grid_6">
+   <div class="grid_6 prefix_3">
    
 		<?php if (login_check($mysqli) == true) : ?>
         <!-- Registration form to be output if the POST variables are not
@@ -58,17 +58,31 @@ sec_session_start();
         <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" 
                 method="post" 
                 name="registration_form">
-            Brukernavn: <input type='text' 
+				<div class="inputHold">	
+            <label>Brukernavn: </label> <input type='text' 
                 name='username' 
-                id='username' /><br>
-            Email: <input type="text" name="email" id="email" /><br>
-            Passord: <input type="password"
+                id='username'
+				class="calcInput" 	/>
+				</div><br>
+				<div class="inputHold">	
+            <label>Email: </label><input type="text" name="email" id="email" class="calcInput" />
+			</div><br>
+            <div class="inputHold">	
+			<label>Passord:</label> <input type="password"
                              name="password" 
-                             id="password"/><br>
-            Bekreft passord: <input type="password" 
+                             id="password"
+							 class="calcInput"/>
+							 </div>
+							 <br>
+			<div class="inputHold">	
+            <label>Bekreft passord: </label><input type="password" 
                                      name="confirmpwd" 
-                                     id="confirmpwd" /><br>
+                                     id="confirmpwd"
+									class="calcInput"	 />
+							</div>
+							<br>
             <input type="button" 
+			class="btnLoginLogin"
                    value="Register" 
                    onclick="return regformhash(this.form,
                                    this.form.username,
@@ -76,7 +90,10 @@ sec_session_start();
                                    this.form.password,
                                    this.form.confirmpwd);" /> 
         </form>
-        <p>Gå tilbake til <a href="login.php"><button>Innloggingssiden</button></a>.</p>
+		<br>
+		<br>
+		<br>
+        <a href="login.php"><input type="button" class="btnLoginLogin" value="Tilbake"></a>
     <div class="grid_3 alpha">
         <?php else : ?>
             <p>

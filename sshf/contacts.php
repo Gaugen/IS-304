@@ -131,7 +131,7 @@ if (login_check($mysqli) == true) {
               <span class="error-message">*The message is too short.</span>
             </label>
             <label class="submit">
-			  <input type='submit' name='send_mail' value='Send Email!'
+			  <input type='submit' name='send_mail' value='Send Email!' class="btnSendEmail">
           </fieldset>
           <div class="modal fade response-message">
             <div class="modal-dialog">
