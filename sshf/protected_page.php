@@ -68,8 +68,8 @@ echo "</div>";
 			if (empty($security_question) == TRUE)
 			{
 			// User havent added a security question
-			echo '<p style="color:red;"><u>Sikkerhetsspørsmålet er ikke satt, dette er viktig for å ha muligheten til
-			å gjennopprette kontoen etter glemt passord eller at kontoen har blitt låst som følger av angrep.</u></p>';
+			echo '<p style="color:red;">Sikkerhetsspørsmålet er ikke satt, dette er viktig for å ha muligheten til
+			å gjennopprette kontoen etter glemt passord eller at kontoen har blitt låst som følger av angrep.</p>';
 			}
 			/*if (seccheck($mysqli) == true) {
 			echo "Sikkerhetsspørsmålet er ikke satt, dette er viktig for å ha muligheten til
