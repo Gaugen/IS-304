@@ -40,10 +40,20 @@ if (login_check($mysqli) == true) {
 <h2 class="inset__1"></h2>
   
     <div class="grid_12">
-	<img src=""/>
+	<img src="images/energi.jpg"/>
 	</div>
 	<div class="container_12">
-	
+	<div class="grid_2">
+	</br>
+        <ul class="list-1 ">
+          <li><a href="transport.php">Transport </a></li>
+		  <li><a href="energi.php">Energi </a></li>
+		  <li><a href="avfall.php">Avfall </a></li>
+		  <li><a href="disposables.php">Engangs </a></li>
+        </ul>
+		<br>
+      </div>
+	  
 	<?php
 	
 	if(isset($_POST['update'])){
@@ -74,7 +84,7 @@ if (login_check($mysqli) == true) {
 	
 	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_6">
-   <form  action="energi.php" method="POST">
+         <form  action="energi.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 <div class="dropdownIndex">
@@ -103,21 +113,11 @@ if (login_check($mysqli) == true) {
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	<?php }?>
     </div>
-	<div class="grid_4">
-	</br>
-        <ul class="list-1  prefix_3">
-          <li><a href="transport.php">Transport </a></li>
-		  <li><a href="energi.php">Energi </a></li>
-		  <li><a href="avfall.php">Avfall </a></li>
-		  <li><a href="disposables.php">Engangs </a></li>
-        </ul>
-		<br>
-      </div>
-    <div class="grid_5 prefix_1">
+    <div class="grid_5">
 	<?php
 	echo "</br>";
 	echo "<div class=newsekkoKategori>";
-$q = "SELECT * FROM post WHERE kategori = 'Energi' ORDER BY newsno DESC";
+$q = "SELECT * FROM post WHERE kategori = 'Energiside' ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
