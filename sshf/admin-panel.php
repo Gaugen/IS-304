@@ -67,11 +67,12 @@ if (login_check($mysqli) == true) {
 		
 		<section id="tab2">
 			<h2><a href="#tab2">Filbehandler</a></h2>
+			
 			<form action="files/upload.php" method="post" enctype="multipart/form-data">
 			<input type="file" name="file" />
 			<button type="submit" name="btn-upload">Last opp</button>
-			</form>
-			<br /><br />
+			
+			
 			<?php
 			if(isset($_GET['success']))
 			{
@@ -92,6 +93,16 @@ if (login_check($mysqli) == true) {
 				<?php
 			}
 			?>
+		
+			
+			<table <div style="border=0 align="center" bgcolor=#d0d7e9>
+			<tr>
+			<td>Beskrivelse</td><td><textarea name="beskrivelse" id="beskrivelse" rows="5" cols="30"></textarea></td>
+			</tr>
+			</div>
+			</table>
+			</form>
+			<br><br>
 			<table width="90%" border="1">
 			<?php
 			//echo "<div class=fileTable>";
@@ -102,15 +113,16 @@ if (login_check($mysqli) == true) {
 			//$stmt->store_result($data);
 			
 					echo "<table width=100% border='1' cellpadding='10'>";
-			echo '<th width="40%">Filnavn</th> <th width="15%">Filtype</th> <th width="15%">Filstørrelse (KB)</th> <th width="5%">ID</th> <th width="6%">Last ned</th> <th width="4%">Slett</th>';
+			echo '<th width="30%">Beskrivelse</th><th width="20%">Filnavn</th> <th width="15%">Filtype</th> <th width="5%">Size</th> <th width="5%">ID</th> <th width="6%">Last ned</th> <th width="4%">Slett</th>';
 			
 			
 			while($row=mysqli_fetch_array($result_set)){
 				echo "<table width=100% border='1' cellpadding='10'>";
 				echo "<tr>";
-				echo '<td width="40%">' . $row['file'] . '</td>';
+				echo '<td width="30%">' . $row['beskrivelse'] . '</td>';
+				echo '<td width="20%">' . $row['file'] . '</td>';
 				echo '<td width="15%">' . $row['type'] . '</td>';
-				echo '<td width="15%">' . $row['size'] . '</td>';
+				echo '<td width="5%">' . $row['size'] . '</td>';
 				echo '<td width="5%">' . $row['id'] . '</td>';
 				echo '<td width="6%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';			
 				echo '<td width="3%"><a href="files/delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	

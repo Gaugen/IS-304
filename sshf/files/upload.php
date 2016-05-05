@@ -11,6 +11,7 @@ if(isset($_POST['btn-upload']))
 	$file_size = isset($_FILES['file']['size']) ? $_FILES['file']['size']: null ;
 	$file_type = isset($_FILES['file']['type']) ? $_FILES['file']['type']: null ;
 	$file_path = isset($_FILES['file']['path']) ? $_FILES['file']['path']: null ;
+	$beskrivelse= $_POST['beskrivelse'];
 	$folder="uploads/";
 	
 	// new file size in KB
@@ -27,8 +28,8 @@ if(isset($_POST['btn-upload']))
 		$path = "$folder" . "$new_file_name"; 
 		//$sql="INSERT INTO tbl_uploads(file,type,size,path) VALUES('$new_file_name','$file_type','$new_size','$path')";
 		//mysql_query($sql)or die(mysqli_error($db));
-		if ($insert_stmt = $mysqli->prepare("INSERT INTO tbl_uploads(file,type,size,path) VALUES (?,?,?,?)")) {
-			$insert_stmt->bind_param('ssss',$new_file_name, $file_type, $new_size, $path);
+		if ($insert_stmt = $mysqli->prepare("INSERT INTO tbl_uploads(file,type,size,path,beskrivelse) VALUES (?,?,?,?,?)")) {
+			$insert_stmt->bind_param('sssss',$new_file_name, $file_type, $new_size, $path, $beskrivelse);
 			if(! $insert_stmt->execute()) {
 				echo "couldn't execute";
 			}

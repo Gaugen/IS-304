@@ -102,9 +102,9 @@ if (login_check($mysqli) == true) {
 	<br>
 
 
-<table width="60%" border="1">
+<table bgcolor=#d0d7e9 width="80%" border="1">
     
-    <th width="60%">Filnavn</th> <th width="20%">Filstørrelse</th><th width="10%">Last ned</th>
+    <th width="50%">Beskrivelse</th><th width="30%">Filnavn</th> <th width="10%">Filstørrelse</th><th width="8%">Last ned</th>
 	 
     <?php
 	$sql="SELECT * FROM tbl_uploads ORDER BY id DESC";
@@ -114,18 +114,19 @@ if (login_check($mysqli) == true) {
 	//$stmt->store_result($data);
 	while($row=mysqli_fetch_array($result_set)){
 	
-		echo "<table width=60% border='1' cellpadding='10'>";
+		echo "<table width=80% border='1' cellpadding='10'>";
 	
 		// echo "<tr> <th>Filnavn</th> <th>Filtype</th> <th>Filstørrelse (KB)</th><th>Last ned</th> </tr>";
 	
 		echo "<tr>";
-		echo '<td width="60%"> ' . $row['file'] . '</td>';
+		echo '<td width="50%"> ' . $row['beskrivelse'] . '</td>';
+		echo '<td width="30%"> ' . $row['file'] . '</td>';
 		// echo '<td>' . $row['type'] . '</td>';
-		echo '<td width="20%">' . $row['size'] . '</td>';
+		echo '<td width="10%">' . $row['size'] . '</td>';
 		$row['id'];
 	
 		
-		echo '<td width="10%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
+		echo '<td width="8%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';
 					
 	
 		
