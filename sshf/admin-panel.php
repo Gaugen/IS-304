@@ -151,10 +151,10 @@ if (login_check($mysqli) == true) {
 			<tr>
 			<td>Kategori</td><td>
 					<input type="radio" value="Generell" name="kategori">Generell<br>
-					<input type="radio" value="transport" name="kategori">Transport<br>
-					<input type="radio" value="energi" name="kategori">Energi<br>
-					<input type="radio" value="avfall" name="kategori">Avfall<br>
-					<input type="radio" value="engangs" name="kategori">Engangs<br>
+					<input type="radio" value="Transport" name="kategori">Transport<br>
+					<input type="radio" value="Energi" name="kategori">Energi<br>
+					<input type="radio" value="Avfall" name="kategori">Avfall<br>
+					<input type="radio" value="Engangs" name="kategori">Engangs<br>
 					</td>
 			</tr>
 			<tr>
