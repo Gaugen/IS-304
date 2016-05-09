@@ -51,6 +51,7 @@
 					<a href="environment.php">Miljø</a>
 					<a href="calculator.php">Kalkulator</a>
 					<a href="contacts.php">Kontakt</a>
+					<a href="test.php">Graf test</a>
 					
 					</div>
 					</div>
