@@ -1184,6 +1184,7 @@ h7 {
 	border-color: #ADADAD;
 	border-width: 1px; 
 	word-wrap: break-word;
+	overflow-y: auto;
 }
 
 .newsekko2 {
