@@ -1,6 +1,32 @@
 function myIndexFunction() {
     document.getElementById("myDropdownIndex").classList.toggle("show");
 }
+function myIndexFunction2() {
+    document.getElementById("myDropdownIndex2").classList.toggle("show");
+}
+function myIndexFunction3() {
+    document.getElementById("myDropdownIndex3").classList.toggle("show");
+}
+function myIndexFunction4() {
+    document.getElementById("myDropdownIndex4").classList.toggle("show");
+}
+function myIndexFunction5() {
+    document.getElementById("myDropdownIndex5").classList.toggle("show");
+}
+function myIndexFunction6() {
+    document.getElementById("myDropdownIndex6").classList.toggle("show");
+}
+function myIndexFunction7() {
+    document.getElementById("myDropdownIndex7").classList.toggle("show");
+}
+
+
+function myIndexFunction8() {
+    document.getElementById("myDropdownIndex8").classList.toggle("show");
+}
+function myIndexFunction9() {
+    document.getElementById("myDropdownIndex9").classList.toggle("show");
+}
 
  function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");

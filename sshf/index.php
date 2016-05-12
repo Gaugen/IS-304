@@ -89,7 +89,7 @@ function MM_swapImage() { //v3.0
 	?>
 	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_6">
-      <form  action="index.php" method="POST">
+      <form action="index.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 <div class="dropdownIndex">

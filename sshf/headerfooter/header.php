@@ -10,6 +10,192 @@
 <body>
 <header>
 <div class="topplinje"><a class="button" href="login.php">
+<?php
+	
+	if(isset($_POST['update1'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu1'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu1'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu1);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	<?php
+	
+	if(isset($_POST['update2'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu2'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu2'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu2);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	
+	<?php
+	
+	if(isset($_POST['update3'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu3'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu3'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	<?php
+	
+	if(isset($_POST['update4'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu4'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu4'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu4);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	<?php
+	
+	if(isset($_POST['update5'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu5'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu5'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu5);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	
+	<?php
+	
+	if(isset($_POST['update6'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu6'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu6'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu6);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	
+	<?php
+	
+	if(isset($_POST['update7'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu7'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu7'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu7);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	
 <?php 
     if(login_check($mysqli) == true){ 
        	echo '<a href="admin-panel.php#tab1"><span>Admin-panel &nbsp;</span></a></li>';
@@ -40,18 +226,18 @@
 					<br>
 					<div class="grid_5">
 					
-					<a href="index.php">Hjem</a>
-					<a href="about.php">Om Sørlandet Sykehus HF</a>
-					<a href="environment.php">Om Miljøsertifisering</a>
+					<a href="index.php"><?php echo ($menu1); ?></a>
+					<a href="about.php"><?php echo ($menu2); ?></a>
+					<a href="environment.php"><?php echo ($menu3); ?></a>
 					
 					<form action="login.php"><button class="btnLogin">Logg inn</button></form>
 					</div>
 					<div class="grid_5">
 					
-					<a href="documents.php">Dokumenter</a>
-					<a href="calculator.php">Kalkulator</a>
-					<a href="test.php">Graf</a>
-					<a href="contacts.php">Kontakt</a>
+					<a href="documents.php"><?php echo ($menu4); ?></a>
+					<a href="calculator.php"><?php echo ($menu5); ?></a>
+					<a href="test.php"><?php echo ($menu6); ?></a>
+					<a href="contacts.php"><?php echo ($menu7); ?></a>
 					
 					
 					</div>
