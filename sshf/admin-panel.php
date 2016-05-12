@@ -67,10 +67,10 @@ if (login_check($mysqli) == true) {
 		
 		<section id="tab2">
 			<h2><a href="#tab2">Filbehandler</a></h2>
-			
+			<label>Trykk velg fil for å laste opp fil - legg så til en beskrivelse. <br>Filen publiseres når du trykker last opp</label>
 			<form action="files/upload.php" method="post" enctype="multipart/form-data">
 			<input type="file" name="file" />
-			<button type="submit" name="btn-upload">Last opp</button>
+			
 			
 			
 			<?php
@@ -89,7 +89,7 @@ if (login_check($mysqli) == true) {
 			else
 			{
 				?>
-				<label>Trykk velg fil for å laste opp excel-ark</label>
+			
 				<?php
 			}
 			?>
@@ -101,6 +101,7 @@ if (login_check($mysqli) == true) {
 			</tr>
 			</div>
 			</table>
+			<button type="submit" name="btn-upload">Last opp</button>
 			</form>
 			<br><br>
 			<table width="90%" border="1">
