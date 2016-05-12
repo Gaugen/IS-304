@@ -392,9 +392,11 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 		</section>
 		<section id="tab6">
 			<h2><a href="#tab6">NavnEndring</a></h2>
-			
+			<center><h4>Endre navnene på menyvalgene og footer informasjonen</h1></center>
 			<!-- Menu1  -->
-			
+			<div class="grid_3" style="border:1px solid black; margin-left: 200px; background-color: #d0d7e9;">
+			<center><h5 style="text-decoration: underline;">Venstre meny</h5></center>
+			<br>
 			<?php
 	
 	if(isset($_POST['update1'])){
@@ -442,7 +444,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	  
 	  <!-- Menu2  -->
 			
@@ -493,7 +495,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	  	  <!-- Menu3  -->
 			
 			<?php
@@ -543,9 +545,12 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	   <!-- menu4 -->
-	  
+	   </div>
+	  <div class="grid_3" style="border:1px solid black;  background-color: #d0d7e9;">
+	  <center><h5 style="text-decoration: underline;">Høyre meny</h5></center>
+	  <br>
 	  <?php
 	
 	if(isset($_POST['update4'])){
@@ -593,7 +598,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	   <!-- menu5 -->
 	  
 	  <?php
@@ -643,7 +648,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	   <!-- menu6 -->
 	  
 	  <?php
@@ -693,7 +698,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	  <!-- menu7 -->
 	   <?php
 	
@@ -742,8 +747,13 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
+	  <br><br>
+	  </div> 
 	  
 	  <!-- footer1 -->
+	  <div class="grid_3" style="border:1px solid black;  background-color: #d0d7e9;">
+	  <center><h5 style="text-decoration: underline;">Footer</h5></center>
+	  <br>
 	   <?php
 	
 	if(isset($_POST['update8'])){
@@ -791,7 +801,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	  <!-- footer2 -->
 	   <?php
 	
@@ -841,7 +851,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 
 	  <?php } ?>
 	  
-	  
+	  </div>
 	  
 	  
 	  
