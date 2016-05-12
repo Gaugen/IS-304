@@ -41,17 +41,18 @@
 					<div class="grid_5">
 					
 					<a href="index.php">Hjem</a>
-					<a href="documents.php">Dokumenter</a>
-					<a href="about.php">Om SSHF</a>
+					<a href="about.php">Om Sørlandet Sykehus HF</a>
+					<a href="environment.php">Om Miljøsertifisering</a>
 					
 					<form action="login.php"><button class="btnLogin">Logg inn</button></form>
 					</div>
 					<div class="grid_5">
 					
-					<a href="environment.php">Miljø</a>
+					<a href="documents.php">Dokumenter</a>
 					<a href="calculator.php">Kalkulator</a>
+					<a href="test.php">Graf</a>
 					<a href="contacts.php">Kontakt</a>
-					<a href="test.php">Graf test</a>
+					
 					
 					</div>
 					</div>

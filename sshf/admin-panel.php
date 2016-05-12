@@ -49,7 +49,7 @@ if (login_check($mysqli) == true) {
 			<font size="5"><p style="font-weight:bold;">Brukerguide for Admin-panelet.</P> </font>
 	
 			<font size="4"><p style="font-weight:bold;"> Hva kan en administrator gjøre?  </p> </font> 
-			<p> En administrator kan legge til nye admin-brukere, laste opp filer, poste nyheter og bilder, samt legge inn kalkulatordata. </p> 
+			<p> En administrator kan legge til nye admin-brukere, laste opp filer, poste nyheter og bilder, samt legge inn grafdata til grafene. </p> 
 			<font size="4"><p style="font-weight:bold;"> Laste opp filer og dokumenter </p> </font> 
 			<p> I "filbehandler"-fanen kan du som administrator gå inn og laste opp filer. Dette gjør man ved å trykke på "velg fil",
 			derretter velger man en fil fra sin datamaskin som man vil laste opp, så trykker man på "last opp" knappen. Denne filen vil nå være tilgjengelig for nedlastning av 
@@ -59,10 +59,9 @@ if (login_check($mysqli) == true) {
 			hvor man kan skrive inn tema, nyhet/informasjon, laste opp bilde, velge kategori og derretter poste. "Tema" og "Informasjon" er enkle tekst-felt hvor 
 			man skriver inn ønsket tekst, på "Bilde" laster man opp ønsket bilde ved å trykke på "velg fil" og derretter velger et bilde fra datamaskinen. På "Kategori" 
 			velger man hvilken kategori postene skal gå inn under, og til slutt publiserer man nyheter ved "post" knappen. Når man har gjort dette, kommer 
-			posten på siden av utfyllingsfeltene, slik at Administrator kan se om det ser greit ut, i tillegg kommer posten på fremsiden.</p> 
-			<font size="4"><p style="font-weight:bold;"> Legge inn kalkulatordata </p> </font>
-			<p> På "Kalkulator"-fanen kan Administrator legge inn nye kalkulator data til kalkulatoren siden prisene på engangsglass/bensin kan forandres ofte, spesielt bensin.
-			Da går man inn på "Kalkulator"-fanen og trykker på knappen "Legg til verdi", som er ved siden av feltene for både engangsglass og bensin. </p>
+			posten på siden av utfyllingsfeltene, slik at Administrator kan se om det ser greit ut, i tillegg kommer posten på fremsiden, og på kategori-sidene nyheten tilhører. For eksempel hvis du skriver en nyhet i Energi-kategorien kommer nyheten på Energi-siden i tillegg til forsiden.</p> 
+			<font size="4"><p style="font-weight:bold;"> Legge inn Grafdata </p> </font>
+			<p> Vent til tor arne er ferdig =D </p>
 		</section>
 		
 		<section id="tab2">

@@ -16,10 +16,10 @@
       <div class="sep-1"></div>
     </div>
     <div class="grid_4">
-      <a href="http://www.sshf.no" rel="nofollow"><address class="address-1"> <div class="fa fa-home"></div><p><font size="4">Sørlandet sykehus HF<br>Teknologi og E-helse.<p></font></address></a>  
+      <a href="http://www.sshf.no" rel="nofollow"><address class="address-1"> <div class="fa fa-home"></div><p><font size="4">Sørlandet Sykehus HF<br>For Teknologi og E-helse.<p></font></address></a>  
     </div>
     <div class="grid_3">
-      <a href="contacts.php" class="mail-1"><span class="fa fa-envelope"></span><p><font size="4">miljo@sshf.no<p></font></a>
+      <a href="contacts.php" class="mail-1"><span class="fa fa-envelope"></span><p><font size="4">Kontakt Oss<p></font></a>
     </div>
     </div>
   </div>
