@@ -116,12 +116,7 @@ if (login_check($mysqli) == true) {
       <h2 class="inset__1"></h2>
 	  <br>
       
-   
-      
-         
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-         
-   
+
     
     </div>
      <div class="clear"></div>
