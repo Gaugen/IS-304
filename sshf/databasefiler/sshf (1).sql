@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12. Mai, 2016 12:35 p.m.
+-- Generation Time: 13. Mai, 2016 11:18 a.m.
 -- Server-versjon: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -45,7 +45,8 @@ INSERT INTO `menufooter` (`menufooterno`, `menufootertopic`, `menufooterplasseri
 (6, 'Graf', 'Menu6'),
 (7, 'Kontakt', 'Menu7'),
 (8, 'SÃ¸rlandet Sykehus HF\r\nFor Teknologi og E-helse.', 'Footer1'),
-(9, 'Kontakt Oss', 'Footer2');
+(9, 'Kontakt Oss', 'Footer2'),
+(10, 'Nyheter', 'Menu8');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +66,7 @@ ALTER TABLE `menufooter`
 -- AUTO_INCREMENT for table `menufooter`
 --
 ALTER TABLE `menufooter`
-  MODIFY `menufooterno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `menufooterno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
