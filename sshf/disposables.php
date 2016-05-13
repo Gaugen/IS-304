@@ -50,7 +50,7 @@ if (login_check($mysqli) == true) {
           <li><a href="transport.php">Transport </a></li>
 		  <li><a href="energi.php">Energi </a></li>
 		  <li><a href="avfall.php">Avfall </a></li>
-		  <li><a href="disposables.php">Engangs </a></li>
+		  <li><a href="disposables.php">Engangsartikler</a></li>
         </ul>
 		<br>
       </div>
@@ -118,7 +118,7 @@ if (login_check($mysqli) == true) {
 	<?php
 	echo "</br>";
 	echo "<div class=newsekkoKategori>";
-$q = "SELECT * FROM post WHERE kategori = 'Engangs' ORDER BY newsno DESC";
+$q = "SELECT * FROM post WHERE kategori = 'disposables.php' ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
@@ -137,7 +137,6 @@ while($row=mysqli_fetch_array($r)){
 	echo "</div>";
 	echo "</div>";
 	echo "<div class=newsfooter2>";
-	echo 'Kategori: ' .	$row['kategori']; 
 	echo "</div>";
 	echo "</br>";
 	echo "</br>";

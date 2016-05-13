@@ -48,7 +48,7 @@ if (login_check($mysqli) == true) {
 	</center>
 	<?php
 	echo "<div class=newsNyheter>";
-$q = "SELECT * FROM post WHERE kategori = 'Generell' ORDER BY newsno DESC";
+$q = "SELECT * FROM post WHERE kategori = 'news.php' ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
@@ -67,7 +67,6 @@ while($row=mysqli_fetch_array($r)){
 	echo "</div>";
 	echo "</div>";
 	echo "<div class=newsfooterNyheter>";
-	echo 'Kategori: ' .	$row['kategori']; 
 	echo "</div>";
 	echo "</br>";
 	echo "</br>";

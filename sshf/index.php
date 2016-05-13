@@ -124,6 +124,9 @@ function MM_swapImage() { //v3.0
       </div>
     </div>
     <div class="grid_5 prefix_1">
+	
+
+	
 	<?php
 	echo "<div class=newsekko2>";
 $q = "SELECT * FROM post ORDER BY newsno DESC";
@@ -141,11 +144,11 @@ while($row=mysqli_fetch_array($r)){
 	echo "</div>";
 	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
 	echo "<div class=tb22>";
-	echo nl2br ($row['newsinfo']);
+	echo nl2br(substr ($row['newsinfo'], 0, 100));
+	echo "<a href='/sshf/".$row['kategori']."'> <span style=color:blue;text-align:center;>...Les mer</span></a>";
 	echo "</div>";
 	echo "</div>";
 	echo "<div class=newsfooter2>";
-	echo 'Kategori: ' .	$row['kategori']; 
 	echo "</div>";
 	echo "</br>";
 	echo "</br>";
@@ -159,6 +162,7 @@ else
 {
 echo mysqli_error();
 }
+
 ?>
     </div>
     <div class="clear"></div>
