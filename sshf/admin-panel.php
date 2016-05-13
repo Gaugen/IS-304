@@ -546,6 +546,58 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 
 	  <?php } ?>
 	  <br><br>
+	  
+	  <!-- Menu8  -->
+			<?php
+	
+	if(isset($_POST['update8'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu8'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu8'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu1);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	<?php if (login_check($mysqli) == true) {?>
+      <form action="admin-panel.php#tab6" method="POST">
+	  <?php echo nl2br ($menu8); ?>
+	  <br>
+<div class="dropdownIndex">
+<submit onclick="myIndexFunction10()" class="dropbtnIndex"><font size="3" color="blue" style="text-decoration: underline">Rediger teksten.</font></submit>
+  <div id="myDropdownIndex10" class="dropdown-contentIndex">
+  <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Meny8</td><td><input type=text size="35%" name="menufootertopic" value="<?php echo     $menu8;?>"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="update8" value="Post"></td>
+  </tr>
+  </table>
+  </div>
+</div>
+			</form>
+			
+
+	  <?php } ?>
+	  <br><br>
+	  
+	  
 	   <!-- menu4 -->
 	   </div>
 	  <div class="grid_3" style="border:1px solid black;  background-color: #d0d7e9;">

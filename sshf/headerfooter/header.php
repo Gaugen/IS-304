@@ -196,6 +196,33 @@
 	}
 	?>
 	
+	<?php
+	
+	if(isset($_POST['update8'])){
+	$mftopic = $_POST['menufootertopic'];
+		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
+											WHERE menufooterplassering = 'Menu8'
+											LIMIT 1");
+		$stmt->bind_param('s', $mftopic);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT menufootertopic
+        FROM menufooter
+		WHERE menufooterplassering = 'Menu8'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($menu8);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+	?>
+	
 <?php 
     if(login_check($mysqli) == true){ 
        	echo '<a href="admin-panel.php#tab1"><span>Admin-panel &nbsp;</span></a></li>';
@@ -229,6 +256,7 @@
 					<a href="index.php"><?php echo ($menu1); ?></a>
 					<a href="about.php"><?php echo ($menu2); ?></a>
 					<a href="environment.php"><?php echo ($menu3); ?></a>
+					<a href="news.php"><?php echo ($menu8); ?></a>
 					
 					<form action="login.php"><button class="btnLogin">Logg inn</button></form>
 					</div>

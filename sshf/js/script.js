@@ -28,6 +28,10 @@ function myIndexFunction9() {
     document.getElementById("myDropdownIndex9").classList.toggle("show");
 }
 
+function myIndexFunction10() {
+    document.getElementById("myDropdownIndex10").classList.toggle("show");
+}
+
  function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

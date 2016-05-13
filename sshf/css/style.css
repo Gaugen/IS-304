@@ -269,7 +269,7 @@ div {
 	margin-left: -300px;
     background-color: #323232;
     min-width: 750px;
-	min-height: 250px;
+	min-height: 270px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
@@ -1127,7 +1127,70 @@ h7 {
 }
 	
 	
+----- Newsfeed - Nyheter -----
+.containerNyheter
+{
+	background:#d0d7e9;
+	margin:0 auto;
+	text-align:left;
+	width:730px;
+	height: 212px;
+	border-width: 1px;
+	border-color: #111111;
+	border-style: solid;
+}
+
+
+.newsheaderNyheter {
+	float: left;
+	background: #ffffff;
+	height: 20px;
+	width: 730px;
+	padding-left: 5px;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-style: solid;
+	border-color: #ADADAD;
+	}
+
+
 	
+.newsfooterNyheter {
+	background: #ffffff;
+	float:left;
+	width:730px;
+	text-align: left;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-color: #adadad;
+	}
+
+.tbNyheter {
+	float: left;
+	background-color : #ffffff;
+	width: 550px;
+	height: 180px;
+	padding-left: 5px;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: #ADADAD;
+	border-width: 1px; 
+	word-wrap: break-word;
+	overflow-y: auto;
+}
+
+.newsNyheter {
+	float: left;
+	background-color : #ffffff;
+	width: 740px;
+	height: 400px;
+	margin-left: 10px;
+}
 	
 	
 ----- Newsfeed - framside -----
