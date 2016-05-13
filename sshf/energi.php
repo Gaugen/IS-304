@@ -19,6 +19,7 @@ if (login_check($mysqli) == true) {
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/lightbox.css">
 <script src="js/script.js"></script>
 <script>
  $(window).load(function(){
@@ -113,7 +114,7 @@ if (login_check($mysqli) == true) {
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	<?php }?>
     </div>
-    <div class="grid_5">
+    <div class="grid_4">
 	<?php
 	echo "</br>";
 	echo "<div class=newsekkoKategori>";
@@ -158,5 +159,6 @@ echo mysqli_error();
               footer
 =================================-->
 <?php include("headerfooter/footer.php");?>
+<script src="js/lightbox-plus-jquery.js"></script>
 </body>
 </html>
