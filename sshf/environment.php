@@ -109,7 +109,7 @@ if (login_check($mysqli) == true) {
    
        <div class="grid_6">
          
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
          </div>
    
     
