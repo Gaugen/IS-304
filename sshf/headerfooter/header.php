@@ -264,7 +264,7 @@
 					
 					<a href="documents.php"><?php echo ($menu4); ?></a>
 					<a href="calculator.php"><?php echo ($menu5); ?></a>
-					<a href="test.php"><?php echo ($menu6); ?></a>
+					<a href="graphs.php"><?php echo ($menu6); ?></a>
 					<a href="contacts.php"><?php echo ($menu7); ?></a>
 					
 					

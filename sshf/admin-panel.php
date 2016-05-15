@@ -908,6 +908,287 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 	  
 	  
 		</section>
+<section id="tab7">
+			<h2><a href="#tab7">Søylediagrammer</a></h2>
+			<div class="newsekko1">
+			<div style="background-color:#f2f2f2;">
+			<div style="font-family: helvetica">
+			<text><center><font color="#666362">Her kan du stille verdiene som blir brukt i de forskjellige søylediagrammene</text><br> <br>
+			
+			<form method="POST"> Gjennomsnittlig bruk av pappkrus:<input type='number' name='papp_avrg'><input type='submit' name='pappkrus_avrg' value='Oppdater'></form>
+			<form method="POST">Mål på forbruk av pappkrus:<input type='number' name='papp_mål'><input type='submit' name='pappkrus_mål' value='Oppdater'></form><br>
+			
+			<form method="POST">Gjennomsnittlig bruk av kopipapir:<input type='number' name='papir_avrg'><input type='submit' name='kopipapir_avrg' value='Oppdater'></form>
+			<form method="POST">Mål på forbruk av kopipapir:<input type='number' name='papir_mål'><input type='submit' name='kopipapir_mål' value='Oppdater'></form><br>
+
+			<form method="POST">Gjennomsnittlig kjørelengde per ansatt i tjeneste:<input type='number' step="0.1" name='kjøre_avrg'><input type='submit' name='kjørelengde_avrg' value='Oppdater'></form>
+			<form method="POST">Mål for kjørelengde per ansatt i tjeneste:<input type='number' step="0.1" name='kjøre_mål'><input type='submit' name='kjørelengde_mål' value='Oppdater'></form><br>
+			
+			<form method="POST">Energiforbruk Kristiansand KWh/m2 per år:<input type='number' name='energi'><input type='submit' name='kristiansand' value='Oppdater'></form>
+			<form method="POST">Energiforbruk Flekkefjord KWh/m2 per år:<input type='number' name='energi'><input type='submit' name='flekkefjord' value='Oppdater'></form>
+			<form method="POST">Energiforbruk Arendal KWh/m2 per år:<input type='number' name='energi'><input type='submit' name='arendal' value='Oppdater'></form>
+			<form method="POST">Energiforbruk Gjennomsnitt SSHF KWh/m2 per år:<input type='number' name='energi'><input type='submit' name='sshf' value='Oppdater'></form>
+			<form method="POST">Energiforbruk Normalforbruk beregnet til sykehus KWh/m2 per år:<input type='number' name='energi'><input type='submit' name='normalforbruk' value='Oppdater'></form>
+			
+			<form method="POST">Areal Gjennomsnittskontor:<input type='number' name='energi'><input type='submit' name='kontor' value='Oppdater'></form>
+			<form method="POST">Areal Gjennomsnitsavdeling:<input type='number' name='energi'><input type='submit' name='avdeling' value='Oppdater'></form><br>
+			<?php 
+			if(isset($_POST['pappkrus_avrg'])){
+				$q = "UPDATE graphs SET papercup_avrg=$_POST[papp_avrg]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['pappkrus_mål'])){
+				$q = "UPDATE graphs SET papercup_wish=$_POST[papp_mål]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['kopipapir_avrg'])){
+				$q = "UPDATE graphs SET paper_avrg=$_POST[papir_avrg]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['kopipapir_mål'])){
+				$q = "UPDATE graphs SET paper_wish=$_POST[papir_mål]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['kjørelengde_avrg'])){
+				$q = "UPDATE graphs SET transport_avrg=$_POST[kjøre_avrg]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['kjørelengde_mål'])){
+				$q = "UPDATE graphs SET transport_wish=$_POST[kjøre_mål]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['kristiansand'])){
+				$q = "UPDATE graphs SET energi_kristiansand=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['flekkefjord'])){
+				$q = "UPDATE graphs SET energi_flekkefjord=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['arendal'])){
+				$q = "UPDATE graphs SET energi_arendal=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['sshf'])){
+				$q = "UPDATE graphs SET energi_sshf_avrg=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['normalforbruk'])){
+				$q = "UPDATE graphs SET energi_normalforbruk=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['kontor'])){
+				$q = "UPDATE graphs SET areal_kontor=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+			if(isset($_POST['avdeling'])){
+				$q = "UPDATE graphs SET areal_avdeling=$_POST[energi]";
+				mysqli_query($mysqli, $q);
+			}
+?>
+<?php
+	if(isset($_POST['update_pappkrus'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE funfacts SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'pappkrus'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM funfacts
+		WHERE plassering = 'pappkrus'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+			?>
+<form  action="admin-panel.php#tab7" method="POST">
+<div class="grid_6">
+<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Pappkrus</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="update_pappkrus" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+  <?php
+	if(isset($_POST['kopipapir'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE funfacts SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'kopipapir'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM funfacts
+		WHERE plassering = 'kopipapir'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+			?>
+<form  action="admin-panel.php#tab7" method="POST">
+<div class="grid_6">
+<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Kopipapir</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="kopipapir" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+    <?php
+	if(isset($_POST['transport'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE funfacts SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'transport'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM funfacts
+		WHERE plassering = 'transport'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+			?>
+<form  action="admin-panel.php#tab7" method="POST">
+<div class="grid_6">
+<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Transport</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="transport" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+     <?php
+	if(isset($_POST['ditt_areal'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE funfacts SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'ditt_areal'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM funfacts
+		WHERE plassering = 'ditt_areal'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+			?>
+<form  action="admin-panel.php#tab7" method="POST">
+<div class="grid_6">
+<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Energi - Ditt areal</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="ditt_areal" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+   <?php
+	if(isset($_POST['sykehusene'])){
+	$topic = $_POST['teksttopic'];
+	$info = $_POST['tekstinfo'];
+		$stmt = $mysqli->prepare("UPDATE funfacts SET teksttopic = ?, tekstinfo = ?
+											WHERE plassering = 'sykehusene'
+											LIMIT 1");
+		$stmt->bind_param('ss', $topic, $info);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
+        FROM funfacts
+		WHERE plassering = 'sykehusene'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($overskrift, $tekst);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+			?>
+<form  action="admin-panel.php#tab7" method="POST">
+<div class="grid_6">
+<table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
+  <tr>
+  <td>Energi - Sykehusene</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
+  </tr>
+  <tr>
+  <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="sykehusene" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+			</center>
+</div></div></div>	
+		</section>
 <?php else : ?>
             <p>
                 <span class="error">Du har ikke autorisasjon til å se denne siden, du blir nå videresendt til login siden.</span>

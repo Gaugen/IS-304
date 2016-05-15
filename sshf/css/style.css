@@ -1110,6 +1110,15 @@ article.tabs section h2
     border: 1px solid #9fa8b0;
 }
 
+.newsekko1 {
+	float: left;
+	background-color : #ffffff;
+	width: 68em;
+	height: 36em;
+	overflow-y: auto;
+    border: 1px solid #9fa8b0;
+}
+
 .fileTable {
 	background-color: #ffffff;
 	width: 1200px;
