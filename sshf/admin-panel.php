@@ -902,7 +902,7 @@ Husk at disse verdiene blir ganget med alle andre som kjører arbeidsbiler på S
 			
 
 	  <?php } ?>
-	  
+	  <br><br>
 	  </div>
 	  
 	  

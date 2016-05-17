@@ -132,7 +132,7 @@ while($row=mysqli_fetch_array($r)){
 	echo $row['newstopic'];
 	echo "</h7>";
 	echo "</div>";
-	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
+	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img style='border:1px solid #ADADAD' src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
 	echo "<div class=tb22>";
 	echo nl2br ($row['newsinfo']);
 	echo "</div>";

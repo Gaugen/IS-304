@@ -47,7 +47,7 @@ $datay4=array($arendal_day,$arendal_week,$arendal_month,$arendal_year);
 $datay5=array($sshf_day,$sshf_week,$sshf_month,$sshf_year);
 $datay6=array($average_day,$average_week,$average_month,$average_year);
  
-$graph = new Graph(800,700,'auto');    
+$graph = new Graph(748,648,'auto');    
 $graph->SetScale("textlin");
 $graph->SetShadow();
 $graph->img->SetMargin(50,50,40,50);

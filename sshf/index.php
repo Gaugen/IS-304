@@ -117,8 +117,8 @@ function MM_swapImage() { //v3.0
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	  <div class="grid_8 alpha">
 	<?php }?>
+	  <div class="prefix_1" id="Navbar">
         
-	  <div id="Navbar">
   <p><img src="images/images/Navbar_01.jpg" width="450" height="65" class="top" /></p>
 <p><a href="disposables.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Engangs','','images/images/images/NavOver_10.jpg',1)"><img src="images/images/Navbar_10.jpg" width="150" height="150" class="imageEngangs" id="Engangs" /></a><a href="avfall.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Avfall','','images/images/images/NavOver_09.jpg',0)"><img src="images/images/Navbar_09.jpg" width="150" height="150" class="imageAvfall" id="Avfall" /></a><img src="images/images/Navbar_02.jpg" width="67" height="385" class="left" /><a href="transport.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Transport','','images/images/images/NavOver_03.jpg',1)"><img src="images/images/Navbar_03.jpg" width="150" height="150" class="imageTransport" id="Transport" /></a><img src="images/images/Navbar_07.jpg" width="150" height="16" class="leftmiddle" /><a href="energi.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Energi','','images/images/images/NavOver_05.jpg',1)"><img src="images/images/Navbar_05.jpg" width="150" height="150" class="imageEnergi" id="Energi" /></a><img src="images/images/Navbar_08.jpg" width="150" height="16" class="rightmiddle" /><img src="images/images/Navbar_11.jpg" width="150" height="69" class="leftbottom" /><img src="images/images/Navbar_04.jpg" width="16" height="385" class="middle" float:right; /><img src="images/images/Navbar_12.jpg" width="150" height="69" class="rightbottom" /><img src="images/images/Navbar_06.jpg" width="67" height="385" class="right" /></p></div>
       </div>
@@ -142,7 +142,7 @@ while($row=mysqli_fetch_array($r)){
 	echo $row['newstopic'];
 	echo "</h7>";
 	echo "</div>";
-	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
+	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img style='border:1px solid #ADADAD' src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
 	echo "<div class=tb22>";
 	echo nl2br(substr ($row['newsinfo'], 0, 100));
 	echo "<a href='/sshf/".$row['kategori']."'> <span style=color:blue;text-align:center;>...Les mer</span></a>";
@@ -150,7 +150,6 @@ while($row=mysqli_fetch_array($r)){
 	echo "</div>";
 	echo "<div class=newsfooter2>";
 	echo "</div>";
-	echo "</br>";
 	echo "</br>";
 	echo "</form>";
 }

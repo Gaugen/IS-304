@@ -181,7 +181,8 @@ body {
 .grid_9,
 .grid_10,
 .grid_11,
-.grid_12 {
+.grid_12,
+.grid_13 {
   display:inline;
   float: left;
   position: relative;
@@ -271,6 +272,10 @@ body {
 .container_12 .grid_12 {
   width:100%;
 }
+.container_12 .grid_13 {
+  width:350px;
+  height: 800px;
+}
 
 
 
@@ -323,6 +328,9 @@ body {
   padding-left:1100px;
 }
 
+.container_12 .prefix_12 {
+  padding-left:150px;
+}
 
 
 /* Suffix Extra Space >> 12 Columns
@@ -479,7 +487,6 @@ body {
 /* `Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
 
-/* http://sonspring.com/journal/clearing-floats */
 
 .clear {
   clear: both;
@@ -490,7 +497,6 @@ body {
   height: 0;
 }
 
-/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
 
 .clearfix:before,
 .clearfix:after {
