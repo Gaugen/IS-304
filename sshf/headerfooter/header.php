@@ -115,32 +115,6 @@
 		echo " Virket ikke!";
 	}
 	?>
-	<?php
-	
-	if(isset($_POST['update5'])){
-	$mftopic = $_POST['menufootertopic'];
-		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
-											WHERE menufooterplassering = 'Menu5'
-											LIMIT 1");
-		$stmt->bind_param('s', $mftopic);  
-		$stmt->execute();    // Execute the prepared query.
-	}
-	if ($stmt =$mysqli->prepare("SELECT menufootertopic
-        FROM menufooter
-		WHERE menufooterplassering = 'Menu5'
-        LIMIT 1")) {
-        $stmt->execute();    // Execute the prepared query.
-        $stmt->store_result();
- 
-        // get variables from result.
-        $stmt->bind_result($menu5);
-        $stmt->fetch();
-		}
-	else
-	{
-		echo " Virket ikke!";
-	}
-	?>
 	
 	<?php
 	
@@ -263,7 +237,6 @@
 					<div class="grid_5">
 					
 					<a href="documents.php"><?php echo ($menu4); ?></a>
-					<a href="calculator.php"><?php echo ($menu5); ?></a>
 					<a href="graphs.php"><?php echo ($menu6); ?></a>
 					<a href="contacts.php"><?php echo ($menu7); ?></a>
 					
