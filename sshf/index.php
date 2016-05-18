@@ -145,7 +145,7 @@ while($row=mysqli_fetch_array($r)){
 	echo "<a href=image.php?newsno=".$row['newsno']." data-lightbox=roadtrip><img style='border:1px solid #ADADAD' src=image.php?newsno=".$row['newsno']." width=180 height=180/></a>";
 	echo "<div class=tb22>";
 	echo nl2br(substr ($row['newsinfo'], 0, 100));
-	echo "<a href='/sshf/".$row['kategori']."'> <span style=color:blue;text-align:center;>...Les mer</span></a>";
+	echo "<a href='/".$row['kategori']."'> <span style=color:blue;text-align:center;>...Les mer</span></a>";
 	echo "</div>";
 	echo "</div>";
 	echo "<div class=newsfooter2>";

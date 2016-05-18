@@ -46,6 +46,7 @@ if (login_check($mysqli) == true) {
 	</div>
 	<div class="container_12">
 	<div class="grid_2">
+	<br>
 	</br>
         <ul class="list-1 ">
           <li><a href="transport.php">Transport </a></li>
@@ -86,6 +87,7 @@ if (login_check($mysqli) == true) {
 	
 	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_6">
+   <br>
          <form  action="transport.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
@@ -111,11 +113,13 @@ if (login_check($mysqli) == true) {
 	  else{?>
 	  
    <div class="grid_6">
+   <br>
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	<?php }?>
     </div>
     <div class="grid_4">
+	<br>
 	<?php
 	echo "</br>";
 	echo "<div class=newsekkoKategori>";
