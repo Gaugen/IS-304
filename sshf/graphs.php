@@ -67,7 +67,7 @@ sec_session_start();
 
 <form action="graphs.php?action=transport" method="POST">
 			<table width="350px" bgcolor=#d0d7e9>
-			<tr><td colspan=3>Transport - Kilometer reist i tjenestetid</td></tr>
+			<th colspan=3>Transport - Kilometer reist i tjenestetid</th>
 			<tr>
 			<td width="60%">Hvor mange Kilometer kjører du i snitt per dag i tjeneste?</td><td><input type="number" step="0.1" size="20%" name="number"></td>
 			</tr>
@@ -80,7 +80,7 @@ sec_session_start();
 <br>
 <form action="graphs.php?action=energi" method="POST">
 			<table width="350x" bgcolor=#d0d7e9>
-			<tr><td colspan=3>Energi - Energiforbruk ditt areal</td></tr>
+			<th colspan=3>Energi - Energiforbruk ditt areal</th>
 			<tr>
 			<td width="60%">Hvor stort arbeidsareal disponerer du/din enhet idag?</td><td><input type="int" size="20%" name="number"></td>
 			</tr>
