@@ -3,7 +3,7 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
  
 sec_session_start();
- 
+//error_reporting(0);
 if (login_check($mysqli) == true) {
     $logged = 'in';
 } else {
@@ -129,7 +129,7 @@ function MM_swapImage() { //v3.0
 	
 	<?php
 	echo "<div class=newsekko2>";
-$q = "SELECT * FROM post ORDER BY newsno DESC";
+$q = "SELECT * FROM post WHERE newsno <> '1' ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
