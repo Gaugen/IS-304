@@ -14,7 +14,7 @@ if ($stmt = $mysqli->prepare("SELECT transport_avrg, transport_wish
 $average_week=$average*5;
 $average_month=$average*20;
 $average_year=$average*230;
-$wish_week=$average*5;
+$wish_week=$wish*5;
 $wish_month=$wish*20;
 $wish_year=$wish*230;
 
@@ -35,10 +35,10 @@ $graph->SetScale("textlin");
 $graph->SetShadow();
 $graph->img->SetMargin(50,30,40,50);
 $graph->xaxis->SetTickLabels(array('Per dag','Per uke','Per måned','Per år'));
- 
+ /*
 $graph->xaxis->title->Set('Tenk gjennomsnitlig antall Km * ansatte!');
 $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
-
+*/
 $graph->yaxis->title->Set('Km');
 $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
 $graph->yaxis->title->SetMargin(10);

@@ -36,10 +36,10 @@ $graph->SetScale("textlin");
 $graph->SetShadow();
 $graph->img->SetMargin(50,30,40,50);
 $graph->xaxis->SetTickLabels(array('Per dag','Per uke','Per måned','Per år'));
- 
+/* 
 $graph->xaxis->title->Set('Tenk gjennomsnitlig antall engangsglass * ansatte!');
 $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
-
+*/
 $graph->yaxis->title->Set('Antall pappkrus');
 $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
 $graph->yaxis->title->SetMargin(10);

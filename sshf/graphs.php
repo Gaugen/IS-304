@@ -69,7 +69,7 @@ sec_session_start();
 			<table width="350px" bgcolor=#d0d7e9>
 			<tr><td colspan=3>Transport - Kilometer reist i tjenestetid</td></tr>
 			<tr>
-			<td width="60%">Hvor mange Kilometer kjører du i snitt per dag i tjeneste?</td><td><input type="int" size="20%" name="number"></td>
+			<td width="60%">Hvor mange Kilometer kjører du i snitt per dag i tjeneste?</td><td><input type="number" step="0.1" size="20%" name="number"></td>
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="submit" value="Se diagram"></td>
@@ -119,7 +119,7 @@ sec_session_start();
  
    <?php if(@$_GET['action'] == "papercup")
 {
-$number= intval($_POST['number']);
+$number= $_POST['number'];
 echo '<img style="border:1px solid black" src="graphs/papercup.php?n='.$number.'" />';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -141,7 +141,7 @@ echo '</table>';
 
 <?php if(@$_GET['action'] == "paper")
 {
-$number= intval($_POST['number']);
+$number= $_POST['number'];
 echo '<img style="border:1px solid black" src="graphs/paper.php?n='.$number.'"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -163,7 +163,7 @@ echo '</table>';
 
  <?php if(@$_GET['action'] == "transport")
 {
-$number= intval($_POST['number']);
+$number= $_POST['number'];
 echo '<img style="border:1px solid black" src="graphs/transport.php?n='.$number.'"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -185,7 +185,7 @@ echo '</table>';
 
  <?php if(@$_GET['action'] == "energi")
 {
-$number= intval($_POST['number']);
+$number= $_POST['number'];
 $hospital=$_POST['sykehus'];
 echo '<img style="border:1px solid black" src="graphs/energi_'.$hospital.'.php?n='.$number.'"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
