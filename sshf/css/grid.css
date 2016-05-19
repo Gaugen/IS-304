@@ -189,7 +189,12 @@ body {
   margin-left: 15px;
   margin-right: 15px;
 }
-
+.grid_14 {
+  display:inline;
+  float: left;
+  position: relative;
+  margin-right: 15px;
+}
 
 
 .push_1, .pull_1,

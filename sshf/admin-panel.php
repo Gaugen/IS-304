@@ -795,27 +795,53 @@ if ($stmt =$mysqli->prepare("SELECT *
 ?>
 			<h2><a href="#tab7">Søylediagrammer</a></h2>
 			<div class="newsekko1">
-			<div style="background-color:#f2f2f2;">
 			<div style="font-family: helvetica">
-			<text><center><font color="#666362">Her kan du stille verdiene som blir brukt i de forskjellige søylediagrammene</text><br> <br>
-			<form method="POST">Gjennomsnittlig bruk av pappkrus:<input type='number' placeholder='<?php echo $papercup_avrg;?>' name='papp_avrg'><input type='submit' name='pappkrus_avrg' value='Oppdater'></form>
-			<form method="POST">Mål på forbruk av pappkrus:<input type='number' placeholder='<?php echo $papercup_wish;?>' name='papp_mål'><input type='submit' name='pappkrus_mål' value='Oppdater'></form><br>
+			<center><br> <br>
+			<p>Her kan du stille verdiene som blir brukt i de forskjellige søylediagrammene, nåværende verdier vises i feltene.</p></center><br> <br>
+			<div class="adminTab7">
+			<form method="POST"><label>Gjennomsnittlig bruk av pappkrus:</label><input type='number' class="tab7Input" placeholder='<?php echo $papercup_avrg;?>' name='papp_avrg'><input type='submit'  name='pappkrus_avrg' value='Oppdater'></form>
+			</div>
+			<br>
+			<div class="adminTab7">
+			<form method="POST"><label>Mål på forbruk av pappkrus:</label><input type='number' class="tab7Input" placeholder='<?php echo $papercup_wish;?>' name='papp_mål'><input type='submit'  name='pappkrus_mål' value='Oppdater'></form><br>
+			</div>
+			<br>
+			<div class="adminTab7">
+			<form method="POST"><label>Gjennomsnittlig bruk av kopipapir:</label><input type='number' class="tab7Input" placeholder='<?php echo $paper_avrg;?>' name='papir_avrg'><input type='submit' name='kopipapir_avrg' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Mål på forbruk av kopipapir:</label><input type='number' class="tab7Input" placeholder='<?php echo $paper_wish;?>' name='papir_mål'><input type='submit' name='kopipapir_mål' value='Oppdater'></form><br>
+			</div>
 			
-			<form method="POST">Gjennomsnittlig bruk av kopipapir:<input type='number' placeholder='<?php echo $paper_avrg;?>' name='papir_avrg'><input type='submit' name='kopipapir_avrg' value='Oppdater'></form>
-			<form method="POST">Mål på forbruk av kopipapir:<input type='number' placeholder='<?php echo $paper_wish;?>' name='papir_mål'><input type='submit' name='kopipapir_mål' value='Oppdater'></form><br>
-
-			<form method="POST">Gjennomsnittlig kjørelengde per ansatt i tjeneste:<input type='number' placeholder='<?php echo $transport_avrg;?>' step="0.1" name='kjøre_avrg'><input type='submit' name='kjørelengde_avrg' value='Oppdater'></form>
-			<form method="POST">Mål for kjørelengde per ansatt i tjeneste:<input type='number' placeholder='<?php echo $transport_wish;?>' step="0.1" name='kjøre_mål'><input type='submit' name='kjørelengde_mål' value='Oppdater'></form><br>
+			<div class="adminTab7">
+			<form method="POST"><label>Gjennomsnittlig kjørelengde per ansatt i tjeneste:</label><input type='number' class="tab7Input" placeholder='<?php echo $transport_avrg;?>' step="0.1" name='kjøre_avrg'><input type='submit' name='kjørelengde_avrg' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Mål for kjørelengde per ansatt i tjeneste:</label><input type='number' class="tab7Input" placeholder='<?php echo $transport_wish;?>' step="0.1" name='kjøre_mål'><input type='submit' name='kjørelengde_mål' value='Oppdater'></form><br>
+			</div>
 			
-			<form method="POST">Energiforbruk Kristiansand KWh/m2 per år:<input type='number' placeholder='<?php echo $energi_kristiansand;?>' name='energi'><input type='submit' name='kristiansand' value='Oppdater'></form>
-			<form method="POST">Energiforbruk Flekkefjord KWh/m2 per år:<input type='number' placeholder='<?php echo $energi_flekkefjord;?>' name='energi'><input type='submit' name='flekkefjord' value='Oppdater'></form>
-			<form method="POST">Energiforbruk Arendal KWh/m2 per år:<input type='number' placeholder='<?php echo $energi_arendal;?>' name='energi'><input type='submit' name='arendal' value='Oppdater'></form>
-			<form method="POST">Energiforbruk Gjennomsnitt SSHF KWh/m2 per år:<input type='number' placeholder='<?php echo $energi_sshf_avrg;?>' name='energi'><input type='submit' name='sshf' value='Oppdater'></form>
-			<form method="POST">Energiforbruk Normalforbruk beregnet til sykehus KWh/m2 per år:<input type='number' placeholder='<?php echo $energi_normalforbruk;?>' name='energi'><input type='submit' name='normalforbruk' value='Oppdater'></form>
+			<div class="adminTab7">
+			<form method="POST"><label>Energiforbruk Kristiansand KWh/m2 per år:</label><input type='number' class="tab7Input" placeholder='<?php echo $energi_kristiansand;?>' name='energi'><input type='submit' name='kristiansand' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Energiforbruk Flekkefjord KWh/m2 per år:</label><input type='number' class="tab7Input" placeholder='<?php echo $energi_flekkefjord;?>' name='energi'><input type='submit' name='flekkefjord' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Energiforbruk Arendal KWh/m2 per år:</label><input type='number' class="tab7Input" placeholder='<?php echo $energi_arendal;?>' name='energi'><input type='submit' name='arendal' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Energiforbruk Gjennomsnitt SSHF KWh/m2 per år:</label><input type='number' class="tab7Input" placeholder='<?php echo $energi_sshf_avrg;?>' name='energi'><input type='submit' name='sshf' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Energiforbruk Normalforbruk beregnet til sykehus KWh/m2 per år:</label><input type='number' class="tab7Input" placeholder='<?php echo $energi_normalforbruk;?>' name='energi'><input type='submit' name='normalforbruk' value='Oppdater'></form>
+			</div>
 			
-			<form method="POST">Areal Gjennomsnittskontor:<input type='number' placeholder='<?php echo $areal_kontor;?>' name='energi'><input type='submit' name='kontor' value='Oppdater'></form>
-			<form method="POST">Areal Gjennomsnitsavdeling:<input type='number' placeholder='<?php echo $areal_avdeling;?>' name='energi'><input type='submit' name='avdeling' value='Oppdater'></form><br>
-
+			<div class="adminTab7">
+			<form method="POST"><label>Areal Gjennomsnittskontor:</label><input type='number' class="tab7Input" placeholder='<?php echo $areal_kontor;?>' name='energi'><input type='submit' name='kontor' value='Oppdater'></form>
+			</div>
+			<div class="adminTab7">
+			<form method="POST"><label>Areal Gjennomsnitsavdeling:</label><input type='number' class="tab7Input" placeholder='<?php echo $areal_avdeling;?>' name='energi'><input type='submit' name='avdeling' value='Oppdater'></form><br>
+			</div>	
 <?php
 	if(isset($_POST['update_pappkrus'])){
 	$topic = $_POST['teksttopic'];
@@ -843,7 +869,7 @@ if ($stmt =$mysqli->prepare("SELECT *
 	}
 			?>
 <form  action="admin-panel.php#tab7" method="POST">
-<div class="grid_6">
+<div class="grid_14">
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
   <tr>
   <td>Pappkrus</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
@@ -856,6 +882,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   </tr>
   </table>
   </form>
+  
   <?php
 	if(isset($_POST['kopipapir'])){
 	$topic = $_POST['teksttopic'];
@@ -881,9 +908,9 @@ if ($stmt =$mysqli->prepare("SELECT *
 	{
 		echo " Virket ikke!";
 	}
-			?>
+?>
+
 <form  action="admin-panel.php#tab7" method="POST">
-<div class="grid_6">
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
   <tr>
   <td>Kopipapir</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
@@ -921,9 +948,9 @@ if ($stmt =$mysqli->prepare("SELECT *
 	{
 		echo " Virket ikke!";
 	}
-			?>
+?>
+
 <form  action="admin-panel.php#tab7" method="POST">
-<div class="grid_6">
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
   <tr>
   <td>Transport</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
@@ -961,9 +988,9 @@ if ($stmt =$mysqli->prepare("SELECT *
 	{
 		echo " Virket ikke!";
 	}
-			?>
+?>
+
 <form  action="admin-panel.php#tab7" method="POST">
-<div class="grid_6">
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
   <tr>
   <td>Energi - Ditt areal</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
@@ -1001,9 +1028,8 @@ if ($stmt =$mysqli->prepare("SELECT *
 	{
 		echo " Virket ikke!";
 	}
-			?>
+?>
 <form  action="admin-panel.php#tab7" method="POST">
-<div class="grid_6">
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
   <tr>
   <td>Energi - Sykehusene</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
@@ -1016,8 +1042,8 @@ if ($stmt =$mysqli->prepare("SELECT *
   </tr>
   </table>
   </form>
-			</center>
-</div></div></div>	
+			
+</div></div>	
 		</section>
 <?php else : ?>
             <p>

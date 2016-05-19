@@ -1281,6 +1281,31 @@ h7 {
 	text-align: left;
 }
 
+.adminTab7 {
+    float: left;
+    width: 800px;
+    margin: 0px 0px 10px 0px;
+    line-height: 30px;
+}
+
+.adminTab7 label {
+    float:left;
+	margin-left: 50px;
+    width: 400px;
+    font-size: 18px;
+    line-height: 30px;
+	text-align: left;
+}
+
+.adminTab7 .tab7Input {
+    float: left;
+    width: 100px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px 0px 0px 10px;
+    font-size: 13px;
+}
+
 .inputHolder .calcInput {
     float: left;
     width: 200px;
