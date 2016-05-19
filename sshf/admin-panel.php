@@ -60,8 +60,12 @@ if (login_check($mysqli) == true) {
 			man skriver inn ønsket tekst, på "Bilde" laster man opp ønsket bilde ved å trykke på "velg fil" og derretter velger et bilde fra datamaskinen. På "Kategori" 
 			velger man hvilken kategori postene skal gå inn under, og til slutt publiserer man nyheter ved "post" knappen. Når man har gjort dette, kommer 
 			posten på siden av utfyllingsfeltene, slik at Administrator kan se om det ser greit ut, i tillegg kommer posten på fremsiden, og på kategori-sidene nyheten tilhører. For eksempel hvis du skriver en nyhet i Energi-kategorien kommer nyheten på Energi-siden i tillegg til forsiden.</p> 
-			<font size="4"><p style="font-weight:bold;"> Legge inn Grafdata </p> </font>
-			<p> Vent til tor arne er ferdig =D </p>
+			<font size="4"><p style="font-weight:bold;"> Skifte navn på meny/footer </p> </font>
+            <p> En administrator kan skifte navn på menyen og footeren, f.eks om "Om Miljøsertifisering" skulle endre navn på sykehuset, kan Admininistrator gå
+            inn i "Admin-panel", trykke på fanen "NavnEndring" og derretter finne "Om Miljøsertifisering", og trykke "rediger teksten".</p>
+            <font size="4"><p style="font-weight:bold;"> Legge inn Grafdata </p> </font>
+            <p> En Admininistrator kan legge inn data til grafene som brukerene av siden skal ta i bruk. For å gjøre dette går man i "admin-panel", og deretter fanen "Søylediagrammer",
+                Her kan man da plotte inn riktig tall til ønsket graf og trykke på "Oppdater"</p>
 		</section>
 		
 		<section id="tab2">
