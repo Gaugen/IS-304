@@ -186,7 +186,7 @@ if (login_check($mysqli) == true) {
 					<?php
 			};
 			echo "<div class=newsekko>";
-			$q = "SELECT * FROM post ORDER BY newsno DESC";
+			$q = "SELECT * FROM post WHERE newsno <> '1' ORDER BY newsno DESC";
 			$r = mysqli_query($mysqli, "$q");
 			if($r)
 			{
@@ -506,56 +506,6 @@ if (login_check($mysqli) == true) {
   </tr>
   <tr>
   <td></td><td><input type="submit" name="update4" value="Post"></td>
-  </tr>
-  </table>
-  </div>
-</div>
-			</form>
-			
-
-	  <?php } ?>
-	  <br><br>
-	   <!-- menu5 -->
-	  
-	  <?php
-	
-	if(isset($_POST['update5'])){
-	$mftopic = $_POST['menufootertopic'];
-		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
-											WHERE menufooterplassering = 'Menu5'
-											LIMIT 1");
-		$stmt->bind_param('s', $mftopic);  
-		$stmt->execute();    // Execute the prepared query.
-	}
-	if ($stmt =$mysqli->prepare("SELECT menufootertopic
-        FROM menufooter
-		WHERE menufooterplassering = 'Menu5'
-        LIMIT 1")) {
-        $stmt->execute();    // Execute the prepared query.
-        $stmt->store_result();
- 
-        // get variables from result.
-        $stmt->bind_result($menu5);
-        $stmt->fetch();
-		}
-	else
-	{
-		echo " Virket ikke!";
-	}
-	?>
-	<?php if (login_check($mysqli) == true) {?>
-      <form action="admin-panel.php#tab6" method="POST">
-	  <?php echo nl2br ($menu5); ?>
-	  <br>
-<div class="dropdownIndex">
-<submit onclick="myIndexFunction5()" class="dropbtnIndex"><font size="3" color="blue" style="text-decoration: underline">Rediger teksten.</font></submit>
-  <div id="myDropdownIndex5" class="dropdown-contentIndex">
-  <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
-  <tr>
-  <td>Meny5</td><td><input type=text size="35%" name="menufootertopic" value="<?php echo     $menu5;?>"></td>
-  </tr>
-  <tr>
-  <td></td><td><input type="submit" name="update5" value="Post"></td>
   </tr>
   </table>
   </div>
