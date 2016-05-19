@@ -34,24 +34,67 @@ sec_session_start();
     
    <div class="grid_6">
         <?php if (login_check($mysqli) == true) : ?>
-            <p>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</p>
+            <h2>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</h2>
             <p>Her kan du enten bytte passord eller legge til/endre sikkerhetsspørsmål som vil bli brukt dersom du glemmer passordet og velger å sende en gjenopprettingsmail. </p>
 			<p><a href="security_question.php"><u>Legg til/endre sikkerhetsspørsmål</u></a></p>
 			<p><a href="change_password.php"><u>Bytt passord</u></a></p>
 			<p><a href="includes/logout.php"><u>Logg ut</u></a></p>
 			
-
+<?php if(@$_GET['action'] == "delete")
+{
+	if ($stmt = $mysqli->prepare("Delete
+                                    FROM members 
+                                    WHERE id = ? LIMIT 1")){
+        // Bind "$user_id" to parameter. 
+        $stmt->bind_param('i', @$_GET['id']);
+        $stmt->execute();   // Execute the prepared query.
+									}
+}
+?>
 <?php
 echo "<div class=inputHold>";
         if (login_check($mysqli) == true) {
-                   		echo "<label>";
-                        echo "<p>Lage konto for ny bruker?</p>"; 
-						echo "</label>";
-						echo "<div class=calcInput>";
-						echo "<a href='register.php'><input type=submit class=btnLoginRegistrer value=Registrer></a>";
-						echo "</div>";
+			if ($stmt = $mysqli->prepare("SELECT superadmin
+                                      FROM members 
+                                      WHERE id = ? LIMIT 1")){
+            // Bind "$user_id" to parameter. 
+            $stmt->bind_param('i', $_SESSION['user_id']);
+            $stmt->execute();   // Execute the prepared query.
+            $stmt->store_result();
+			$stmt->bind_result($superadmin);
+			$stmt->fetch();
+			}
+			if ($superadmin == 1){
+                echo "<h2>Konto Administrasjon:</h2>";
+				echo "<p><a href='register.php'><u>Registrer Ny Admin Bruker</u></a></p>";
+				echo "<p> Eller slett noen av de gamle brukerne:</p>";
+				
+				if ($stmt = $mysqli->prepare("SELECT id, username, email
+                                      FROM members 
+                                      WHERE id != ?")){
+				// Bind "$user_id" to parameter. 
+					$stmt->bind_param('i', $_SESSION['user_id']);
+					$stmt->execute();   // Execute the prepared query.
+					$stmt->store_result();
+					$stmt->bind_result($id, $username, $email);
+					echo "<table width=100% border='1' cellpadding='10'>";
+					echo '<th width="10%">ID</th><th width="30%">Brukernavn</th> <th width="50%">Email</th><th width="10%">Slett</th>';
+					while($stmt->fetch()){
 						
-				}
+						
+						echo "<tr>";
+						echo '<td width="10%"> ' . $id . '</td>';
+						echo '<td width="30%"> ' . $username . '</td>';
+						echo '<td width="50%">' . $email . '</td>';
+						echo '<td width="10%"><a href="protected_page.php?action=delete&id=' . $id . '"><button>Slett</button></a></td>';
+						echo "</tr>"; 
+						
+					}
+					echo "</table>";
+				}	        		
+						
+			}
+		}
 echo "</div>";
 ?>
 <?php
@@ -96,6 +139,7 @@ echo "<p><br/><br/><br/><br/>Passordet ditt har blitt endret!</p>";
 echo "<p><br/><br/><br/><br/>En ny bruker har blitt opprettet! </p>";
 }
 ?>
+
 
         <?php else : ?>
             <p>
