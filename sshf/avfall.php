@@ -86,7 +86,7 @@ if (login_check($mysqli) == true) {
 	?>
 	
 	<?php if (login_check($mysqli) == true) {?>
-   <div class="grid_6">
+   <div class="grid_15">
    <br>
          <form  action="avfall.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
@@ -112,7 +112,7 @@ if (login_check($mysqli) == true) {
 	  <?php }
 	  else{?>
 	  
-   <div class="grid_6">
+   <div class="grid_15">
    <br>
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
