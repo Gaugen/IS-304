@@ -49,10 +49,10 @@ if (login_check($mysqli) == true) {
 	<br>
 	</br>
         <ul class="list-1 ">
-          <li><a href="transport.php">Transport </a></li>
-		  <li><a href="energi.php">Energi </a></li>
-		  <li><a href="avfall.php">Avfall </a></li>
-		  <li><a href="disposables.php">Engangsartikler</a></li>
+          <li><a href="transport.php"><font size="4">Transport </font></a></li>
+		  <li><a href="energi.php"><font size="4">Energi </font></a></li>
+		  <li><a href="avfall.php"><font size="4">Avfall </font></a></li>
+		  <li><a href="disposables.php"><font size="4">Engangsartikler</font></a></li>
         </ul>
 		<br>
       </div>
