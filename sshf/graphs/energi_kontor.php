@@ -69,12 +69,28 @@ $bplot4 = new BarPlot($datay4);
 $bplot5 = new BarPlot($datay5);
 $bplot6 = new BarPlot($datay6);
 
+if ($stmt = $mysqli->prepare("SELECT legend1, legend2, legend3, legend4, legend5 
+                                    FROM legend
+									WHERE tabell = 'Energi - Energiforbruk per lokasjon - kontor' 
+									LIMIT 1")){
+            $stmt->execute();  
+            $stmt->store_result();
+			$stmt->bind_result($legend1, $legend2, $legend3, $legend4, $legend5);
+			$stmt->fetch();
+									  }
+
+$bplot2->SetLegend($legend1);
+$bplot3->SetLegend($legend2);
+$bplot4->SetLegend($legend3);
+$bplot5->SetLegend($legend4);
+$bplot6->SetLegend($legend5);
+/*
 $bplot2->SetLegend('Flekkefjord Sykehus');
 $bplot3->SetLegend('Kristiansand Sykehus');
 $bplot4->SetLegend('Arendal Sykehus');
 $bplot5->SetLegend('SSHF gjennomsnitt');
 $bplot6->SetLegend('Antatt normalforbruk sykehus');
- 
+ */
 $gbarplot = new GroupBarPlot(array($bplot2,$bplot3,$bplot4,$bplot5,$bplot6));
 $gbarplot->SetWidth(0.9);
 $graph->Add($gbarplot);

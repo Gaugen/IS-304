@@ -430,7 +430,7 @@ if (login_check($mysqli) == true) {
         $stmt->store_result();
  
         // get variables from result.
-        $stmt->bind_result($menu1);
+        $stmt->bind_result($menu8);
         $stmt->fetch();
 		}
 	else
@@ -622,7 +622,7 @@ if (login_check($mysqli) == true) {
 	  <br>
 	   <?php
 	
-	if(isset($_POST['update8'])){
+	if(isset($_POST['Footer1'])){
 	$mftopic = $_POST['menufootertopic'];
 		$stmt = $mysqli->prepare("UPDATE menufooter SET menufootertopic = ?
 											WHERE menufooterplassering = 'Footer1'
@@ -658,7 +658,7 @@ if (login_check($mysqli) == true) {
   <td>Footer1</td><td><textarea name="menufootertopic" rows="2" cols="60"><?php echo     $footer1;?></textarea></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="update8" value="Post"></td>
+  <td></td><td><input type="submit" name="Footer1" value="Post"></td>
   </tr>
   </table>
   </div>
@@ -1042,7 +1042,398 @@ if ($stmt =$mysqli->prepare("SELECT *
   </tr>
   </table>
   </form>
-			
+    <?php
+	if(isset($_POST['papercup'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?
+											WHERE tabell = 'Forbruk Engangsartikler - Pappkrus'
+											LIMIT 1");
+		$stmt->bind_param('sss', $legend1, $legend2, $legend3);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3
+        FROM legend
+		WHERE tabell = 'Forbruk Engangsartikler - Pappkrus'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table <border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Forbruk Engangsartikler - Pappkrus</td>
+  </tr>
+  <tr>
+  <td>Ditt forbruk/ blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Gjennomsnittet/ rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="papercup" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+ <br>
+    <?php
+	if(isset($_POST['paper'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?
+											WHERE tabell = 'Forbruk Engangsartikler - Kopipapir'
+											LIMIT 1");
+		$stmt->bind_param('sss', $legend1, $legend2, $legend3);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3
+        FROM legend
+		WHERE tabell = 'Forbruk Engangsartikler - Kopipapir'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table < border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Forbruk Engangsartikler - Kopipapir</td>
+  </tr>
+  <tr>
+  <td>Ditt forbruk/ blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Gjennomsnittet/ rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="paper" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+	 <br>		  
+<?php
+	if(isset($_POST['transport_legend'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?
+											WHERE tabell = 'Transport - Kilometer reist i tjenestetid'
+											LIMIT 1");
+		$stmt->bind_param('sss', $legend1, $legend2, $legend3);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3
+        FROM legend
+		WHERE tabell = 'Transport - Kilometer reist i tjenestetid'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table < border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Transport - Kilometer reist i tjenestetid</td>
+  </tr>
+  <tr>
+  <td>Ditt forbruk/ blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Gjennomsnittet/ rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="transport_legend" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+ <br>
+<?php
+	if(isset($_POST['Energi_kristiansand'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?
+											WHERE tabell = 'Energi - Energiforbruk ditt areal - Kristiansand'
+											LIMIT 1");
+		$stmt->bind_param('sss', $legend1, $legend2, $legend3);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3
+        FROM legend
+		WHERE tabell = 'Energi - Energiforbruk ditt areal - Kristiansand'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table < border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Energi - Energiforbruk ditt areal - Kristiansand</td>
+  </tr>
+  <tr>
+  <td>Ditt forbruk/ blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Gjennomsnittet/ rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="Energi_kristiansand" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+   <br>
+  <?php
+	if(isset($_POST['Energi_flekkefjord'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?
+											WHERE tabell = 'Energi - Energiforbruk ditt areal - Flekkefjord'
+											LIMIT 1");
+		$stmt->bind_param('sss', $legend1, $legend2, $legend3);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3
+        FROM legend
+		WHERE tabell = 'Energi - Energiforbruk ditt areal - Flekkefjord'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table < border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Energi - Energiforbruk ditt areal - Flekkefjord</td>
+  </tr>
+  <tr>
+  <td>Ditt forbruk/ blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Gjennomsnittet/ rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="Energi_flekkefjord" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+  <br>
+   <?php
+	if(isset($_POST['Energi_arendal'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?
+											WHERE tabell = 'Energi - Energiforbruk ditt areal - Arendal'
+											LIMIT 1");
+		$stmt->bind_param('sss', $legend1, $legend2, $legend3);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3
+        FROM legend
+		WHERE tabell = 'Energi - Energiforbruk ditt areal - Arendal'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table < border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Energi - Energiforbruk ditt areal - Arendal</td>
+  </tr>
+  <tr>
+  <td>Ditt forbruk/ blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Gjennomsnittet/ rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="Energi_arendal" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+	 <br>		
+   <?php
+	if(isset($_POST['Energi_kontor'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+	$legend4 = $_POST['legend4'];
+	$legend5 = $_POST['legend5'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?, legend4 = ?, legend5 = ?
+											WHERE tabell = 'Energi - Energiforbruk per lokasjon - kontor'
+											LIMIT 1");
+		$stmt->bind_param('sssss', $legend1, $legend2, $legend3, $legend4, $legend5);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3, legend4, legend5
+        FROM legend
+		WHERE tabell = 'Energi - Energiforbruk per lokasjon - kontor'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3, $l4, $l5);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table <border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Energi - Energiforbruk per lokasjon - kontor</td>
+  </tr>
+  <tr>
+  <td>Flekkefjord Sykehus/ Blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Kristiansand Sykehus/ Rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Arendal Sykehus/ Grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+    <tr>
+  <td>SSHF Gjennomsnitt/ Lysegrønn farge</td><td><input type=text name="legend4" value="<?php echo $l4;?>" style="width: 300px"></td>
+  </tr>
+    <tr>
+  <td>Antatt normalforbruk for sykehus/ Beige farge</td><td><input type=text name="legend5" value="<?php echo $l5;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="Energi_kontor" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+   <br>
+   <?php
+	if(isset($_POST['Energi_avdeling'])){
+	$legend1 = $_POST['legend1'];
+	$legend2 = $_POST['legend2'];
+	$legend3 = $_POST['legend3'];
+	$legend4 = $_POST['legend4'];
+	$legend5 = $_POST['legend5'];
+		$stmt = $mysqli->prepare("UPDATE legend SET legend1 = ?, legend2 = ?, legend3 = ?, legend4 = ?, legend5 = ?
+											WHERE tabell = 'Energi - Energiforbruk per lokasjon - Avdeling'
+											LIMIT 1");
+		$stmt->bind_param('sssss', $legend1, $legend2, $legend3, $legend4, $legend5);  
+		$stmt->execute();    // Execute the prepared query.
+	}
+	if ($stmt =$mysqli->prepare("SELECT legend1, legend2, legend3, legend4, legend5
+        FROM legend
+		WHERE tabell = 'Energi - Energiforbruk per lokasjon - Avdeling'
+        LIMIT 1")) {
+        $stmt->execute();    // Execute the prepared query.
+        $stmt->store_result();
+ 
+        // get variables from result.
+        $stmt->bind_result($l1, $l2, $l3, $l4, $l5);
+        $stmt->fetch();
+		}
+	else
+	{
+		echo " Virket ikke!";
+	}
+?>
+<form  action="admin-panel.php#tab7" method="POST">
+<table <border=0 align=center bgcolor=#d0d7e9 width="620">
+  <tr>
+  <td width="305">Diagramnøkkler</td><td>Energi - Energiforbruk per lokasjon - Avdeling</td>
+  </tr>
+  <tr>
+  <td>Flekkefjord Sykehus/ Blå farge</td><td><input type=text name="legend1" value="<?php echo $l1;?>"  style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Kristiansand Sykehus/ Rosa farge</td><td><input type=text name="legend2" value="<?php echo $l2;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td>Arendal Sykehus/ Grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
+  </tr>
+    <tr>
+  <td>SSHF Gjennomsnitt/ Lysegrønn farge</td><td><input type=text name="legend4" value="<?php echo $l4;?>" style="width: 300px"></td>
+  </tr>
+    <tr>
+  <td>Antatt normalforbruk for sykehus/ Beige farge</td><td><input type=text name="legend5" value="<?php echo $l5;?>" style="width: 300px"></td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" name="Energi_avdeling" value="Post"></td>
+  </tr>
+  </table>
+  </form>
+					
 </div></div>	
 		</section>
 <?php else : ?>

@@ -14,7 +14,7 @@ if ($stmt = $mysqli->prepare("SELECT paper_avrg, paper_wish
 $average_week=$average*5;
 $average_month=$average*20;
 $average_year=$average*230;
-$wish_week=$average*5;
+$wish_week=$wish*5;
 $wish_month=$wish*20;
 $wish_year=$wish*230;
 
@@ -23,9 +23,6 @@ $number = $_GET['n'];
 $number_week=$number*5;
 $number_month=$number*20;
 $number_year=$number*230;
-
-
-
 
 $datay1=array($number,$number_week,$number_month,$number_year);
 $datay2=array($average,$average_week,$average_month,$average_year);
@@ -52,9 +49,19 @@ $bplot2 = new BarPlot($datay2);
 $bplot3 = new BarPlot($datay3);
  
 
-$bplot1->SetLegend('Ditt forbruk');
-$bplot2->SetLegend('Gjennomsnittet');
-$bplot3->SetLegend('Målet vårt');
+if ($stmt = $mysqli->prepare("SELECT legend1, legend2, legend3 
+                                    FROM legend
+									WHERE tabell = 'Forbruk Engangsartikler - Kopipapir' 
+									LIMIT 1")){
+            $stmt->execute();  
+            $stmt->store_result();
+			$stmt->bind_result($legend1, $legend2, $legend3);
+			$stmt->fetch();
+									  }
+
+$bplot1->SetLegend($legend1);
+$bplot2->SetLegend($legend2);
+$bplot3->SetLegend($legend3);
  
 $gbarplot = new GroupBarPlot(array($bplot1,$bplot2,$bplot3));
 $gbarplot->SetWidth(0.8);

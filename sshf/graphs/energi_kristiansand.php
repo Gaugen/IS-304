@@ -57,9 +57,19 @@ $bplot1 = new BarPlot($datay1);
 $bplot2 = new BarPlot($datay2);
 $bplot3 = new BarPlot($datay3);
 
-$bplot1->SetLegend('Ditt forbruk');
-$bplot2->SetLegend('Gjennomsnittet for SSHF');
-$bplot3->SetLegend('Etter standard/normalforbruk');
+if ($stmt = $mysqli->prepare("SELECT legend1, legend2, legend3 
+                                    FROM legend
+									WHERE tabell = 'Energi - Energiforbruk ditt areal - Kristiansand' 
+									LIMIT 1")){
+            $stmt->execute();  
+            $stmt->store_result();
+			$stmt->bind_result($legend1, $legend2, $legend3);
+			$stmt->fetch();
+									  }
+
+$bplot1->SetLegend($legend1);
+$bplot2->SetLegend($legend2);
+$bplot3->SetLegend($legend3);
  
 $gbarplot = new GroupBarPlot(array($bplot1,$bplot2,$bplot3));
 $gbarplot->SetWidth(0.8);
