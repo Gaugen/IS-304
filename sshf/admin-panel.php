@@ -65,7 +65,7 @@ if (login_check($mysqli) == true) {
             inn i "Admin-panel", trykke på fanen "NavnEndring" og derretter finne "Om Miljøsertifisering", og trykke "rediger teksten".</p>
             <font size="4"><p style="font-weight:bold;"> Legge inn Grafdata </p> </font>
             <p> En Admininistrator kan legge inn data til grafene som brukerene av siden skal ta i bruk. For å gjøre dette går man i "admin-panel", og deretter fanen "Søylediagrammer",
-                Her kan man da plotte inn riktig tall til ønsket graf og trykke på "Oppdater"</p>
+                Her kan man da plotte inn riktig tall og tekst til ønsket graf og trykke på "Oppdater"</p>
 		</section>
 		
 		<section id="tab2">
@@ -797,7 +797,7 @@ if ($stmt =$mysqli->prepare("SELECT *
 			<div class="newsekko1">
 			<div style="font-family: helvetica">
 			<center><br> <br>
-			<p>Her kan du stille verdiene som blir brukt i de forskjellige søylediagrammene, nåværende verdier vises i feltene.</p></center><br> <br>
+			<p><font size="5">Her kan du stille verdiene som blir brukt i de forskjellige søylediagrammene, nåværende verdier vises i feltene</font></p></center><br> <br>
 			<div class="adminTab7">
 			<form method="POST"><label>Gjennomsnittlig bruk av pappkrus:</label><input type='number' class="tab7Input" placeholder='<?php echo $papercup_avrg;?>' name='papp_avrg'><input type='submit'  name='pappkrus_avrg' value='Oppdater'></form>
 			</div>
@@ -842,6 +842,7 @@ if ($stmt =$mysqli->prepare("SELECT *
 			<div class="adminTab7">
 			<form method="POST"><label>Areal Gjennomsnitsavdeling:</label><input type='number' class="tab7Input" placeholder='<?php echo $areal_avdeling;?>' name='energi'><input type='submit' name='avdeling' value='Oppdater'></form><br>
 			</div>	
+			
 <?php
 	if(isset($_POST['update_pappkrus'])){
 	$topic = $_POST['teksttopic'];
@@ -868,8 +869,12 @@ if ($stmt =$mysqli->prepare("SELECT *
 		echo " Virket ikke!";
 	}
 			?>
+			
+
+
 <form  action="admin-panel.php#tab7" method="POST">
 <div class="grid_14">
+<center><br> <br><p><font size="5">Her er tekstboksene som vises på siden av grafene</font></p></center><br> <br>
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
   <tr>
   <td>Pappkrus</td><td>Overskrift: <input type=text size="35%" name="teksttopic" value="<?php echo     $overskrift;?>"></td>
@@ -878,7 +883,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="update_pappkrus" value="Post"></td>
+  <td></td><td><input type="submit" name="update_pappkrus" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -919,7 +924,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="kopipapir" value="Post"></td>
+  <td></td><td><input type="submit" name="kopipapir" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -959,7 +964,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="transport" value="Post"></td>
+  <td></td><td><input type="submit" name="transport" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -999,7 +1004,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="ditt_areal" value="Post"></td>
+  <td></td><td><input type="submit" name="ditt_areal" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1038,10 +1043,13 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Informasjon</td><td><textarea name="tekstinfo" rows="10" cols="60"><?php echo $tekst;?>     </textarea></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="sykehusene" value="Post"></td>
+  <td></td><td><input type="submit" name="sykehusene" value="Oppdater"></td>
   </tr>
   </table>
   </form>
+  <div class="adminTab7">
+  <center><br> <br><p><font size="5">Her er verdiene til nøkklene i diagrammene, altså hva de forskjellige fargene betyr</font></p></center>
+  </div>
     <?php
 	if(isset($_POST['papercup'])){
 	$legend1 = $_POST['legend1'];
@@ -1084,7 +1092,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="papercup" value="Post"></td>
+  <td></td><td><input type="submit" name="papercup" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1131,7 +1139,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="paper" value="Post"></td>
+  <td></td><td><input type="submit" name="paper" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1178,7 +1186,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="transport_legend" value="Post"></td>
+  <td></td><td><input type="submit" name="transport_legend" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1225,7 +1233,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="Energi_kristiansand" value="Post"></td>
+  <td></td><td><input type="submit" name="Energi_kristiansand" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1272,7 +1280,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="Energi_flekkefjord" value="Post"></td>
+  <td></td><td><input type="submit" name="Energi_flekkefjord" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1319,7 +1327,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Målet vårt/ grønn farge</td><td><input type=text name="legend3" value="<?php echo $l3;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="Energi_arendal" value="Post"></td>
+  <td></td><td><input type="submit" name="Energi_arendal" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1374,7 +1382,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Antatt normalforbruk for sykehus/ Beige farge</td><td><input type=text name="legend5" value="<?php echo $l5;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="Energi_kontor" value="Post"></td>
+  <td></td><td><input type="submit" name="Energi_kontor" value="Oppdater"></td>
   </tr>
   </table>
   </form>
@@ -1429,7 +1437,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <td>Antatt normalforbruk for sykehus/ Beige farge</td><td><input type=text name="legend5" value="<?php echo $l5;?>" style="width: 300px"></td>
   </tr>
   <tr>
-  <td></td><td><input type="submit" name="Energi_avdeling" value="Post"></td>
+  <td></td><td><input type="submit" name="Energi_avdeling" value="Oppdater"></td>
   </tr>
   </table>
   </form>
