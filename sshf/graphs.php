@@ -95,7 +95,7 @@ sec_session_start();
 <div class="grid_13">
 
 <form action="graphs.php?action=papercup" method="POST">
-			<table width="350px" bgcolor=#d0d7e9>
+			<table width="355px" bgcolor=#d0d7e9>
 			<th colspan=3>Forbruk Engangsartikler - Pappkrus</th>
 			<tr>
 			<td width="60%">Hvor mange pappkrus bruker du per dag?</td>
@@ -103,40 +103,40 @@ sec_session_start();
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="submit" value="Se diagram"></td>
-			</tr></div>
+			</tr>
 			</table>
 			</form>
 			
 <br>
 <form action="graphs.php?action=paper" method="POST">
-			<table width="350px" bgcolor=#d0d7e9>
+			<table width="355px" bgcolor=#d0d7e9>
 			<th colspan=3>Forbruk Engangsartikler - Kopipapir</th>
 			<tr>
 			<td width="60%">Hvor mange Kopipapir bruker du til dagen?</td><td><input type="int" size="20%" name="number"></td>
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="submit" value="Se diagram"></td>
-			</tr></div>
+			</tr>
 			</table>
 			</form>
 
 <br>
 
 <form action="graphs.php?action=transport" method="POST">
-			<table width="350px" bgcolor=#d0d7e9>
+			<table width="355px" bgcolor=#d0d7e9>
 			<th colspan=3>Transport - Kilometer reist i tjenestetid</th>
 			<tr>
 			<td width="60%">Hvor mange Kilometer kjører du i snitt per dag i tjeneste?</td><td><input type="number" step="0.1" size="20%" name="number"></td>
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="submit" value="Se diagram"></td>
-			</tr></div>
+			</tr>
 			</table>
 			</form>
 
 <br>
 <form action="graphs.php?action=energi" method="POST">
-			<table width="350x" bgcolor=#d0d7e9>
+			<table width="355px" bgcolor=#d0d7e9>
 			<th colspan=3>Energi - Energiforbruk ditt areal</th>
 			<tr>
 			<td width="60%">Hvor stort arbeidsareal disponerer du/din enhet idag?</td><td><input type="int" size="20%" name="number"></td>
@@ -150,12 +150,12 @@ sec_session_start();
 			</tr>
 			<tr>
 			<td></td><td><input type="submit" name="submit" value="Se diagram"></td>
-			</tr></div>
+			</tr>
 			</table>
 			</form>
 <br>
 <form action="graphs.php?action=energi_lokasjon" method="POST">
-			<table width="350px" bgcolor=#d0d7e9>
+			<table width="355px" bgcolor=#d0d7e9>
 			<tr><td colspan=3>Energi - Energiforbruk per lokasjon</td></tr>
 			<td width="48%">Sammenlign Energiforbruk ved sykehusene</td><td>
 					<input type="radio" value="kontor" name="lokasjon">Gjennomsnittskontor<br>
@@ -165,18 +165,19 @@ sec_session_start();
 			<tr>
 			<td></td><td><input type="submit" name="submit" value="Se diagram"></td>
 			</tr>
-			</tr></div>
+			</tr>
 			</table>
 			</form>
 
 <br>
 
    </div>
-   <div class="grid_11";>
+   <!--<div class="grid_11";>-->
  
    <?php if(@$_GET['action'] == "papercup")
 {
 $number= $_POST['number'];
+echo '<div class="grid_11";>';
 echo '<img style="border:1px solid black" src="graphs/papercup.php?n='.$number.'" />';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -193,12 +194,14 @@ echo '<table <div border=0 bgcolor=#d0d7e9 style="margin-left: 15px; float: righ
 echo '<tr><td width="230px">'.nl2br ($overskrift).'</td></tr>';
 echo '<tr><td width="230px">'.nl2br ($tekst).'</td></tr>';
 echo '</table>';
+echo '</div>';
 }
 ?>
 
 <?php if(@$_GET['action'] == "paper")
 {
 $number= $_POST['number'];
+echo '<div class="grid_11";>';
 echo '<img style="border:1px solid black" src="graphs/paper.php?n='.$number.'"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -215,12 +218,14 @@ echo '<table <div border=0 bgcolor=#d0d7e9 style="margin-left: 15px; float: righ
 echo '<tr><td width="230px">'.nl2br ($overskrift).'</td></tr>';
 echo '<tr><td width="230px">'.nl2br ($tekst).'</td></tr>';
 echo '</table>';
+echo '</div>';
 }
 ?>   
 
  <?php if(@$_GET['action'] == "transport")
 {
 $number= $_POST['number'];
+echo '<div class="grid_11";>';
 echo '<img style="border:1px solid black" src="graphs/transport.php?n='.$number.'"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -237,6 +242,7 @@ echo '<table <div border=0 bgcolor=#d0d7e9 style="margin-left: 15px; float: righ
 echo '<tr><td width="230px">'.nl2br ($overskrift).'</td></tr>';
 echo '<tr><td width="230px">'.nl2br ($tekst).'</td></tr>';
 echo '</table>';
+echo '</div>';
 }
 ?> 
 
@@ -244,6 +250,7 @@ echo '</table>';
 {
 $number= $_POST['number'];
 $hospital=$_POST['sykehus'];
+echo '<div class="grid_11";>';
 echo '<img style="border:1px solid black" src="graphs/energi_'.$hospital.'.php?n='.$number.'"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -260,12 +267,15 @@ echo '<table <div border=0 bgcolor=#d0d7e9 style="margin-left: 15px; float: righ
 echo '<tr><td width="230px">'.nl2br ($overskrift).'</td></tr>';
 echo '<tr><td width="230px">'.nl2br ($tekst).'</td></tr>';
 echo '</table>';
+echo '</div>';
 }
 ?> 
+<!--</div>-->
 
  <?php if(@$_GET['action'] == "energi_lokasjon")
 {
 	$lokasjon=$_POST['lokasjon'];
+echo ' <div class="grid_16">';
 echo '<img style="border:1px solid black; position: relative; float:left;" src="graphs/energi_'.$lokasjon.'.php"/>';
 if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM funfacts
@@ -279,14 +289,15 @@ if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         $stmt->fetch();
 		}
 
-echo '<table <div border=0 bgcolor=#d0d7e9 style="margin-left: 15px; margin-top: 670px; clear: left">';
-echo '<tr><td width="400px">'.nl2br ($overskrift).'</td></tr>';
+echo '<table <div border=0 bgcolor=#d0d7e9  clear: left">';
+echo '<tr><td width="745px">'.nl2br ($overskrift).'</td></tr>';
 echo '<tr><td width="400px">'.nl2br ($tekst).'</td></tr>';
 echo '</table>';
+echo '</div>';
 }
-?> 
+?>
 
-</div>
+
  </div>
 </section>
 <!--==============================

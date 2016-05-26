@@ -182,7 +182,8 @@ body {
 .grid_10,
 .grid_11,
 .grid_12,
-.grid_13 {
+.grid_13,
+.grid_16 {
   display:inline;
   float: left;
   position: relative;
@@ -290,6 +291,9 @@ body {
 }
 .container_12 .grid_15 {
   width:485px;
+}
+.container_12 .grid_16 {
+  width:750px;
 }
 
 

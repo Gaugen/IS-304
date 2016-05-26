@@ -1,7 +1,7 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
- 
+error_reporting(0);
 sec_session_start();
 
 $newstopic = $_POST['newstopic'];
