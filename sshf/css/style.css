@@ -1186,9 +1186,10 @@ h7 {
 .newsNyheter {
 	float: left;
 	background-color : #ffffff;
-	width: 740px;
-	height: 400px;
+	width: 800px;
+	height: 700px;
 	margin-left: 10px;
+	overflow:auto;
 }
 	
 	
