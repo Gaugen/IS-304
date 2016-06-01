@@ -86,7 +86,7 @@ if (login_check($mysqli) == true) {
 	?>
 	
 	<?php if (login_check($mysqli) == true) {?>
-		<!--> Check if you're logged in. If so - give option to change content of page <--> 
+		<!-- Check if you're logged in. If so - give option to change content of page --> 
    <div class="grid_15">
    <br>
          <form  action="energi.php" method="POST">
@@ -109,10 +109,10 @@ if (login_check($mysqli) == true) {
   </div>
 </div>
 			</form>
-	  
+	  <!-- If you're not logged in, display this -->   
 	  <?php }
 	  else{?>
-	<!--> If you're not logged in, display this <-->   
+	
    <div class="grid_15">
    <br>
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>

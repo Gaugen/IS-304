@@ -15,12 +15,12 @@ if (login_check($mysqli) == true) {
 
 <html>
 <head>
-<!--> Style and stylesheets from css <-->
+<!-- Style and stylesheets from css -->
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <title>Newsfeed</title>
 <body>
-<!--> storeinfo to save newsposts in db <-->
+<!-- storeinfo to save newsposts in db -->
 <form enctype="multipart/form-data" action="storeinfo.php" method="POST">
 
 <table>
@@ -32,7 +32,7 @@ if (login_check($mysqli) == true) {
 <tr><td colspan=3><h1>Nyheter</h1></td></tr>
 <tr>
 
-<!--> Post functions with text areas and post option - also to add picture <-->
+<!-- Post functions with text areas and post option - also to add picture -->
 <td>Tema</td><td><input type=text size="35%" name="newstopic"></td>
 </tr>
 <tr>

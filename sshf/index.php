@@ -87,9 +87,10 @@ function MM_swapImage() { //v3.0
 	{
 		echo " Virket ikke!";
 	}
+		// Check if you're logged in. If so - give option to change content of page  
+
 	?>
 	<?php if (login_check($mysqli) == true) {?>
-	<!--> Check if you're logged in. If so - give option to change content of page <--> 
    <div class="grid_6">
       <form action="index.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
@@ -112,7 +113,7 @@ function MM_swapImage() { //v3.0
 </div>
 			</form>
 	  <div class="grid_8 alpha">
-	  	  <!--> If you're not logged in, display this <-->  
+	  	  <!-- If you're not logged in, display this -->  
 
 	  <?php }
 	  else{?>
