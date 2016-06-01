@@ -11,7 +11,7 @@ if (login_check($mysqli) == true) {
 }
 ?>
 <!DOCTYPE html>
-<!-- General design handlers <-->
+<!-- General design handlers -->
 <html lang="en">
 <head>
 <link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
