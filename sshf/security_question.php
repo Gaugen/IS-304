@@ -50,7 +50,7 @@ sec_session_start();
 			$password=@$_POST['password'];
 			$security_question=@$_POST['security_question'];
 			$security_answer=@$_POST['security_answer'];
-			
+			// Changes/Sets security question and answer if the password given is correct for the user
 			if(isset($_POST['change'])){
 				//Using prepared statements means that SQL injection is not possible. 
 				$stmt = $mysqli->prepare("SELECT password, salt

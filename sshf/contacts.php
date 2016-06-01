@@ -47,7 +47,7 @@ if (login_check($mysqli) == true) {
       </div>
     </div>
 <?php
-	
+	//updates text displayed on the contact page
 	if(isset($_POST['update'])){
 	$topic = $_POST['teksttopic'];
 	$info = $_POST['tekstinfo'];
@@ -57,6 +57,7 @@ if (login_check($mysqli) == true) {
 		$stmt->bind_param('ss', $topic, $info);  
 		$stmt->execute();    // Execute the prepared query.
 	}
+	// Selects the text that should be displayed on the contact page
 	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM tekstbokser
 		WHERE plassering = 'Kontakt'
@@ -73,7 +74,7 @@ if (login_check($mysqli) == true) {
 		echo " Virket ikke!";
 	}
 	?>
-	
+	<!--If an admin is logged in, gives the possibility to change the text on the page -->
 	<?php if (login_check($mysqli) == true) {?>
    <div class="grid_5">
    <form  action="contacts.php" method="POST">
@@ -105,6 +106,7 @@ if (login_check($mysqli) == true) {
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	<?php }?>
     </div>
+	<!-- Email form to send to admin -->
     <div class="grid_6 prefix_2">
       <h4 class="color1 inset__1">Kontakt Form</h4>
       <form action='includes/contactmail.php' method='POST' id="contact-form">

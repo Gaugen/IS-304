@@ -2,7 +2,7 @@
 include_once 'db_connect.php';
 include_once 'functions.php';
 
-
+//Mail sent to user if the account has been locked because of an brute force attack or just to many failed login attempts
 function sendbrute($email, $mysqli)
 {
 	require '../PHPMailer/PHPMailerAutoload.php';

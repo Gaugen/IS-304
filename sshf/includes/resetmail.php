@@ -2,7 +2,7 @@
 include_once 'db_connect.php';
 include_once 'functions.php';
 require '../PHPMailer/PHPMailerAutoload.php';
-
+// Mail sent to user if he/she cannot remember password and needs to reset it
 if(isset($_POST['email']))
 {
     $email = $_POST['email'];

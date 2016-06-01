@@ -3,7 +3,7 @@ include_once '../includes/db_connect.php';
 include_once '../includes/functions.php';
 require_once ('../jpgraph/src/jpgraph.php');
 require_once ('../jpgraph/src/jpgraph_bar.php');
-
+// Gets data from database to put in the graph
 if ($stmt = $mysqli->prepare("SELECT energi_flekkefjord, energi_sshf_avrg, energi_normalforbruk, energi_kristiansand, energi_arendal, areal_kontor
                                       FROM graphs LIMIT 1")){
             $stmt->execute();  
@@ -40,13 +40,13 @@ $sshf_day = $sshf / 365;
 $sshf_week = $sshf_day * 5;
 $sshf_month = $sshf_day * 20;
 $sshf_year = $sshf_day * 230;
-
+//Creates array with the bar plot variables that will be used in graph
 $datay2=array($flekkefjord_day,$flekkefjord_week,$flekkefjord_month,$flekkefjord_year);
 $datay3=array($kristiansand_day,$kristiansand_week,$kristiansand_month,$kristiansand_year);
 $datay4=array($arendal_day,$arendal_week,$arendal_month,$arendal_year);
 $datay5=array($sshf_day,$sshf_week,$sshf_month,$sshf_year);
 $datay6=array($average_day,$average_week,$average_month,$average_year);
- 
+ //Creates picture and graph to fill in bar plots on
 $graph = new Graph(748,648,'auto');    
 $graph->SetScale("textlin");
 $graph->SetShadow();
@@ -62,13 +62,13 @@ $graph->yaxis->title->SetMargin(10);
 
 $graph->title->Set('Energi - Energiforbruk per lokasjon');
 $graph->title->SetFont(FF_FONT1,FS_BOLD);
-
+// Creates the bars
 $bplot2 = new BarPlot($datay2);
 $bplot3 = new BarPlot($datay3);
 $bplot4 = new BarPlot($datay4);
 $bplot5 = new BarPlot($datay5);
 $bplot6 = new BarPlot($datay6);
-
+// Gets the names for the database to be used as legend on the picture
 if ($stmt = $mysqli->prepare("SELECT legend1, legend2, legend3, legend4, legend5 
                                     FROM legend
 									WHERE tabell = 'Energi - Energiforbruk per lokasjon - kontor' 
@@ -84,17 +84,11 @@ $bplot3->SetLegend($legend2);
 $bplot4->SetLegend($legend3);
 $bplot5->SetLegend($legend4);
 $bplot6->SetLegend($legend5);
-/*
-$bplot2->SetLegend('Flekkefjord Sykehus');
-$bplot3->SetLegend('Kristiansand Sykehus');
-$bplot4->SetLegend('Arendal Sykehus');
-$bplot5->SetLegend('SSHF gjennomsnitt');
-$bplot6->SetLegend('Antatt normalforbruk sykehus');
- */
+// To gather the bar plots close to eachother
 $gbarplot = new GroupBarPlot(array($bplot2,$bplot3,$bplot4,$bplot5,$bplot6));
 $gbarplot->SetWidth(0.9);
 $graph->Add($gbarplot);
-
+// draws the barplots
 $bplot2->value->Show();
 $bplot3->value->Show();
 $bplot4->value->Show();
@@ -118,6 +112,6 @@ $bplot3->value->SetAngle(45);
 $bplot4->value->SetAngle(45);
 $bplot5->value->SetAngle(45);
 $bplot6->value->SetAngle(45);
-
+//draws the picture
 $graph->Stroke();
 ?>

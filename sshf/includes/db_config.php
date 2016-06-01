@@ -22,6 +22,6 @@ define("DATABASE", "sshf");    // The database name.
 define("CAN_REGISTER", "any");
 define("DEFAULT_ROLE", "member");
  
-define("SECURE", TRUE);    // FOR DEVELOPMENT ONLY!!!! 
+define("SECURE", TRUE);    
 
 ?>

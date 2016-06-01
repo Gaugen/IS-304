@@ -31,7 +31,7 @@ sec_session_start();
 <section id="content">
 <div class="container_12">
     <?php
-	
+	//updates text displayed on the page
 	if(isset($_POST['update'])){
 	$topic = $_POST['teksttopic'];
 	$info = $_POST['tekstinfo'];
@@ -41,6 +41,7 @@ sec_session_start();
 		$stmt->bind_param('ss', $topic, $info);  
 		$stmt->execute();    // Execute the prepared query.
 	}
+	//gets text from DB to be displayed on the page
 	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM tekstbokser
 		WHERE plassering = 'Graphs'
@@ -62,6 +63,7 @@ sec_session_start();
 
 <center>
 <br>
+<!-- Give the admin if logged in the possibility to change text displayed on the page -->
 <?php if (login_check($mysqli) == true) {?>
 <br>
 <form action="graphs.php" method="POST">
@@ -93,7 +95,7 @@ sec_session_start();
 	<?php }?>
 </center>
 <div class="grid_13">
-
+<!-- Here comes forms that sends input or no input and uses the files in the graph folder to generate pictures/diagrams displayed together with funfacts -->
 <form action="graphs.php?action=papercup" method="POST">
 			<table width="355px" bgcolor=#d0d7e9>
 			<th colspan=3>Forbruk Engangsartikler - Pappkrus</th>
@@ -172,7 +174,7 @@ sec_session_start();
 <br>
 
    </div>
-   <!--<div class="grid_11";>-->
+   <!--This code gets funfact info and also sends number to be displayed on the graph generated-->
  
    <?php if(@$_GET['action'] == "papercup")
 {

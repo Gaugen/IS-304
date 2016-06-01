@@ -44,7 +44,7 @@ if (login_check($mysqli) == true) {
   <br>
   <center>
   <?php
-	
+	//updates text displayed on this page
 	if(isset($_POST['update'])){
 	$topic = $_POST['teksttopic'];
 	$info = $_POST['tekstinfo'];
@@ -54,6 +54,7 @@ if (login_check($mysqli) == true) {
 		$stmt->bind_param('ss', $topic, $info);  
 		$stmt->execute();    // Execute the prepared query.
 	}
+	//Gets text that should be displayed on this page
 	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM tekstbokser
 		WHERE plassering = 'Dokumenter'
@@ -70,6 +71,7 @@ if (login_check($mysqli) == true) {
 		echo " Virket ikke!";
 	}
 	?>
+	<!-- If admin is logged in, give possibility to edit text -->
 	<?php if (login_check($mysqli) == true) {?>
       <form  action="documents.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
@@ -107,6 +109,7 @@ if (login_check($mysqli) == true) {
     <th width="50%">Beskrivelse</th><th width="30%">Filnavn</th> <th width="10%">Filstørrelse</th><th width="8%">Last ned</th>
 	 
     <?php
+	//Gets and displays files and reports from DB
 	$sql="SELECT * FROM tbl_uploads ORDER BY id DESC";
 	$result_set=mysqli_query($mysqli, $sql);
 	//$stmt = $mysqli->prepare($sql);

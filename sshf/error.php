@@ -6,6 +6,7 @@ if (! $error) {
 }
 ?>
 <!DOCTYPE html>
+<!-- shows error if login fails -->
 <html>
     <head>
         <meta charset="UTF-8">

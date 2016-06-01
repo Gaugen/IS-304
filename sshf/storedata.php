@@ -3,7 +3,7 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
  
 sec_session_start();
-
+//creates variables from forms and inserts into DB
 $teksttopic = $_POST['teksttopic'];
 $tekstinfo= $_POST['tekstinfo'];
 

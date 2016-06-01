@@ -49,6 +49,7 @@ if (login_check($mysqli) == true) {
             echo '<p class="error">Feil email eller passord, vennligst prøv igjen.</p>';
         }
         ?> 
+		<!-- Login form  -->
         <form action="includes/process_login.php" method="post" name="login_form"> 
 <div class="inputHold">		
             <label>Email:</label> <input type="text" name="email" class="calcInput" placeholder="Email" />
@@ -75,6 +76,7 @@ if (login_check($mysqli) == true) {
 	<form action="includes/resetmail.php" method="post" name="reset_form"> 
 	<br/><br/>
 	<div class="inputHold">
+	<!-- Forgotten password function that sends reset mail -->
 			<label>Glemt passord?</label> 
             <input type="text" name="email" class="calcInput" placeholder="Fyll inn Email" />
 			<hr style="height:1px; visibility:hidden;" />
@@ -86,23 +88,7 @@ if (login_check($mysqli) == true) {
 echo "<p>Gjennopprettingsmail er blitt sendt, husk å sjekke søppelpost hvis du ikke finner mailen.</p>";
 }
 ?>
-
-			<br/><br/>	<br/><br/>
-			<br/><br/>  <br/><br/>
-		
-<?php
-echo "<div class=inputHold>";
-        if (login_check($mysqli) == true) {
-                   		echo "<label>";
-                        echo "<p>Lage konto for ny bruker?</p>"; 
-						echo "</label>";
-						echo "<div class=calcInput>";
-						echo "<a href='register.php'><input type=submit class=btnLoginRegistrer value=Registrer></a>";
-						echo "</div>";
-						
-				}
-echo "</div>";
-?>      
+     
      <div class="grid_3 alpha">
         
       </div>

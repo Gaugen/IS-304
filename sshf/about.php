@@ -56,16 +56,18 @@ if (login_check($mysqli) == true) {
  <div class="grid_6 prefix_3">
     <center>
 <?php
-	
+	//if admin updates text on page creates variables that can be inserted in DB
 	if(isset($_POST['update'])){
 	$topic = $_POST['teksttopic'];
 	$info = $_POST['tekstinfo'];
+	//Updates text in DB that is suppose to be on this page
 		$stmt = $mysqli->prepare("UPDATE tekstbokser SET teksttopic = ?, tekstinfo = ?
 											WHERE plassering = 'Om_oss'
 											LIMIT 1");
 		$stmt->bind_param('ss', $topic, $info);  
 		$stmt->execute();    // Execute the prepared query.
 	}
+	//Gets text from DB that is suppose to be on this page
 	if ($stmt =$mysqli->prepare("SELECT teksttopic, tekstinfo
         FROM tekstbokser
 		WHERE plassering = 'Om_oss'
@@ -82,6 +84,7 @@ if (login_check($mysqli) == true) {
 		echo " Virket ikke!";
 	}
 	?>
+	<!-- View the logged in admin can see and makes him able to change the text -->
 	<?php if (login_check($mysqli) == true) {?>
    
       <form  action="about.php" method="POST">
@@ -107,7 +110,7 @@ if (login_check($mysqli) == true) {
 	  
 	  <?php }
 	  else{?>
-   
+   <!-- View the ordinary users has-->
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
 	  

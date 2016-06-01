@@ -55,6 +55,7 @@ sec_session_start();
             </li>
             <li>Passord og bekreft passord må matche</li>
         </ul>
+		<!-- form for superadmin to create new admin accounts -->
         <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" 
                 method="post" 
                 name="registration_form">

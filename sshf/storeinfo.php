@@ -3,7 +3,7 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 error_reporting(0);
 sec_session_start();
-
+//Creates variables from the form input and inserts into DB
 $newstopic = $_POST['newstopic'];
 $newsinfo= $_POST['newsinfo'];
 $newsphoto = addslashes (file_get_contents($_FILES['newsphoto']['tmp_name']));

@@ -31,7 +31,7 @@ sec_session_start();
 ======================-->
 <section id="content">
 <div class="container_12">
-    
+    <!-- Different account managment possibility for the user -->
    <div class="grid_6">
         <?php if (login_check($mysqli) == true) : ?>
             <h2>Velkommen <?php echo htmlentities($_SESSION['username']); ?>!</h2>
@@ -40,7 +40,9 @@ sec_session_start();
 			<p><a href="change_password.php"><u>Bytt passord</u></a></p>
 			<p><a href="includes/logout.php"><u>Logg ut</u></a></p>
 			
-<?php if(@$_GET['action'] == "delete")
+<?php 
+//function only for superadmin, deletes admin users
+if(@$_GET['action'] == "delete")
 {
 	if ($stmt = $mysqli->prepare("Delete
                                     FROM members 
@@ -52,6 +54,7 @@ sec_session_start();
 }
 ?>
 <?php
+//Displays table with admin accounts for the superadmin where he can delete them or create new admin accounts
 echo "<div class=inputHold>";
         if (login_check($mysqli) == true) {
 			if ($stmt = $mysqli->prepare("SELECT superadmin
@@ -98,6 +101,7 @@ echo "<div class=inputHold>";
 echo "</div>";
 ?>
 <?php
+//checks if a sequrity question is set for the user, if not reminds them to set it
 			if ($stmt = $mysqli->prepare("SELECT security_question, security_answer 
                                       FROM members 
                                       WHERE id = ? LIMIT 1")){

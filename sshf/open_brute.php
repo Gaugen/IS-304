@@ -34,7 +34,7 @@ include_once 'includes/functions.php';
 		
 		<?php
 		
-	
+	//gets the encrypted id to the user and checks it against the DB
 	
 	if(isset($_GET['action']))
 	{
@@ -54,6 +54,7 @@ include_once 'includes/functions.php';
 		}
 		
 	}
+	// gets the encrypted id to the user and checks it against the DB If the security question also is correct, the loginattempts is deleted and the account is reopened
 	elseif(isset($_POST['open_brute']))
 	{
 			$encrypt = mysqli_real_escape_string($mysqli,$_POST['encrypt']);
@@ -99,6 +100,7 @@ include_once 'includes/functions.php';
            return false;
     }
 		?>
+		<!-- form for the reopening of the account -->
 			Fyll inn sikkerhetssvaret for å åpne kontoen din igjen.
 			
 			<form action='open_brute.php?encrypt=<?php echo "$encrypt";?>' method='POST'><center>

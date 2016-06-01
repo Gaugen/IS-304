@@ -2,7 +2,7 @@
 include_once 'db_connect.php';
 include_once 'functions.php';
 require '../PHPMailer/PHPMailerAutoload.php';
-
+// mail sent from the mail form on the contact page. It is sent to the admin with email set as active. this can be changed in the email tab in admin panel
 if ($stmt = $mysqli->prepare("SELECT email FROM active_mail WHERE id = 1
         LIMIT 1")) {
         $stmt->execute();    // Execute the prepared query.

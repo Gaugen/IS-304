@@ -76,7 +76,7 @@ if (login_check($mysqli) == true) {
 			$curr_pass=@$_POST['curr_pass'];
 			$new_pass=@$_POST['new_password'];
 			$re_pass=@$_POST['confirm_password'];
-			
+		
 			if(isset($_POST['change_pass'])){
 				//Using prepared statements means that SQL injection is not possible. 
 				$stmt = $mysqli->prepare("SELECT password, salt

@@ -35,7 +35,7 @@ include_once 'includes/functions.php';
 		<?php
 		
 	
-	
+	//finds id to user based on the enctrypted id the user recieved from the resetmail
 	if(isset($_GET['action']))
 	{
 		if(@$_GET['action'] == "reset")
@@ -54,6 +54,7 @@ include_once 'includes/functions.php';
 		}
 		
 	}
+	//Checks sequrity answer to the user, if its ok the new password is set 
 	elseif(isset($_POST['reset_password']))
 	{
 			$encrypt = mysqli_real_escape_string($mysqli,$_POST['encrypt']);
@@ -120,7 +121,7 @@ include_once 'includes/functions.php';
             </li>
         </ul>
         </ul><br/><br/>
-			
+			<!-- form for new password -->
 			<form action='reset_password.php?encrypt=<?php echo "$encrypt";?>' method='POST'><center>
 			Svar på sikkerhetsspørsmål:<input type='text' name='security_answer' id='security_answer'><br>
 			Nytt Passord: <input type='password' name='new_password' id="new_password" onkeyup='check()'><br/>

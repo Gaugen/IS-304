@@ -41,9 +41,13 @@ if (login_check($mysqli) == true) {
 	<div class="grid_11">
 	<br>
 	<br>
-<?php if (login_check($mysqli) == true) : ?>
+	
+<?php
+//checks if admin is logged in
+ if (login_check($mysqli) == true) : 
+ ?>
 	<article class="tabs">
-
+<!-- Tab 1 is a written guide that explains what the admin can do in the admin panel -->
 		<section id="tab1">
 			<h2><a href="#tab1">Guide</a></h2>
 			<font size="5"><p style="font-weight:bold;">Brukerguide for Admin-panelet.</P> </font>
@@ -67,7 +71,7 @@ if (login_check($mysqli) == true) {
             <p> En Admininistrator kan legge inn data til grafene som brukerene av siden skal ta i bruk. For å gjøre dette går man i "admin-panel", og deretter fanen "Søylediagrammer",
                 Her kan man da plotte inn riktig tall og tekst til ønsket graf og trykke på "Oppdater"</p>
 		</section>
-		
+		<!-- In tab 2 the admin can manag files and reports -->
 		<section id="tab2">
 			<h2><a href="#tab2">Filbehandler</a></h2>
 			<label>Trykk velg fil for å laste opp fil - legg så til en beskrivelse. <br>Filen publiseres når du trykker last opp</label>
@@ -109,12 +113,9 @@ if (login_check($mysqli) == true) {
 			<br><br>
 			<table width="90%" border="1">
 			<?php
-			//echo "<div class=fileTable>";
+			//Gets files with informaion from DB and displays the so the admin can manage them
 			$sql="SELECT * FROM tbl_uploads ORDER BY id DESC";
 			$result_set=mysqli_query($mysqli, $sql);
-			//$stmt = $mysqli->prepare($sql);
-			//$stmt->execute();
-			//$stmt->store_result($data);
 			
 					echo "<table width=100% border='1' cellpadding='10'>";
 			echo '<th width="30%">Beskrivelse</th><th width="20%">Filnavn</th> <th width="15%">Filtype</th> <th width="5%">Size</th> <th width="5%">ID</th> <th width="6%">Last ned</th> <th width="4%">Slett</th>';
@@ -131,13 +132,13 @@ if (login_check($mysqli) == true) {
 				echo '<td width="6%"><a href="files/download.php?id=' . $row['id'] . '"><button>Last Ned</button></a></td>';			
 				echo '<td width="3%"><a href="files/delete.php?id=' . $row['id'] . '"><button>Slett</button></a></td>';	
 				echo "</tr>"; 
-				// close table>
+
 				echo "</table>";
 			}
-				//echo "</div>";
+
 				?>
 		</section>
-	
+	<!-- In tab 3 the admin can create posts and decide where they should be placed -->
 		<section id="tab3">
 			<h2><a href="#tab3">Nyheter</a></h2>
 			<form enctype="multipart/form-data" action="storeinfo.php" method="POST">
@@ -167,25 +168,19 @@ if (login_check($mysqli) == true) {
 			</table>
 			</form>
 			<?php
-			//if(isset($_POST['kategori'])){
-			//	$kategori = $_POST['kategori'];
-			//	echo("Kategori: ".$kategori);
-			//}
-			?>
-			<?php
 
-
+			// if admin deletes a post this function deletes it from DB
 			if (isset($_POST['delete'])){
 				$DeleteQuery = "DELETE FROM post WHERE newsno='$_POST[newsno]'";
 				mysqli_query($mysqli, $DeleteQuery);
 				?>
 					<script>
-					//alert('successfully deleted');
 					window.location.href='admin-panel.php#tab3';
 					</script>
 					<?php
 			};
 			echo "<div class=newsekko>";
+			//gets all news posts from DB and displays them
 			$q = "SELECT * FROM post WHERE newsno <> '1' ORDER BY newsno DESC";
 			$r = mysqli_query($mysqli, "$q");
 			if($r)
@@ -223,6 +218,7 @@ if (login_check($mysqli) == true) {
 				echo "</div>";
 				?>
 		</section>
+		<!-- In tab 5 the admin can set the email that useres send email to through the mail form on the contact page -->
 		<section id="tab5">
 		<?php
 		if ($stmt = $mysqli->prepare("SELECT email FROM active_mail WHERE id = 1
@@ -254,6 +250,7 @@ if (login_check($mysqli) == true) {
 			</center>
 			</form>
 		</section>
+		<!-- In tab 6 the admin can change the names displayed in the main menue -->
 		<section id="tab6">
 			<h2><a href="#tab6">NavnEndring</a></h2>
 			<center><h4>Endre navnene på menyvalgene og footer informasjonen</h1></center>
@@ -722,8 +719,10 @@ if (login_check($mysqli) == true) {
 	  
 	  
 		</section>
+		<!-- In tab 7 the admin can update the values, legend and funfacts used and displayed on the statistic page -->
 <section id="tab7">
 			<?php 
+			//Updates value used in the graphs 
 			if(isset($_POST['pappkrus_avrg'])){
 				$q = "UPDATE graphs SET papercup_avrg=$_POST[papp_avrg]";
 				mysqli_query($mysqli, $q);
@@ -778,6 +777,7 @@ if (login_check($mysqli) == true) {
 			}
 ?>
 <?php
+// Gets the value used in the graphs from DB
 if ($stmt =$mysqli->prepare("SELECT *
         FROM graphs
         LIMIT 1")) {
@@ -793,6 +793,7 @@ if ($stmt =$mysqli->prepare("SELECT *
 		echo " Virket ikke!";
 	}
 ?>
+<!--displayes used values in graphs and gives the possibility to change them -->
 			<h2><a href="#tab7">Søylediagrammer</a></h2>
 			<div class="newsekko1">
 			<div style="font-family: helvetica">
@@ -842,7 +843,7 @@ if ($stmt =$mysqli->prepare("SELECT *
 			<div class="adminTab7">
 			<form method="POST"><label>Areal Gjennomsnitsavdeling:</label><input type='number' class="tab7Input" placeholder='<?php echo $areal_avdeling;?>' name='energi'><input type='submit' name='avdeling' value='Oppdater'></form><br>
 			</div>	
-			
+<!-- Here comes the funfact code, this changes the text that is diplayed next to the graphs -->			
 <?php
 	if(isset($_POST['update_pappkrus'])){
 	$topic = $_POST['teksttopic'];
@@ -1050,6 +1051,7 @@ if ($stmt =$mysqli->prepare("SELECT *
   <div class="adminTab7">
   <center><br> <br><p><font size="5">Her er verdiene til nøkklene i diagrammene, altså hva de forskjellige fargene betyr</font></p></center>
   </div>
+  <!-- Here comes the legend code, this code updates what the lagend displeyed in the graph pictures say -->
     <?php
 	if(isset($_POST['papercup'])){
 	$legend1 = $_POST['legend1'];
