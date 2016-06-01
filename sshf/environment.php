@@ -11,7 +11,7 @@ if (login_check($mysqli) == true) {
 }
 ?>
 <!DOCTYPE html>
-<!-- General design handlers <-->
+<!-- General design handlers -->
 <html lang="en">
 <head>
 <link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
@@ -73,7 +73,7 @@ if (login_check($mysqli) == true) {
 	}
 	?>
 	<?php if (login_check($mysqli) == true) {?>
-	<!--> Check if you're logged in. If so - give option to change content of page <--> 
+	<!-- Check if you're logged in. If so - give option to change content of page --> 
    <div class="grid_6">
       <form  action="environment.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
@@ -99,7 +99,7 @@ if (login_check($mysqli) == true) {
 	  <?php }
 	  
 	  else{?>
-	  <!--> If you're not logged in, display this <-->  
+	  <!-- If you're not logged in, display this -->  
    <div class="grid_6">
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
