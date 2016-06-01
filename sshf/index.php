@@ -112,9 +112,10 @@ function MM_swapImage() { //v3.0
 </div>
 			</form>
 	  <div class="grid_8 alpha">
+	  	  <!--> If you're not logged in, display this <-->  
+
 	  <?php }
 	  else{?>
-	  <!--> If you're not logged in, display this <-->  
    <div class="grid_6">
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
