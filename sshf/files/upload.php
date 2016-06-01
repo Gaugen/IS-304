@@ -26,7 +26,7 @@ if(isset($_POST['btn-upload']))
 	if(move_uploaded_file($file_loc,$folder.$new_file_name))
 	{
 		$path = "$folder" . "$new_file_name"; 
-		//$sql="INSERT INTO tbl_uploads(file,type,size,path) VALUES('$new_file_name','$file_type','$new_size','$path')";
+		//$sql="INSERT INTO tbl_uploads(file,type,size,path) VALUES('$new_file_name','$file_type','$new_size','$path')";- placement of the upload
 		//mysql_query($sql)or die(mysqli_error($db));
 		if ($insert_stmt = $mysqli->prepare("INSERT INTO tbl_uploads(file,type,size,path,beskrivelse) VALUES (?,?,?,?,?)")) {
 			$insert_stmt->bind_param('sssss',$new_file_name, $file_type, $new_size, $path, $beskrivelse);

@@ -15,10 +15,12 @@ if (login_check($mysqli) == true) {
 
 <html>
 <head>
+<!--> Style and stylesheets from css <-->
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <title>Newsfeed</title>
 <body>
+<!--> storeinfo to save newsposts in db <-->
 <form enctype="multipart/form-data" action="storeinfo.php" method="POST">
 
 <table>
@@ -29,6 +31,8 @@ if (login_check($mysqli) == true) {
 <table <div class=containerpost border=0 align=center bgcolor=#d0d7e9>
 <tr><td colspan=3><h1>Nyheter</h1></td></tr>
 <tr>
+
+<!--> Post functions with text areas and post option - also to add picture <-->
 <td>Tema</td><td><input type=text size="35%" name="newstopic"></td>
 </tr>
 <tr>
@@ -45,7 +49,7 @@ if (login_check($mysqli) == true) {
 
 <?php
 
-
+//Function to delete post
 if (isset($_POST['delete'])){
 	$DeleteQuery = "DELETE FROM post WHERE newstopic='$_POST[hidden]'";
 	mysqli_query($mysqli, $DeleteQuery);
@@ -57,8 +61,8 @@ $q = "SELECT * FROM post";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
-	
-while($row=mysqli_fetch_array($r)){
+	//Run show.php and get other external input to handle posts
+while($row=mysqli_fetch_array($r)){ 
 	echo "<form action=show.php method=post>";
 	echo "<div class=container>";
 	echo "<div class=newsheader>";

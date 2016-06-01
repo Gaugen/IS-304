@@ -11,6 +11,7 @@ if (login_check($mysqli) == true) {
 }
 ?>
 <!DOCTYPE html>
+<!-- General design handlers <-->
 <html lang="en">
 <head>
 <link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
@@ -88,6 +89,7 @@ function MM_swapImage() { //v3.0
 	}
 	?>
 	<?php if (login_check($mysqli) == true) {?>
+	<!--> Check if you're logged in. If so - give option to change content of page <--> 
    <div class="grid_6">
       <form action="index.php" method="POST">
 	  <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
@@ -112,6 +114,7 @@ function MM_swapImage() { //v3.0
 	  <div class="grid_8 alpha">
 	  <?php }
 	  else{?>
+	  <!--> If you're not logged in, display this <-->  
    <div class="grid_6">
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
 	  <p><font size="4"><?php echo nl2br ($tekst); ?></p></font>
@@ -128,12 +131,14 @@ function MM_swapImage() { //v3.0
 
 	
 	<?php
+	// Show posts from newsfeed
 	echo "<div class=newsekko2>";
 $q = "SELECT * FROM post WHERE newsno <> '1' ORDER BY newsno DESC";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
 
+//Echo contents, aslo from mysql
 while($row=mysqli_fetch_array($r)){
 	echo "<form action=index.php method=post>";
 	echo "<div class=container2>";

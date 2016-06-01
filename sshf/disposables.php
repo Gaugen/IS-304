@@ -11,6 +11,7 @@ if (login_check($mysqli) == true) {
 }
 ?>
 <!DOCTYPE html>
+<!-- General design handlers <-->
 <html lang="en">
 <head>
 <link rel="icon" href="http://www.sshf.no/style%20library/images/favicon.ico?rev=23">
@@ -85,6 +86,7 @@ if (login_check($mysqli) == true) {
 	?>
 	
 	<?php if (login_check($mysqli) == true) {?>
+		<!--> Check if you're logged in. If so - give option to change content of page <--> 
    <div class="grid_15">
    <br>
          <form  action="disposables.php" method="POST">
@@ -110,7 +112,7 @@ if (login_check($mysqli) == true) {
 	  
 	  <?php }
 	  else{?>
-	  
+	 <!--> If you're not logged in, display this <-->  
    <div class="grid_15">
    <br>
       <h2 class="inset__1"><?php echo nl2br ($overskrift); ?></h2>
@@ -122,11 +124,12 @@ if (login_check($mysqli) == true) {
 	<?php
 	echo "</br>";
 	echo "<div class=newsekkoKategori>";
-$q = "SELECT * FROM post WHERE kategori = 'disposables.php' ORDER BY newsno DESC";
+$q = "SELECT * FROM post WHERE kategori = 'disposables.php' ORDER BY newsno DESC"; //Get contents from mysql, for newsfeed
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
 
+// What to print from mysql and index.php
 while($row=mysqli_fetch_array($r)){
 	echo "<form action=index.php method=post>";
 	echo "<div class=container2>";

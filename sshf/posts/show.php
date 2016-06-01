@@ -8,7 +8,7 @@ include_once '../includes/functions.php';
 sec_session_start();
 
 
-
+//Function to delete post
 if (isset($_POST['delete'])){
 	$DeleteQuery = "DELETE FROM post WHERE newstopic='$_POST[hidden]'";
 	mysqli_query($mysqli, $DeleteQuery);
@@ -20,7 +20,7 @@ $q = "SELECT * FROM post";
 $r = mysqli_query($mysqli, "$q");
 if($r)
 {
-
+	//Run show.php and get other external input to handle posts
 while($row=mysqli_fetch_array($r)){
 	echo "<form action=show.php method=post>";
 	echo "<div class=container>";
